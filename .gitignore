@@ -1,11 +1,16 @@
 #################
+## Air
+#################
+air/
+
+#################
 ## Eclipse
 #################
 
 *.pydevproject
 .project
 .metadata
-bin/
+# bin/
 tmp/
 *.tmp
 *.bak
