@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<texts>
+		
+		<!-- GUI -->
+		<text_space>
+			<en>Press [KEY] to continue</en>
+			<fr>Appuyez sur [KEY] pour continuer</fr>
+		</text_space>
+		
+		<or>
+			<en>Or</en>
+			<fr>Ou</fr>
+		</or>
+		
+		<right>
+			<en>Right</en>
+			<fr>Droite</fr>
+		</right>
+		
+		<left>
+			<en>Left</en>
+			<fr>Gauche</fr>
+		</left>
+		
+		<up>
+			<en>Up</en>
+			<fr>Haut</fr>
+		</up>
+		
+		<down>
+			<en>Down</en>
+			<fr>Bas</fr>
+		</down>
+		
+		<space>
+			<en>Space</en>
+			<fr>Espace</fr>
+		</space>
+		
+		<enter>
+			<en>Enter</en>
+			<fr>Entrée</fr>
+		</enter>
+		
+		<ctrl>
+			<en>Ctrl</en>
+			<fr>Ctrl</fr>
+		</ctrl>
+				
+		<text_comeback>
+			<img></img>
+			<en>I'm on my way!</en>
+			<fr>J'arrive !</fr>
+		</text_comeback>
+		
+		<!-- GameOver -->
+		<gameover_gameover>
+			<en>Game over!</en>
+			<fr>Perdu !</fr>
+		</gameover_gameover>
+		
+		<gameover_princess>
+			<en>You're dead.</en>
+			<fr>Vous êtes morte.</fr>
+		</gameover_princess>
+		
+		<tryAgainBtn>
+			<en>Click here to try again.</en>
+			<fr>Cliquez ici pour réessayer.</fr>
+		</tryAgainBtn>	
+		
+		<gameover_knight>
+			<en>Your knight's dead.</en>
+			<fr>Votre chevalier est mort.</fr>
+		</gameover_knight>	
+		
+		<gameover_finished>
+			<en>Congratulations, you finished the Beta 1</en>
+			<fr>Félicitations, vous avez fini la Beta 1</fr>
+		</gameover_finished>	
+		
+		<gameover_visit>
+			<en>Don't forget to visit 
+https://www.facebook.com/UkuleleDogPrincess 
+to keep in touch with the project.</en>
+			<fr>N'oubliez pas de commenter sur
+https://www.facebook.com/UkuleleDogPrincess 
+pour rester au courant des nouveautées!</fr>
+		</gameover_visit>	
+
+		<!-- menus -->
+		<menu_title>
+			<en>Princess !</en>
+			<fr>Princess !</fr>
+		</menu_title>
+		
+		<menu_start>
+			<en>Start</en>
+			<fr>Jouer</fr>
+		</menu_start>
+		
+		<menu_options>
+			<en>Options</en>
+			<fr>Options</fr>
+		</menu_options>
+		
+		<menu_credits>
+			<en>Credits</en>
+			<fr>Crédits</fr>
+		</menu_credits>
+		
+		<menu_exit>
+			<en>Exit</en>
+			<fr>Quitter</fr>
+		</menu_exit>
+		
+		<menu_copyright>
+			<en>Un Chien et un Ukulele - 2012</en>
+			<fr>Un Chien et un Ukulele - 2012</fr>
+		</menu_copyright>
+		
+		<menu_return>
+			<en>return</en>
+			<fr>retour</fr>
+		</menu_return>
+		
+		<menu_language>
+			<en>language</en>
+			<fr>langue</fr>
+		</menu_language>
+		
+		<menu_volume>
+			<en>Volume</en>
+			<fr>Volume</fr>
+		</menu_volume>
+		
+		<menu_fullscreen>
+			<en>Fullscreen</en>
+			<fr>Plein Ecran</fr>
+		</menu_fullscreen>
+		
+		<menu_fr>
+			<en>French</en>
+			<fr>Français</fr>
+		</menu_fr>
+		
+		<menu_en>
+			<en>English</en>
+			<fr>Anglais</fr>
+		</menu_en>
+		
+		<menu_loading>
+			<en>Loading...</en>
+			<fr>Chargement...</fr>
+		</menu_loading>
+		
+		<menu_programing>
+			<en>Programing & design: Matthew Charlton</en>
+			<fr>Programation & design: Matthew Charlton</fr>
+		</menu_programing>
+		
+		<menu_design>
+			<en>Design, testing & cookies: Marie Balmont</en>
+			<fr>Designs, tests & cookies: Marie Balmont</fr>
+		</menu_design>
+		
+		<menu_scribbles>
+			<en>Graphics & Animations: Frantz Hofmann</en>
+			<fr>Graphismes & Animations: Frantz Hofmann</fr>
+		</menu_scribbles>
+			
+		<menu_citrus>
+			<en>Powered by Citrus Engine.</en>
+			<fr>Utilise le Citrus Engine.</fr>
+		</menu_citrus>
+		
+		<!-- pause -->
+		<pause_pause>
+			<en>Pause</en>
+			<fr>Pause</fr>
+		</pause_pause>
+		
+		<pause_continue>
+			<en>Continue</en>
+			<fr>Continuer</fr>
+		</pause_continue>
+		
+		<pause_reload>
+			<en>Reload Chapter</en>
+			<fr>Recommencer Chapitre</fr>
+		</pause_reload>
+		
+		<pause_exit>
+			<en>Exit</en>
+			<fr>Quitter</fr>
+		</pause_exit>
+		
+		<!-- dialogs -->
+		<intro_1>
+			<img></img>
+			<en>Princess!!</en>
+			<fr>Princesse !!</fr>
+		</intro_1>
+		<intro_2>
+			<img></img>
+			<en>The castle is under attack! Quick, we have to flee!</en>
+			<fr>Le chateau est attaqué ! Vite, nous devons fuir !</fr>
+		</intro_2>
+		<intro_3>
+			<img></img>
+			<key>right,left</key>
+			<en>Use the LEFT and RIGHT arrow keys to move and follow me!</en>
+			<fr>Utilisez les flêches GAUCHE et DROITE pour vous déplacer et suivez moi !</fr>
+		</intro_3>
+		<!--<intro_3>
+			<img></img>
+			<key>down</key>
+			<en>When you need me to come back towards you, just press the DOWN button!</en>
+			<fr>Quand vous avez besoin que je revienne vers vous, appuyez sur la touche BAS !</fr>
+		</intro_3>-->
+		
+		<text_1>
+			<img></img>
+			<en>Monsters come back to life after a few seconds, so run run run!</en>
+			<fr>Les monstres reviennent à la vie après quelque secondes, alors courez courez courez !</fr>
+		</text_1>
+		<text_2>
+			<img></img>
+			<en>The roof is crashing down, come quick!</en>
+			<fr>Le toit s'éfondre, venez vite !</fr>
+		</text_2>
+		<text_3>
+			<img></img>
+			<en>We have to get to the bridge! I have a plan, let's hurry!</en>
+			<fr>Nous devons atteindre le pont-levis. J'ai un plan, dépêchons-nous !</fr>
+		</text_3>
+		<text_4>
+			<img></img>
+			<key>ctrl</key>
+			<en>See that green thing up left? That's my health bar. Mash CTRL to heal me!</en>
+			<fr>Vous voyez ce truc vert en haut à gauche? C'est ma barre de vie. Bourrinez CTRL pour me guérir !</fr>
+		</text_4>
+		<text_5>
+			<img></img>
+			<en>We have to blow up the floor but I can't use the switch with my sword and shield.</en>
+			<fr>On doit tout faire sauter mais je ne peux utiliser les détonateurs à cause de mon équipement.</fr>
+		</text_5>
+		<text_6>
+			<img></img>
+			<key>space</key>
+			<en>Press Space in front of the switches!</en>
+			<fr>Appuyez sur Espace devant les leviers !</fr>
+		</text_6>
+		<boss>
+			<img></img>
+			<key>ctrl</key>
+			<en>It's a Boss! Quick, get ready to mash CTRL to heal me!</en>
+			<fr>C'est un Boss! Vite, préparez vous a bourriner sur CTRL !</fr>
+		</boss>
+		<text_7>
+			<img></img>
+			<en>This way leads to the town... let's go!</en>
+			<fr>Ce chemin mène vers la ville... partons !</fr>
+		</text_7>
+		<beta>
+			<img></img>
+			<en>You'll have to wait for the Beta to know what this does!</en>
+			<fr>Il vous faudra attendre la Beta pour savoir à quoi ça sert !</fr>
+		</beta>
+		<unstuck>
+			<img></img>
+			<en>It's ok, you can move now! Run!</en>
+			<fr>C'est bon vous pouvez à nouveau bouger, courrez!</fr>
+		</unstuck>
+		
+		<not_that_way>
+			<img></img>
+			<en>No, don't go back! Follow me quick!</en>
+			<fr>Non ne retournez pas en arrière ! Suivez-moi !</fr>
+		</not_that_way>
+		
+		<corridor_fight_1>
+			<img></img>
+			<en>I'll take care of the fighting, just stay close behind me!</en>
+			<fr>Je m'occupe de les combattre, restez près de moi !</fr>
+		</corridor_fight_1>
+		
+		<corridor_fight_2>
+			<img></img>
+			<en>These monsters come back to life after a few seconds, don't let them touch you!</en>
+			<fr>Ces monstres reviennent à la vie après quelque secondes, ne les laissez pas vous toucher!</fr>
+		</corridor_fight_2>
+		
+		<corridor_gate>
+			<img></img>
+			<en>You have to flick the switch to open the gate for me.</en>
+			<fr>Vous devez actionner l'interrupteur pour m'ouvrir le portail.</fr>
+		</corridor_gate>
+		
+		<throne_nobody_here>
+			<img></img>
+			<en>They don't seem to be in this room, but we should stay on our gards...</en>
+			<fr>Ils ne semble pas y avoir d'ennemi dans cette pièce, mais restons aux aguets...</fr>
+		</throne_nobody_here>
+		
+		<throne_roof_crumbled>
+			<img></img>
+			<key>down</key>
+			<en>Damn! The roof cam down on you! Press DOWN to call me back to help you whenever you want.</en>
+			<fr>Damned! Le toit vous est tombé dessus! Appuyez sur BAS pour me faire revenir vous aider quand vous voulez.</fr>
+		</throne_roof_crumbled>
+		
+		<throne_corridor>
+			<img></img>
+			<en>Errrr... Into this corridor! Quick!</en>
+			<fr>Euuhh... Vite, dans ce couloir !</fr>
+		</throne_corridor>
+		
+		<lift_heal_1>
+			<img></img>
+			<en>See that bar at the top left fo the screen?</en>
+			<fr>Vous voyez cette barre en haut à gauche de l'écran ?</fr>
+		</lift_heal_1>
+		
+		<lift_heal_2>
+			<img></img>
+			<en>That's my health points. If it's empty, I'll die!</en>
+			<fr>Ce sont mes points de vie. Si elle se vide, je meurs !</fr>
+		</lift_heal_2>
+		
+		<lift_heal_3>
+			<img></img>
+			<key>ctrl</key>
+			<en>Bash CTRL to heal me using your magic powers!</en>
+			<fr>Bourrinez CTRL pour me guérir avec vos pouvoir magiques !</fr>
+		</lift_heal_3>
+		
+		<on_the_lift>
+			<img></img>
+			<en>Quick, get on this lift!</en>
+			<fr>Vite, montez dans cet ascenceur !</fr>
+		</on_the_lift>
+		
+		<wall_run>
+			<img></img>
+			<en>Run!!</en>
+			<fr>Courrez !!</fr>
+		</wall_run>
+				
+	</texts>
+</data>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<tutorial>
+		<startAnimation>
+			<action type="animation">
+				<character>Princess</character>
+				<animation>sleeping</animation>
+			</action>
+			<action type="temp">
+				<time>2000</time>
+			</action>
+			<action type="start_sound">
+				<file>sound/bomb.mp3</file>
+			</action>
+			<action type="temp">
+				<time>5000</time>
+			</action>
+			<action type="stop_sound">
+				<file>sound/bomb.mp3</file>
+			</action>
+			<action type="animation">
+				<character>Knight</character>
+				<animation>walk</animation>
+			</action>
+			<!--<action type="turnaround">
+				<character>Knight</character>
+			</action>-->
+			<action type="move">
+				<character>Knight</character>
+				<time>2000</time>
+				<x>-500</x>
+			</action>
+			<action type="animation">
+				<character>Knight</character>
+				<animation>talking</animation>
+			</action>
+			<action type="animation">
+				<character>Princess</character>
+				<animation>waking</animation>
+			</action>
+			<action type="dialog">
+				<text>intro_1,intro_2</text>
+			</action>
+			<action type="temp">
+				<time>1500</time>
+			</action>
+			<action type="animation">
+				<character>Knight</character>
+				<animation>walk</animation>
+			</action>
+			<action type="turnaround">
+				<character>Knight</character>
+			</action>
+			<action type="move">
+				<character>Knight</character>
+				<time>2000</time>
+				<x>250</x>
+			</action>
+			<action type="remove_object">
+				<object>Knight</object>
+			</action>
+			<action type="animation">
+				<character>Princess</character>
+				<animation>nightshirt</animation>
+			</action>
+			<action type="move">
+				<character>Princess</character>
+				<time>6000</time>
+				<x>320</x>
+			</action>
+			<action type="animation">
+				<character>Princess</character>
+				<animation>idle</animation>
+			</action>
+			<action type="temp">
+				<time>2000</time>
+			</action>
+			<action type="add_object">
+				<type>Knight</type>
+				<x>915</x>
+				<y>289</y>
+			</action>
+			<action type="animation">
+				<character>Princess</character>
+				<animation>walk</animation>
+			</action>
+			<action type="move">
+				<character>Princess</character>
+				<time>6000</time>
+				<x>350</x>
+			</action>
+			<action type="animation">
+				<character>Princess</character>
+				<animation>idle</animation>
+			</action>
+			<action type="unblock" />
+		</startAnimation>
+	</tutorial>
+	<corridor>
+		<startAnimation2>
+			<action type="camera_target">
+				<object>CameraIntro</object>
+			</action>
+			<action type="move">
+				<character>CameraIntro</character>
+				<time>10000</time>
+				<x>1915</x>
+			</action>
+			<action type="camera_target">
+				<object>Princess</object>
+			</action>
+			<action type="temp">
+				<time>300</time>
+			</action>
+			<action type="unblock" />
+		</startAnimation2>
+		
+		<gate_rise1>
+			<action type="animation">
+				<character>Princess</character>
+				<animation>idle</animation>
+			</action>
+			<action type="camera_target">
+				<object>Gate</object>
+			</action>
+			<action type="move">
+				<character>Gate</character>
+				<time>3000</time>
+				<y>-150</y>
+			</action>
+			<action type="camera_target">
+				<object>Princess</object>
+			</action>
+			<action type="unblock" />
+		</gate_rise1>
+		
+		<gate_rise2>
+			<action type="animation">
+				<character>Princess</character>
+				<animation>idle</animation>
+			</action>
+			<!--<action type="camera_target">
+				<object>Gate2</object>
+			</action>-->
+			<action type="move">
+				<character>Gate2</character>
+				<time>500</time>
+				<y>-150</y>
+			</action>
+			<!--<action type="camera_target">
+				<object>Princess</object>
+			</action>-->
+			<action type="unblock" />
+		</gate_rise2>
+		
+	</corridor>
+	<throne>
+		<fallingObjects1>
+			<action type="temp">
+				<time>300</time>
+			</action>
+			<action type="remove_object">
+				<object>Platform268</object>
+			</action>
+			<action type="stuck" />
+			<action type="unblock" />
+			<action type="camera_target">
+				<object>Knight350</object>
+			</action>
+		</fallingObjects1>
+		<boss_appear>
+			<action type="camera_target">
+				<object>CameraSpot174</object>
+			</action>
+			<action type="move">
+				<character>BossSprite</character>
+				<effect>bounce</effect>
+				<time>1000</time>
+				<y>420</y>
+			</action>
+			<action type="temp">
+				<time>200</time>
+			</action>
+			<action type="animation">
+				<character>BossSprite</character>
+				<animation>shout</animation>
+			</action>
+			<action type="temp">
+				<time>2000</time>
+			</action>
+			<action type="animation">
+				<character>BossSprite</character>
+				<animation>fight</animation>
+			</action>
+			<action type="camera_target">
+				<object>Princess123</object>
+			</action>
+			<action type="remove_object">
+				<object>StopSpot172</object>
+			</action>
+			<action type="unblock" />
+		</boss_appear>
+	</throne>
+	<lift>
+		<liftCamera>
+			<action type="camera_target">
+				<object>CameraSpot</object>
+			</action>
+			<action type="animation">
+				<character>Princess</character>
+				<animation>idle</animation>
+			</action>
+			<action type="lift_start">
+				<object>Lift118</object>
+			</action>
+			<action type="unblock" />
+		</liftCamera>
+			
+	</lift>
+	<wall>
+		<startAnimation>
+			<action type="move">
+				<character>Lift</character>
+				<time>4000</time>
+				<y>-400</y>
+			</action>
+			<action type="run">
+				<character>Boss</character>
+			</action>
+			<action type="camera_target">
+				<object>Boss</object>
+			</action>
+			<action type="temp">
+				<time>1200</time>
+			</action>
+			<action type="camera_target">
+				<object>Princess</object>
+			</action>
+			<action type="unblock" />
+			<action type="dialog">
+				<text>wall_run</text>
+			</action>
+		</startAnimation>
+		<gateClose>
+			<action type="move">
+				<character>Gate3</character>
+				<time>500</time>
+				<y>150</y>
+			</action>
+		</gateClose>
+		<bossFall>
+			<action type="camera_target">
+				<object>Boss</object>
+			</action>
+			<action type="move">
+				<character>Princess</character>
+				<time>650</time>
+				<x>250</x>
+			</action>
+			<action type="move">
+				<character>Boss</character>
+				<time>750</time>
+				<x>-150</x>
+			</action>
+			<action type="animation">
+				<character>Boss</character>
+				<animation>fall</animation>
+			</action>
+			<action type="animation">
+				<character>Princess</character>
+				<animation>idle</animation>
+			</action>
+			<action type="temp">
+				<time>1500</time>
+			</action>
+			<action type="camera_target">
+				<object>Princess</object>
+			</action>
+			<action type="remove_object">
+				<object>Boss</object>
+			</action>
+			<action type="unblock" />
+		</bossFall>
+		<teamFall>
+			<action type="start_sound">
+				<file>sound/bomb.mp3</file>
+			</action>
+			<action type="animation">
+				<character>Princess</character>
+				<animation>endFall</animation>
+			</action>
+			<action type="animation">
+				<character>Knight</character>
+				<animation>endFall</animation>
+			</action>
+			<action type="temp">
+				<time>5000</time>
+			</action>
+			<action type="stop_sound">
+				<file>sound/bomb.mp3</file>
+			</action>
+			<action type="teleport">
+				<level>yard</level>
+			</action>
+		</teamFall>
+	</wall>
+</data>

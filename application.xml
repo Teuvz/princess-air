@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<application xmlns="http://ns.adobe.com/air/application/3.1">
+  <id>com.ukuleledog.princess.air.princessair</id>
+  <versionNumber>0.1.4</versionNumber>
+  <filename>Princess!!</filename>
+  <name>
+    <text xml:lang="en">Princess!!</text>
+    <text xml:lang="fr">
+    </text>
+  </name>
+  <initialWindow>
+    <title>Princess!!</title>
+    <content>princessair.swf</content>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <minimizable>true</minimizable>
+    <maximizable>true</maximizable>
+    <resizable>true</resizable>
+    <aspectRatio>landscape</aspectRatio>
+    <renderMode>auto</renderMode>
+    <autoOrients>false</autoOrients>
+  </initialWindow>
+  <!-- 
+	More options:
+	http://livedocs.adobe.com/flex/3/html/File_formats_1.html#1043413
+	-->
+  <programMenuFolder>Princess</programMenuFolder>
+  <supportedProfiles>desktop mobileDevice</supportedProfiles>
+  <copyright>2012</copyright>
+  <description>
+    <text xml:lang="en">
+    </text>
+    <text xml:lang="fr">
+    </text>
+  </description>
+  <allowBrowserInvocation>false</allowBrowserInvocation>
+  <customUpdateUI>false</customUpdateUI>
+  <icon>
+    <image48x48>icons/icon_48.png</image48x48>
+    <image72x72>icons/icon_72.png</image72x72>
+  </icon>
+</application>
