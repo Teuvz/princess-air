@@ -211,8 +211,11 @@ package
 			stage.addEventListener( EndGameEvent.RELOAD, reload );
 			stage.addEventListener( EndGameEvent.EXIT, init );
 			
-			var stats:Stats = new Stats();
-			addChild( stats );
+			CONFIG::debug
+			{
+				var stats:Stats = new Stats();
+				addChild( stats );
+			}
 			
 		}
 				

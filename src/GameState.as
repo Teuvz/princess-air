@@ -42,6 +42,7 @@ package
 	import objects.platformer.TextSpot;
 	import objects.menus.Dialog;
 	import singletons.Levels;
+	import singletons.XmlGameData;
 	
 	public class GameState extends State
 	{
@@ -91,7 +92,8 @@ package
 			/*if (_levelData)
 				ObjectMaker.FromLevelArchitect(_levelData);*/
 				ObjectMaker.FromLevelArchitect( Levels.getLevelXml( _levelName ) );
-								
+				//System.disposeXML( Levels.getLevelXml(_levelName) );
+				
 			//trace( "load level " + _levelName );
 				
 			_hero = getFirstObjectByType(Princess) as Princess;
@@ -220,6 +222,7 @@ package
 				runningCinematic = false;
 				//trace( "undefined cinematic" );
 				hideBlackBands();
+				//System.disposeXML( XmlGameData.getInstance().cinematics );
 			}
 			else if ( cinematic.action[cinematicActionStep].attribute("type") == 'animation' )
 			{				

@@ -16,7 +16,7 @@ set SIGNING_OPTIONS=-storetype pkcs12 -keystore %CERT_FILE% -storepass %CERT_PAS
 set APP_XML=application.xml
 
 :: Files to package
-set APP_DIR=bin
+set APP_DIR=client
 set FILE_OR_DIR=-C %APP_DIR% .
 
 :: Your application ID (must match <id> of Application descriptor)
