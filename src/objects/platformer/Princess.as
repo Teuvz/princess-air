@@ -22,6 +22,7 @@ package objects.platformer
 	import objects.events.TeleportEvent;
 	import objects.menus.Dialog;
 	import objects.platformer.Knight;
+	import singletons.ConstantState;
 	
 	import com.citrusengine.math.MathVector;
 	import com.citrusengine.objects.PhysicsObject;
@@ -335,7 +336,7 @@ package objects.platformer
 					}
 				}
 				
-				if ( _ce.input.isDown( Keyboard.SPACE ) && _onSwitch && !_ce.state.runningCinematic )
+				if ( _ce.input.isDown( Keyboard.SPACE ) && _onSwitch && !ConstantState.getInstance().runningCinematic )
 				{
 					
 					if ( _switchOn.gate != "" )
@@ -373,7 +374,8 @@ package objects.platformer
 										
 					if ( _switchOn.animationToStart != "" )
 					{
-						_ce.state.playCinematic( _switchOn.animationToStart );
+						// BUG the playCinematic should use event/signal
+						//_ce.state.playCinematic( _switchOn.animationToStart );
 					}
 					
 					//_ce.state.remove( _switchOn );
@@ -511,8 +513,9 @@ package objects.platformer
 			}
 			
 			if ( collider is AnimationSpot )
-			{				
-				_ce.state.playCinematic( (collider as AnimationSpot).cinematic );
+			{		
+				// BUG the playCinematic should use event/signal
+				//_ce.state.playCinematic( (collider as AnimationSpot).cinematic );
 				_ce.state.remove( collider );
 			}
 			
@@ -525,8 +528,8 @@ package objects.platformer
 			if ( collider is TextSpot )
 				showDialog( collider as TextSpot );
 				
-			if ( collider is Checkpoint )
-				_ce.state.activateCheckpoint( collider as Checkpoint );
+			/*if ( collider is Checkpoint )
+				_ce.state.activateCheckpoint( collider as Checkpoint );*/
 				
 			if ( collider is DestroySpot )
 				destroyElement( collider as DestroySpot );
@@ -608,9 +611,9 @@ package objects.platformer
 		protected function updateAnimation():void
 		{
 			var prevAnimation:String = _animation;
-								
+											
 			var velocity:V2 = _body.GetLinearVelocity();
-			if ( _ce.state.runningCinematic )
+			if ( ConstantState.getInstance().runningCinematic )
 			{
 				
 			}
@@ -699,10 +702,11 @@ package objects.platformer
 			_switchOn = null;
 		}
 		
+		// BUG find a cleaner way to heal
 		private function heal() : void
 		{
 			_healing = true;
-			_ce.state.heal();
+			//_ce.state.heal();
 		}
 		
 		private function stopHealing( e:TimerEvent=null ) : void

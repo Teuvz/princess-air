@@ -133,7 +133,7 @@ package com.citrusengine.objects.platformer
 		protected var _controlsEnabled:Boolean = true;
 		protected var _ducking:Boolean = false;
 		protected var _combinedGroundAngle:Number = 0;
-		protected var _healing:Boolean = false;
+		//protected var _healing:Boolean = false;
 		
 		public static function Make(name:String, x:Number, y:Number, width:Number, height:Number, view:* = null):Hero
 		{
@@ -266,27 +266,27 @@ package com.citrusengine.objects.platformer
 					_fixture.SetFriction(_friction); //Add friction so that he stops running
 				}
 				
-				/*if (_onGround && _ce.input.justPressed(Keyboard.SPACE) && !_ducking)
+				if (_onGround && _ce.input.justPressed(Keyboard.SPACE) && !_ducking)
 				{
 					velocity.y = -jumpHeight;
 					onJump.dispatch();
-				}*/
+				}
 				
-				/*if (_ce.input.isDown(Keyboard.SPACE) && !_onGround && velocity.y < 0)
+				if (_ce.input.isDown(Keyboard.SPACE) && !_onGround && velocity.y < 0)
 				{
 					velocity.y -= jumpAcceleration;
-				}*/
+				}
 				
-				/*if (_springOffEnemy != -1)
+				if (_springOffEnemy != -1)
 				{
 					if (_ce.input.isDown(Keyboard.SPACE))
 						velocity.y = -enemySpringJumpHeight;
 					else
 						velocity.y = -enemySpringHeight;
 					_springOffEnemy = -1;
-				}*/
+				}
 
-				if ( _ce.input.isDown( Keyboard.CONTROL ) && !_healing )
+				/*if ( _ce.input.isDown( Keyboard.CONTROL ) && !_healing )
 				{
 					_healing = true;
 					_ce.state.heal();
@@ -294,7 +294,7 @@ package com.citrusengine.objects.platformer
 				else if ( !_ce.input.isDown( Keyboard.CONTROL ) && _healing )
 				{
 					 _healing = false;
-				}
+				}*/
 				
 				//Cap velocities
 				if (velocity.x > (maxVelocity))
@@ -468,11 +468,11 @@ package com.citrusengine.objects.platformer
 			var prevAnimation:String = _animation;
 			
 			var velocity:V2 = _body.GetLinearVelocity();
-			if ( _healing )
+			/*if ( _healing )
 			{
 				_animation = "heal";
 			}
-			else if (_hurt)
+			else */if (_hurt)
 			{
 				_animation = "hurt";
 			}

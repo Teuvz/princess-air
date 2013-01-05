@@ -76,7 +76,6 @@ package org.osflash.signals
 		public function get numListeners():uint { return bindings.length; }
 		
 		/** @inheritDoc */
-		//TODO: @throws
 		public function add(listener:Function):ISignalBinding
 		{
 			return registerListener(listener);

@@ -58,7 +58,7 @@ package org.osflash.signals
 			_target = value;
 		}
 
-		// TODO: @throws
+		// @throws
 		override public function add(listener:Function):ISignalBinding
 		{
 			return addWithPriority(listener);

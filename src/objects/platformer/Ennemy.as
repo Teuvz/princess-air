@@ -21,6 +21,7 @@ package objects.platformer
 	import flash.utils.getDefinitionByName;
 	import flash.utils.getTimer;
 	import flash.utils.setTimeout;
+	import objects.events.FightEvent;
 	import org.osflash.signals.Signal;
 	import singletons.Assets;
 	
@@ -112,6 +113,7 @@ package objects.platformer
 					break;
 			}*/
 						
+			// BUG cannot use asset_skeleton for some reason?
 			params.view = Assets.getInstance().formatName( params.view );
 			
 			super(name, params);
@@ -256,6 +258,7 @@ package objects.platformer
 			_rightSensorFixture.addEventListener(ContactEvent.BEGIN_CONTACT, handleSensorBeginContact);
 		}
 		
+		//BUG the startFight should use event/signal
 		protected function handleBeginContact(e:ContactEvent):void
 		{
 			var collider:PhysicsObject = e.other.GetBody().GetUserData();
@@ -265,7 +268,9 @@ package objects.platformer
 				
 			if ( collider is Knight && !_hurt && !kill )
 			{
-				_ce.state.startFight( this );
+				//_ce.state.startFight( this );
+				trace( "by jove! " + name );
+				CitrusEngine.getInstance().stage.dispatchEvent( new FightEvent( FightEvent.START_FIGHT, this.name ) );
 			}
 				
 			if (e.normal) //The normal property doesn't come through all the time. I think doesn't come through against sensors.
@@ -280,6 +285,7 @@ package objects.platformer
 			
 		}
 		
+		// BUG the stopFight should use event/signal
 		protected function handleEndContact(e:ContactEvent):void
 		{
 			//Remove from ground contacts, if it is one.
@@ -293,10 +299,11 @@ package objects.platformer
 				}
 			}
 			
-			_ce.state.stopFight( false, false );
+			//_ce.state.stopFight( false, false );
 			
 		}
 		
+		// BUG the startFight should use event/signal
 		protected function handleSensorBeginContact(e:ContactEvent):void
 		{
 			if (_body.GetLinearVelocity().x < 0 && e.fixture == _rightSensorFixture)
@@ -307,12 +314,7 @@ package objects.platformer
 				
 			var collider:PhysicsObject = e.other.GetBody().GetUserData();
 			var velocity:V2 = _body.GetLinearVelocity();
-						
-			if ( collider is Knight && !_hurt && !kill )
-			{
-				_ce.state.startFight( this );
-			}
-			
+									
 			if ( collider is Hero )
 			{
 				trace( 'ahah, got you!' );

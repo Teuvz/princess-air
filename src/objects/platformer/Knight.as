@@ -25,6 +25,7 @@ package objects.platformer
 	import objects.events.KnightEvent;
 	import objects.menus.Dialog;
 	import org.osflash.signals.Signal;
+	import singletons.ConstantState;
 	
 	
 	
@@ -143,7 +144,7 @@ package objects.platformer
 		override public function update(timeDelta:Number):void
 		{
 			
-			if ( CitrusEngine.getInstance().playing || CitrusEngine.getInstance().state.runningCinematic )
+			if ( CitrusEngine.getInstance().playing || ConstantState.getInstance().runningCinematic )
 			{
 				super.update(timeDelta);
 				
@@ -382,7 +383,7 @@ package objects.platformer
 		protected function updateAnimation():void
 		{			
 			
-			if ( !CitrusEngine.getInstance().state.runningCinematic )
+			if ( !ConstantState.getInstance().runningCinematic )
 			{
 				if ( _fighting )
 					_animation = "fight";

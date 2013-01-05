@@ -75,7 +75,7 @@ package org.osflash.signals
 		public function set strict(value:Boolean):void { _strict = value; }
 		
 		/** @inheritDoc */
-		//TODO: @throws
+		// @throws
 		public function add(listener:Function):ISignalBinding
 		{
 			return registerListener(listener);
@@ -170,7 +170,7 @@ package org.osflash.signals
 			}
 			
 			//
-			// TODO : Question about returning null, as you're adding the same listener twice. We 
+			// Question about returning null, as you're adding the same listener twice. We 
 			// could possibly have a way to locate the binding by listener?
 			//
 			return binding;

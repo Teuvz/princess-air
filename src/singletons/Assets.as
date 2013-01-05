@@ -46,7 +46,7 @@ package singletons
 				trace( "asset not in library: " + plop );
 				reported.push( plop );
 			}
-				
+							
 			return name;
 		}
 		

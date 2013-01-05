@@ -158,6 +158,8 @@ package objects.menus
 			textArray = null;
 		}
 		
+		// BUG the startBossFight should use event/signal
+		// BUG the hideDialog should use event/signal
 		public function hide( e:TimerEvent=null ) : void
 		{
 			if ( textArray != null )
@@ -174,11 +176,11 @@ package objects.menus
 				
 				if ( _bossSpot != null )
 				{
-					_ce.state.startBossFight( _bossSpot );
+					//_ce.state.startBossFight( _bossSpot );
 					_bossSpot = null;
 				}
-				else
-					_ce.state.hideDialog();
+				//else
+					//_ce.state.hideDialog();
 				
 				_ce.stage.removeChild( this );
 				

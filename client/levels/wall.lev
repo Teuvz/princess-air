@@ -1781,7 +1781,7 @@
     <Property name="parallax">1</Property>
     <Property name="rotation">0</Property>
     <Property name="group">0</Property>
-    <Property name="view">asset/ennemy.swf</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
     <Property name="offsetX">0</Property>
     <Property name="offsetY">0</Property>
     <Property name="registration">center</Property>
@@ -1807,7 +1807,7 @@
     <Property name="parallax">1</Property>
     <Property name="rotation">0</Property>
     <Property name="group">0</Property>
-    <Property name="view">asset/ennemy.swf</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
     <Property name="offsetX">0</Property>
     <Property name="offsetY">0</Property>
     <Property name="registration">center</Property>
@@ -1833,7 +1833,7 @@
     <Property name="parallax">1</Property>
     <Property name="rotation">0</Property>
     <Property name="group">0</Property>
-    <Property name="view">asset/ennemy.swf</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
     <Property name="offsetX">0</Property>
     <Property name="offsetY">0</Property>
     <Property name="registration">center</Property>
@@ -1859,7 +1859,7 @@
     <Property name="parallax">1</Property>
     <Property name="rotation">0</Property>
     <Property name="group">0</Property>
-    <Property name="view">asset/ennemy.swf</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
     <Property name="offsetX">0</Property>
     <Property name="offsetY">0</Property>
     <Property name="registration">center</Property>
@@ -2028,7 +2028,7 @@
     <Property name="parallax">1</Property>
     <Property name="rotation">0</Property>
     <Property name="group">0</Property>
-    <Property name="view">asset/ennemy.swf</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
     <Property name="offsetX">0</Property>
     <Property name="offsetY">0</Property>
     <Property name="registration">center</Property>
@@ -2054,7 +2054,7 @@
     <Property name="parallax">1</Property>
     <Property name="rotation">0</Property>
     <Property name="group">0</Property>
-    <Property name="view">asset/ennemy.swf</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
     <Property name="offsetX">0</Property>
     <Property name="offsetY">0</Property>
     <Property name="registration">center</Property>

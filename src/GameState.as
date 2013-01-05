@@ -24,7 +24,9 @@ package
 	import flash.utils.ByteArray;
 	import flash.utils.setTimeout;
 	import flash.utils.Timer;
+	import objects.events.CinematicEvent;
 	import objects.events.EndGameEvent;
+	import objects.events.FightEvent;
 	import objects.events.KnightEvent;
 	import objects.events.TeleportEvent;
 	import objects.menus.PauseMenu;
@@ -41,6 +43,7 @@ package
 	import objects.platformer.Ennemy;
 	import objects.platformer.TextSpot;
 	import objects.menus.Dialog;
+	import singletons.ConstantState;
 	import singletons.Levels;
 	import singletons.XmlGameData;
 	
@@ -61,6 +64,11 @@ package
 		private var _bosshealthbar:Healthbar;
 		private var _levelName:String;
 		private var _inMenu:Boolean;
+		
+		//private var _lang:String;
+		private var cinematic:XML;
+		public var playIntro:Boolean = false;
+		private var cinematicActionStep:uint = 0;
 		
 		private var cinematicLineTop:BlackBand;
 		private var cinematicLineBottom:BlackBand;
@@ -109,11 +117,15 @@ package
 			{
 				start();
 			}
-								
+			
+			stage.addEventListener( CinematicEvent.PLAY_CINEMATIC, playCinematic );
+			//stage.addEventListener( CinematicEvent.PLAY_INTRO, playIntro );
+			stage.addEventListener( FightEvent.START_FIGHT, startFight );
+			
 			handleLoadComplete();			
 		}
 		
-		override public function start() : void
+		public function start() : void
 		{
 			//Find the hero object, and make it the camera target if it exists.
 			
@@ -143,15 +155,17 @@ package
 			stage.addEventListener( KnightEvent.KNIGHT_REMOVED, knightRemoved );
 			
 			// dialog	
-			Dialog.getInstance().setXml( lang, _textData, _charsData );
+			Dialog.getInstance().setXml( XmlGameData.getInstance().lang, _textData, _charsData );
+			_textData = null;
+			_charsData = null;
 			
 			_bosshealthbar = new Healthbar();
 			_bosshealthbar.x = (stage.stageWidth - _bosshealthbar.width) - 5;
 			_bosshealthbar.y = 5;
 					
-			if ( _scenesData.length() != 0 && _scenesData.child( "startAnimation" ).length() != 0 /*&& playIntro*/ )
+			if ( _scenesData.length() != 0 && _scenesData.child( "startAnimation" ).length() != 0 )
 			{
-				runningCinematic = true;
+				ConstantState.getInstance().runningCinematic = true;
 				var _ce:CitrusEngine = CitrusEngine.getInstance();
 				//_ce.playing = false;
 				
@@ -162,6 +176,7 @@ package
 				_hero.controlsEnabled = false;
 				
 				cinematic = XML( _scenesData.child( "startAnimation" ).toXMLString() );
+				_scenesData = null;
 								
 				showBlackBands();
 				cinematicAction();
@@ -197,11 +212,15 @@ package
 			TweenLite.to( cinematicLineBottom, 0.5, { y: stage.stageHeight } );
 		}
 		
-		override public function playCinematic( name:String ) : void
+		public function playCinematic( event:CinematicEvent = null, name:String = null ) : void
 		{			
+			
+			if ( event != null )
+				name = event.name;
+			
 			showBlackBands();
 			cinematicActionStep = 0;
-			runningCinematic = true;
+			ConstantState.getInstance().runningCinematic = true;
 			var _ce:CitrusEngine = CitrusEngine.getInstance();
 			//_ce.playing = false;
 							
@@ -219,7 +238,7 @@ package
 			{
 				var _ce:CitrusEngine = CitrusEngine.getInstance();
 				_ce.playing = true;
-				runningCinematic = false;
+				ConstantState.getInstance().runningCinematic = false;
 				//trace( "undefined cinematic" );
 				hideBlackBands();
 				//System.disposeXML( XmlGameData.getInstance().cinematics );
@@ -303,7 +322,7 @@ package
 				SoundManager.getInstance().playSound( cinematic.action[cinematicActionStep].file );
 				trace( cinematic.action[cinematicActionStep].file );
 				
-				SoundManager.getInstance().setGlobalVolume( this.volume/10 );
+				//SoundManager.getInstance().setGlobalVolume( this.volume/10 );
 								
 				setTimeout( cinematicAction, 200 );
 				cinematicActionStep++;
@@ -402,7 +421,6 @@ package
 			}
 			
 			//Destroy all objects marked for destroy
-			//TODO There might be a limit on the number of Box2D bodies that you can destroy in one tick?
 			n = garbage.length;
 			for (i = 0; i < n; i++)
 			{
@@ -420,15 +438,28 @@ package
 					
 		}
 		
-		override public function startFight( ennemy:Ennemy ) : void
+		public function startFight( event:FightEvent=null, ennemy:Ennemy=null ) : void
 		{
-			_currentEnnemy = ennemy;
-			_knight.startFighting( );
-			_currentEnnemy.startFighting();
-			//_view.cameraTarget = _knight;
+			if ( event != null )
+				ennemy = getObjectByName( event.ennemy ) as Ennemy;
+				
+			trace( "FIGHT! " + ennemy )
+				
+			if ( _knight == null )
+				_knight = getFirstObjectByType( Knight ) as Knight;
+			
+			if ( ennemy != null && _knight != null )
+			{
+				trace( "null ennemy or knight" );
+				_currentEnnemy = ennemy;
+				_knight.startFighting( );
+				_currentEnnemy.startFighting();
+				_view.cameraTarget = _knight;
+			}
+			
 		}
 		
-		override public function stopFight( ennemyDead:Boolean, knightDead:Boolean ) : void
+		public function stopFight( ennemyDead:Boolean, knightDead:Boolean ) : void
 		{
 			if ( _currentEnnemy != null )
 			{
@@ -474,7 +505,7 @@ package
 			}
 		}
 		
-		override public function heal() : void
+		public function heal() : void
 		{
 			if ( _knight != null && _healthbar != null )
 			{				
@@ -486,19 +517,19 @@ package
 			}
 		}
 		
-		override public function startBossFight( spot:BossSpot ) : void
+		/*override public function startBossFight( spot:BossSpot ) : void
 		{
 			_knight.start();
 			view.cameraTarget = getObjectByName( spot.cameraName );
 			startFight( getObjectByName( spot.bossName ) as Ennemy );
 			addChild( _bosshealthbar );
 			remove( spot );
-		}
+		}*/
 					
-		override public function hideDialog() : void
+		/*override public function hideDialog() : void
 		{
 			view.cameraTarget = _hero;		
-		}
+		}*/
 		
 		private function handleLoadComplete() : void
 		{
@@ -541,7 +572,7 @@ package
 				{
 					
 					if ( pauseScreen == null )
-					pauseScreen = new PauseMenu( lang, _textData );
+					pauseScreen = new PauseMenu( XmlGameData.getInstance().lang, _textData );
 					pauseScreen.addEventListener( Event.COMPLETE, pauseContinue );
 					pauseScreen.show();
 					addChild( pauseScreen );
@@ -567,12 +598,12 @@ package
 			stage.focus = this;
 		}
 		
-		override public function activateCheckpoint( checkpoint:Checkpoint ) : void
+		/*override public function activateCheckpoint( checkpoint:Checkpoint ) : void
 		{
 			this.checkpoint = checkpoint;
-		}
+		}*/
 		
-		override public function setPrincessStartPosition( x:uint, y:uint ) : void 
+		public function setPrincessStartPosition( x:uint, y:uint ) : void 
 		{ 
 			_hero.x = x;
 			_hero.y = y;
@@ -585,12 +616,12 @@ package
 			
 		}
 		
-		override public function getKnightHealth() : uint
+		public function getKnightHealth() : uint
 		{
 			return _knight.healthPoints;
 		}
 		
-		override public function setKnightHealth( value:uint ) : void
+		public function setKnightHealth( value:uint ) : void
 		{
 			if ( _knight != null )
 			{

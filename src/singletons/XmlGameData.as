@@ -8,8 +8,10 @@ package singletons
 	{
 		
 		private static var instance:XmlGameData;
+		
 		public var cinematics:XML;
 		public var texts:XML;
+		public var lang:String;
 		
 		public function XmlGameData() 
 		{

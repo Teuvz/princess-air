@@ -142,7 +142,6 @@
 		/**
 		 * This is the game loop. It switches states if necessary, then calls update on the current state.
 		 */		
-		//TODO The CE updates use the timeDelta to keep consistent speed during slow framerates. However, Box2D becomes unstable when changing timestep. Why?
 		private function handleEnterFrame(e:Event):void
 		{
 			//Change states if it has been requested

@@ -24,7 +24,7 @@ package com.citrusengine.core
 		protected var _view:CitrusView;
 		protected var _input:Input;
 		
-		public var lang:String = 'fr';
+		/*public var lang:String = 'fr';
 		public var volume:Number = 8;
 		
 		public function startFight( ennemy:Ennemy ) : void {}
@@ -45,7 +45,7 @@ package com.citrusengine.core
 		protected var cinematic:XML;
 		protected var cinematicActionStep:uint = 0;
 		public var playIntro:Boolean = true;
-		public var checkpoint:Checkpoint;
+		public var checkpoint:Checkpoint;*/
 		
 		public function State()
 		{
@@ -109,7 +109,6 @@ package com.citrusengine.core
 			}
 			
 			//Destroy all objects marked for destroy
-			//TODO There might be a limit on the number of Box2D bodies that you can destroy in one tick?
 			n = garbage.length;
 			for (i = 0; i < n; i++)
 			{

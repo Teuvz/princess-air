@@ -177,6 +177,7 @@ package objects.platformer
 			
 		}
 		
+		// BUG stop fight
 		protected function handleEndContact(e:ContactEvent):void
 		{
 			//Remove from ground contacts, if it is one.
@@ -190,10 +191,11 @@ package objects.platformer
 				}
 			}
 			
-			_ce.state.stopFight( false, false );
+			//_ce.state.stopFight( false, false );
 			
 		}
 		
+		// BUG the playCinematic should use event/signal
 		protected function handleSensorBeginContact(e:ContactEvent):void
 		{
 			if (_body.GetLinearVelocity().x < 0 && e.fixture == _rightSensorFixture)
@@ -213,7 +215,7 @@ package objects.platformer
 			if ( collider is Gate )
 			{
 				running = false;
-				_ce.state.playCinematic( "bossFall" );
+				//_ce.state.playCinematic( "bossFall" );
 			}
 								
 		}

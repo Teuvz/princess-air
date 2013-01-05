@@ -133,7 +133,7 @@ package com.citrusengine.utils
 			_numLoadersLoading--;
 			if (_numLoadersLoading == 0)
 				onLoadComplete.dispatch();
-			//TODO Make this error more robust.
+			// Make this error more robust
 			trace("Warning: Art loading error in current state: " + e.text);
 		}
 	}

@@ -9,7 +9,8 @@ package
 	import flash.filesystem.FileStream;
 	import flash.system.Capabilities;
 	import flash.ui.ContextMenu;
-	import net.hires.debug.Stats;
+	import singletons.ConstantState;
+	//import net.hires.debug.Stats;
 	import objects.platformer.Ennemy;
 	import objects.platformer.Gate;
 	import objects.platformer.Ennemy;
@@ -107,6 +108,8 @@ package
 		private var objectsLoaded:Boolean = false;
 		
 		private var intro:filmIntro;
+		private var version:TextField;
+		private var versionFormat:TextFormat;
 		
 		public function Main():void 
 		{
@@ -211,11 +214,26 @@ package
 			stage.addEventListener( EndGameEvent.RELOAD, reload );
 			stage.addEventListener( EndGameEvent.EXIT, init );
 			
-			CONFIG::debug
+			this.version = new TextField();
+			this.versionFormat = new TextFormat();
+			versionFormat.color = 0xFFFFFF;
+			version.selectable = false;
+			version.width = 150;
+			version.text = Version.Major+"."+Version.Minor+"."+Version.Build;
+			
+			if ( CONFIG::debug )
 			{
-				var stats:Stats = new Stats();
-				addChild( stats );
+				//var stats:Stats = new Stats();
+				//addChild( stats );
+				version.appendText(" DEBUG");
 			}
+			else
+				version.appendText(" RELEASE");
+			
+			version.setTextFormat( versionFormat, 0, version.length );
+			version.x = stage.stageWidth - version.textWidth - 5;
+			version.y = stage.stageHeight - version.textHeight - 5;
+			addChild( version );
 			
 		}
 				
@@ -260,8 +278,10 @@ package
 			
 			//Mouse.hide();
 			state = new GameState(null,null,null,currentLevel, null, inMenu );
-			state.lang = mainMenu.lang;
-			state.volume = mainMenu.volume;
+			//state.lang = mainMenu.lang;
+			//state.volume = mainMenu.volume;
+			XmlGameData.getInstance().lang = mainMenu.lang;
+			SoundManager.getInstance().setGlobalVolume( mainMenu.volume);
 			stage.focus = state; 
 			state.addEventListener( Event.COMPLETE, loadComplete );
 			
@@ -269,6 +289,7 @@ package
 			
 		}	
 		
+		// BUG should use event/signal
 		private function startNewGame( e:Event ) : void
 		{
 		
@@ -286,7 +307,7 @@ package
 			removeChild( mainMenuBackground );
 			this.stage.focus = state;
 			playing = true;
-			state.start();
+			(state as GameState).start();
 		}
 		
 		private function continueGame( e:Event=null ) : void
@@ -356,13 +377,14 @@ package
 			assetsLoaded = false;
 			objectsLoaded = false;
 			
-			lastCheckpoint = state.checkpoint;
+			//lastCheckpoint = state.checkpoint;
 			
 			if ( endScreen != null && getChildByName( endScreen.name ) != null )
 				removeChild( endScreen );
 				
 			state = new GameState(gameXml, null, null, currentLevel, Levels.getCinematicXml(currentLevel));
-			state.playIntro = false;
+			// BUG the playIntro should use event/signal
+			//state.playIntro = false;
 			
 			state.addEventListener( Event.COMPLETE, loadComplete );
 			
@@ -370,10 +392,11 @@ package
 						
 		}
 		
+		// BUG knight health should be managed otherwise
 		private function changeLevel( e:TeleportEvent ) : void
 		{
 					
-			previousKnightHealth = state.getKnightHealth();
+			//previousKnightHealth = state.getKnightHealth();
 			
 			lastCheckpoint = null;
 			
@@ -438,6 +461,7 @@ package
 			}
 		}
 		
+		// BUG the setKnightHealth should be managed otherwise
 		private function startPlaying() : void
 		{			
 			
@@ -448,7 +472,7 @@ package
 				mainMenu.addEventListener( MenuEvent.CONTINUE, continueGame );
 				mainMenu.activate();
 				//Mouse.show();
-				state.runningCinematic = true;
+				ConstantState.getInstance().runningCinematic = true;
 				( state.getFirstObjectByType( Princess ) as Princess ).animation = "sleeping";
 			}
 			else
@@ -457,11 +481,11 @@ package
 				var mySO:SharedObject = SharedObject.getLocal("save");	
 				mySO.data.currentLevel = currentLevel;
 				
-				if ( lastCheckpoint != null )
-				state.setPrincessStartPosition( lastCheckpoint.x, lastCheckpoint.y );
+				/*if ( lastCheckpoint != null )
+				state.setPrincessStartPosition( lastCheckpoint.x, lastCheckpoint.y );*/
 				
-				if ( previousKnightHealth != 0 )
-				state.setKnightHealth( previousKnightHealth );
+				/*if ( previousKnightHealth != 0 )
+				state.setKnightHealth( previousKnightHealth );*/
 				
 				removeChild( mainMenu );
 				removeChild( mainMenuBackground );
