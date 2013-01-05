@@ -4,6 +4,7 @@
 air/
 art2/
 graphics/
+*.air
 
 #################
 ## Eclipse
