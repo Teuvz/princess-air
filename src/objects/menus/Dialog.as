@@ -179,7 +179,8 @@ package objects.menus
 					//_ce.state.startBossFight( _bossSpot );
 					_bossSpot = null;
 				}
-				//else
+				else
+					_ce.state.view.cameraTarget = _ce.state.getFirstObjectByType( Princess );
 					//_ce.state.hideDialog();
 				
 				_ce.stage.removeChild( this );

@@ -18,6 +18,7 @@ package objects.platformer
 	import flash.events.TimerEvent;
 	import flash.external.ExternalInterface;
 	import flash.utils.Timer;
+	import objects.events.CinematicEvent;
 	import objects.events.EndGameEvent;
 	import objects.events.TeleportEvent;
 	import objects.menus.Dialog;
@@ -374,8 +375,8 @@ package objects.platformer
 										
 					if ( _switchOn.animationToStart != "" )
 					{
-						// BUG the playCinematic should use event/signal
 						//_ce.state.playCinematic( _switchOn.animationToStart );
+						_ce.stage.dispatchEvent( new CinematicEvent( CinematicEvent.PLAY_CINEMATIC, _switchOn.animationToStart ) );
 					}
 					
 					//_ce.state.remove( _switchOn );
@@ -514,7 +515,7 @@ package objects.platformer
 			
 			if ( collider is AnimationSpot )
 			{		
-				// BUG the playCinematic should use event/signal
+				_ce.stage.dispatchEvent( new CinematicEvent( CinematicEvent.PLAY_CINEMATIC, (collider as AnimationSpot).cinematic ) );
 				//_ce.state.playCinematic( (collider as AnimationSpot).cinematic );
 				_ce.state.remove( collider );
 			}

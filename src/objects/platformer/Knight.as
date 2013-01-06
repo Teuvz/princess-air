@@ -381,8 +381,8 @@ package objects.platformer
 		}
 		
 		protected function updateAnimation():void
-		{			
-			
+		{
+			//trace( ConstantState.getInstance().runningCinematic );
 			if ( !ConstantState.getInstance().runningCinematic )
 			{
 				if ( _fighting )
@@ -396,6 +396,7 @@ package objects.platformer
 				else
 					_animation = "walk";
 			}
+			//trace( _animation );
 		}
 		
 		protected function endHurtState():void
@@ -409,7 +410,7 @@ package objects.platformer
 			var velocity:V2 = _body.GetLinearVelocity();
 			velocity.x = 0;
 			_body.SetLinearVelocity(velocity);
-			//trace( 'Knight: StartFight' );
+			trace( 'Knight: StartFight' );
 		}
 		
 		public function stopFighting( dead:Boolean ) : void
@@ -427,7 +428,7 @@ package objects.platformer
 				_body.SetLinearVelocity(velocity);
 			}
 			
-			//trace( 'Knight: StopFight' );
+			trace( 'Knight: StopFight' );
 				
 		}
 		

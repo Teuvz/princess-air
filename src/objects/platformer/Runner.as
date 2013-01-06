@@ -7,6 +7,7 @@ package objects.platformer
 	import Box2DAS.Dynamics.b2Fixture;
 	import Box2DAS.Dynamics.b2FixtureDef;
 	import Box2DAS.Dynamics.ContactEvent;
+	import com.citrusengine.core.CitrusEngine;
 	import com.citrusengine.math.MathVector;
 	import com.citrusengine.objects.PhysicsObject;
 	import com.citrusengine.objects.platformer.Baddy;
@@ -19,6 +20,7 @@ package objects.platformer
 	import flash.utils.clearTimeout;
 	import flash.utils.getDefinitionByName;
 	import flash.utils.setTimeout;
+	import objects.events.CinematicEvent;
 	import org.osflash.signals.Signal;
 	
 	
@@ -195,7 +197,6 @@ package objects.platformer
 			
 		}
 		
-		// BUG the playCinematic should use event/signal
 		protected function handleSensorBeginContact(e:ContactEvent):void
 		{
 			if (_body.GetLinearVelocity().x < 0 && e.fixture == _rightSensorFixture)
@@ -215,6 +216,7 @@ package objects.platformer
 			if ( collider is Gate )
 			{
 				running = false;
+				CitrusEngine.getInstance().stage.dispatchEvent( new CinematicEvent( CinematicEvent.PLAY_CINEMATIC, "bossFall" ) ); 
 				//_ce.state.playCinematic( "bossFall" );
 			}
 								

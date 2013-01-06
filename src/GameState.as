@@ -28,6 +28,7 @@ package
 	import objects.events.EndGameEvent;
 	import objects.events.FightEvent;
 	import objects.events.KnightEvent;
+	import objects.events.StateEvent;
 	import objects.events.TeleportEvent;
 	import objects.menus.PauseMenu;
 	import objects.platformer.BossSpot;
@@ -121,12 +122,16 @@ package
 			stage.addEventListener( CinematicEvent.PLAY_CINEMATIC, playCinematic );
 			//stage.addEventListener( CinematicEvent.PLAY_INTRO, playIntro );
 			stage.addEventListener( FightEvent.START_FIGHT, startFight );
+			addEventListener( StateEvent.START, start );
 			
 			handleLoadComplete();			
 		}
 		
-		public function start() : void
+		public function start( e:StateEvent=null ) : void
 		{
+			if ( e != null )
+				removeEventListener( StateEvent.START, start );
+			
 			//Find the hero object, and make it the camera target if it exists.
 			
 			//trace( "state start" );
@@ -176,7 +181,7 @@ package
 				_hero.controlsEnabled = false;
 				
 				cinematic = XML( _scenesData.child( "startAnimation" ).toXMLString() );
-				_scenesData = null;
+				//_scenesData = null;
 								
 				showBlackBands();
 				cinematicAction();
@@ -192,7 +197,7 @@ package
 				cinematicLineTop = new BlackBand();
 				cinematicLineTop.x = 0;
 				cinematicLineTop.y = cinematicLineTop.height * -1;
-				stage.addChild( cinematicLineTop );
+				this.addChild( cinematicLineTop );
 			}
 			TweenLite.to( cinematicLineTop, 0.5, { y:0 } );
 			
@@ -200,8 +205,8 @@ package
 			{
 				cinematicLineBottom = new BlackBand();
 				cinematicLineBottom.x = 0;
-				cinematicLineBottom.y = stage.stageHeight;
-				stage.addChild( cinematicLineBottom );
+				cinematicLineBottom.y = CitrusEngine.getInstance().stage.stageHeight;
+				this.addChild( cinematicLineBottom );
 			}
 			TweenLite.to( cinematicLineBottom, 0.5, { y:472 } );
 		}
@@ -209,7 +214,7 @@ package
 		private function hideBlackBands() : void
 		{
 			TweenLite.to( cinematicLineTop, 0.5, { y: -127 } );
-			TweenLite.to( cinematicLineBottom, 0.5, { y: stage.stageHeight } );
+			TweenLite.to( cinematicLineBottom, 0.5, { y: CitrusEngine.getInstance().stage.stageHeight } );
 		}
 		
 		public function playCinematic( event:CinematicEvent = null, name:String = null ) : void
@@ -442,15 +447,12 @@ package
 		{
 			if ( event != null )
 				ennemy = getObjectByName( event.ennemy ) as Ennemy;
-				
-			trace( "FIGHT! " + ennemy )
-				
+								
 			if ( _knight == null )
 				_knight = getFirstObjectByType( Knight ) as Knight;
 			
 			if ( ennemy != null && _knight != null )
 			{
-				trace( "null ennemy or knight" );
 				_currentEnnemy = ennemy;
 				_knight.startFighting( );
 				_currentEnnemy.startFighting();
@@ -526,7 +528,7 @@ package
 			remove( spot );
 		}*/
 					
-		/*override public function hideDialog() : void
+		/*public function hideDialog() : void
 		{
 			view.cameraTarget = _hero;		
 		}*/

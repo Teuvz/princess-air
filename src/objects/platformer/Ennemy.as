@@ -112,8 +112,7 @@ package objects.platformer
 					//params.view = getDefinitionByName("asset_Skeleton");
 					break;
 			}*/
-						
-			// BUG cannot use asset_skeleton for some reason?
+
 			params.view = Assets.getInstance().formatName( params.view );
 			
 			super(name, params);
@@ -258,7 +257,6 @@ package objects.platformer
 			_rightSensorFixture.addEventListener(ContactEvent.BEGIN_CONTACT, handleSensorBeginContact);
 		}
 		
-		//BUG the startFight should use event/signal
 		protected function handleBeginContact(e:ContactEvent):void
 		{
 			var collider:PhysicsObject = e.other.GetBody().GetUserData();
@@ -269,7 +267,6 @@ package objects.platformer
 			if ( collider is Knight && !_hurt && !kill )
 			{
 				//_ce.state.startFight( this );
-				trace( "by jove! " + name );
 				CitrusEngine.getInstance().stage.dispatchEvent( new FightEvent( FightEvent.START_FIGHT, this.name ) );
 			}
 				
@@ -303,7 +300,6 @@ package objects.platformer
 			
 		}
 		
-		// BUG the startFight should use event/signal
 		protected function handleSensorBeginContact(e:ContactEvent):void
 		{
 			if (_body.GetLinearVelocity().x < 0 && e.fixture == _rightSensorFixture)

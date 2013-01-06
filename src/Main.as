@@ -9,8 +9,9 @@ package
 	import flash.filesystem.FileStream;
 	import flash.system.Capabilities;
 	import flash.ui.ContextMenu;
+	import objects.events.StateEvent;
 	import singletons.ConstantState;
-	//import net.hires.debug.Stats;
+	import net.hires.debug.Stats;
 	import objects.platformer.Ennemy;
 	import objects.platformer.Gate;
 	import objects.platformer.Ennemy;
@@ -223,8 +224,8 @@ package
 			
 			if ( CONFIG::debug )
 			{
-				//var stats:Stats = new Stats();
-				//addChild( stats );
+				var stats:Stats = new Stats();
+				addChild( stats );
 				version.appendText(" DEBUG");
 			}
 			else
@@ -277,7 +278,8 @@ package
 			objectsLoaded = false;
 			
 			//Mouse.hide();
-			state = new GameState(null,null,null,currentLevel, null, inMenu );
+			state = new GameState(null, null, null, currentLevel, null, inMenu );
+			ConstantState.getInstance().runningCinematic = false;
 			//state.lang = mainMenu.lang;
 			//state.volume = mainMenu.volume;
 			XmlGameData.getInstance().lang = mainMenu.lang;
@@ -289,7 +291,6 @@ package
 			
 		}	
 		
-		// BUG should use event/signal
 		private function startNewGame( e:Event ) : void
 		{
 		
@@ -307,7 +308,8 @@ package
 			removeChild( mainMenuBackground );
 			this.stage.focus = state;
 			playing = true;
-			(state as GameState).start();
+			state.dispatchEvent( new StateEvent( StateEvent.START ) );
+			//(state as GameState).start();
 		}
 		
 		private function continueGame( e:Event=null ) : void
@@ -383,6 +385,7 @@ package
 				removeChild( endScreen );
 				
 			state = new GameState(gameXml, null, null, currentLevel, Levels.getCinematicXml(currentLevel));
+			ConstantState.getInstance().runningCinematic = false;
 			// BUG the playIntro should use event/signal
 			//state.playIntro = false;
 			
@@ -414,6 +417,7 @@ package
 									
 			state = null;			
 			state = new GameState(gameXml, null, null, currentLevel, Levels.getCinematicXml(currentLevel));
+			ConstantState.getInstance().runningCinematic = false;
 			
 			state.addEventListener( Event.COMPLETE, loadComplete );
 			
