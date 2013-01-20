@@ -43,6 +43,7 @@
       <path-element>C:\Users\Gény\Documents\GitHub\princess-air\lib\greensock.swc</path-element>
       <path-element>C:\Users\Gény\Documents\GitHub\princess-air\engine\Box2D.swc</path-element>
       <path-element>C:\Users\Gény\Documents\GitHub\princess-air\lib\Stats.swc</path-element>
+      <path-element>C:\Users\Gény\Documents\GitHub\princess-air\lib\as3-signals-v0.8.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>

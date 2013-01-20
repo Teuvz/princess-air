@@ -56,8 +56,9 @@
     <element path="lib\gameover.swc" />
     <element path="lib\greensock.swc" />
     <element path="lib\menus.swc" />
-    <element path="engine\Box2D.swc" />
     <element path="lib\Stats.swc" />
+    <element path="lib\as3-signals-v0.8.swc" />
+    <element path="lib\Box2D.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
