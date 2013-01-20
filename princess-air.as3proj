@@ -5,7 +5,7 @@
     <movie outputType="Application" />
     <movie input="" />
     <movie path="client\princessair.swf" />
-    <movie fps="60" />
+    <movie fps="30" />
     <movie width="800" />
     <movie height="600" />
     <movie version="3" />
@@ -57,6 +57,7 @@
     <element path="lib\greensock.swc" />
     <element path="lib\menus.swc" />
     <element path="engine\Box2D.swc" />
+    <element path="lib\Stats.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
