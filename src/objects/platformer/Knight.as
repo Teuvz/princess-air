@@ -336,27 +336,13 @@ package objects.platformer
 				//trace( 'Knight: TextSpot 2 ' + collider.name );
 			}
 							
-			if ( collider is UnblockHeroSpot )
-			{
-				var princess:Princess = _ce.state.getFirstObjectByType( Princess ) as Princess;
-				princess.controlsEnabled = true;
-				//trace( 'Knight: UnblockHeroSpot ' + collider.name );
-			}
 			if ( collider is Destructible )
 			{
 				//(collider as Destructible).destruct();
 				_ce.state.remove( collider );
 			}
 				
-			// jump
-			if (collider is JumpSpot )
-			{
-				velocity.y = -jumpHeight;
-				_body.SetLinearVelocity(velocity);
-				_jumping = true;
-				_ce.state.remove( collider );
-				//trace( 'Knight: 21 JumpSpot ' + collider.name );
-			} else if ( collider is DirectionSpot )
+			if ( collider is DirectionSpot )
 			{
 				_inverted = !_inverted;
 				_ce.state.remove( collider );

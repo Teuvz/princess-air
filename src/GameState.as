@@ -33,7 +33,6 @@ package
 	import objects.menus.PauseMenu;
 	import objects.platformer.BossSpot;
 	import objects.platformer.CameraSpot;
-	import objects.platformer.Checkpoint;
 	import objects.platformer.Ennemy;
 	import objects.platformer.Knight;
 	import objects.platformer.Lift;

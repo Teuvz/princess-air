@@ -5,7 +5,6 @@ package com.citrusengine.core
 	import flash.display.Sprite;
 	import flash.events.TimerEvent;
 	import objects.platformer.BossSpot;
-	import objects.platformer.Checkpoint;
 	import objects.platformer.Ennemy;
 	import objects.platformer.Ennemy;
 	import objects.platformer.TextSpot;

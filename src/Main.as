@@ -61,7 +61,6 @@ package
 	import objects.menus.Dialog;
 	import objects.menus.StartMenu;
 	import objects.platformer.AnimationSpot;
-	import objects.platformer.Checkpoint;
 	import objects.platformer.Destructible;
 	import objects.platformer.Exploding;
 	import objects.platformer.Runner;
@@ -70,7 +69,6 @@ package
 	
 	import objects.platformer.Knight;
 	import objects.platformer.Ennemy;
-	import objects.platformer.JumpSpot;
 	import objects.platformer.StopSpot;
 	import objects.platformer.BossSpot;
 	import objects.platformer.CameraSpot;
@@ -102,7 +100,6 @@ package
 		private var endScreen:GameOverScreen;
 		private var gameXml:XML;
 		private var currentLevel:String = Levels.LEVEL_TUTORIAL;
-		private var lastCheckpoint:Checkpoint;
 		private var previousKnightHealth:uint;
 		
 		private var assetsLoaded:Boolean = false;
@@ -261,9 +258,7 @@ package
 			//trace( gameXml );
 			
 			playing = false;
-			
-			lastCheckpoint = null;	
-			
+						
 			if ( e != null )
 			mainMenu.removeEventListener( Event.COMPLETE, startGame );
 			
@@ -330,8 +325,6 @@ package
 		{
 			
 			//Mouse.show();
-			
-			lastCheckpoint = null;
 			
 			playing = false;
 			stage.removeEventListener( e.type, endGame );
@@ -400,8 +393,6 @@ package
 		{
 					
 			//previousKnightHealth = state.getKnightHealth();
-			
-			lastCheckpoint = null;
 			
 			playing = false;
 			
