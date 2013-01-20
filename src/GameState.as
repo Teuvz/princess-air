@@ -391,7 +391,7 @@ package
 			}
 			else if ( cinematic.action[cinematicActionStep].attribute("type") == 'stuck' ) 
 			{
-				_hero.stuck = true;
+				_hero.setStuck(true);
 				setTimeout( cinematicAction, 200 );
 				cinematicActionStep++;
 			}

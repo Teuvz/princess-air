@@ -217,7 +217,6 @@ package objects.platformer
 			{
 				running = false;
 				CitrusEngine.getInstance().stage.dispatchEvent( new CinematicEvent( CinematicEvent.PLAY_CINEMATIC, "bossFall" ) ); 
-				//_ce.state.playCinematic( "bossFall" );
 			}
 								
 		}

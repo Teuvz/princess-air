@@ -28,7 +28,6 @@ package objects.platformer
 	import com.citrusengine.math.MathVector;
 	import com.citrusengine.objects.PhysicsObject;
 	
-	import flash.media.Video;
 	import flash.ui.Keyboard;
 	import flash.utils.clearTimeout;
 	import flash.utils.getDefinitionByName;
@@ -59,13 +58,7 @@ package objects.platformer
 		 */
 		[Property(value="8")]
 		public var maxVelocity:Number = 8;
-							
-		/**
-		 * How long the Princess is in hurt mode for. 
-		 */
-		[Property(value="1000")]
-		public var hurtDuration:Number = 1000;
-				
+										
 		[Property(value="2")]
 		public var healingPower:Number = 2;
 						
@@ -85,12 +78,11 @@ package objects.platformer
 		protected var _friction:Number = 0.75;
 		protected var _playerMovingHero:Boolean = false;
 		protected var _controlsEnabled:Boolean = true;
-		protected var _ducking:Boolean = false;
 		protected var _combinedGroundAngle:Number = 0;
 		protected var _healing:Boolean = false;
 		protected var triggerBossAfterDialog:Boolean = false;
 		protected var currentBossSpot:BossSpot;
-		public var stuck:Boolean = false;
+		protected var stuck:Boolean = false;
 		
 		protected var _switchOn:Switch;
 		protected var _onSwitch:Boolean = false;
@@ -203,7 +195,7 @@ package objects.platformer
 			{
 				var moveKeyPressed:Boolean = false;
 								
-				if (_ce.input.isDown(Keyboard.RIGHT) && !_ducking)
+				if (_ce.input.isDown(Keyboard.RIGHT))
 				{
 					if ( _ce.input.isDown( Keyboard.SHIFT ) )
 					{
@@ -217,7 +209,7 @@ package objects.platformer
 					}
 				}
 				
-				if (_ce.input.isDown(Keyboard.LEFT) && !_ducking)
+				if (_ce.input.isDown(Keyboard.LEFT))
 				{
 					
 					if ( _ce.input.isDown( Keyboard.SHIFT ) )
@@ -426,24 +418,7 @@ package objects.platformer
 			
 			return _body.GetLinearVelocity().x - groundVelocityX;
 		}
-		
-		/**
-		 * Hurts the Princess, disables his controls for a little bit, and dispatches the onTakeDamage signal. 
-		 */		
-		public function hurt():void
-		{
-			_hurt = true;
-			controlsEnabled = false;
-			_hurtTimeoutID = setTimeout(endHurtState, hurtDuration);
 			
-			//Makes sure that the Princess is not frictionless while his control is disabled
-			if (_playerMovingHero)
-			{
-				_playerMovingHero = false;
-				_fixture.SetFriction(_friction);
-			}
-		}
-		
 		override protected function defineBody():void
 		{
 			super.defineBody();
@@ -477,10 +452,7 @@ package objects.platformer
 		}
 		
 		protected function handlePreSolve(e:ContactEvent):void 
-		{
-			if (!_ducking)
-				return;
-				
+		{				
 			var other:PhysicsObject = e.other.GetBody().GetUserData() as PhysicsObject;
 			
 			var heroTop:Number = y;
@@ -630,10 +602,6 @@ package objects.platformer
 			{
 				_animation = "jump";
 			}
-			else if (_ducking)
-			{
-				_animation = "duck";
-			}
 			else
 			{
 				var walkingSpeed:Number = getWalkingSpeed();
@@ -713,6 +681,16 @@ package objects.platformer
 		private function stopHealing( e:TimerEvent=null ) : void
 		{
 			_healing = false;
+		}
+		
+		public function getStuck() : Boolean
+		{
+			return stuck;
+		}
+		
+		public function setStuck( bool:Boolean ) : void
+		{
+			stuck = bool;
 		}
 
 	}

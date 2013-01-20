@@ -32,18 +32,23 @@ package objects.platformer
 		 */
 		public var onEndContact:Signal;
 		
+		// text id
 		[Property(value="hello world")]
 		public var text:String;
 		
+		// true to pause game when show text
 		[Property(value="true")]
 		public var pauseOnRead:Boolean = true;
 		
+		// time (in ms) before dialog auto-closes
 		[Property(value="2000")]
 		public var displayTime:uint = 2000;
 		
+		// true if the knight starts the dialog
 		[Property(value="true")]
 		public var readByKnight:Boolean = true;
 		
+		// text to show if the princess touches this spot a 2nd time
 		[Property(value="")]
 		public var switchText:String;
 						

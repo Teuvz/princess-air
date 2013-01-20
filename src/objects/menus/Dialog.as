@@ -95,7 +95,7 @@ package objects.menus
 				if ( _princess != null )
 				{
 					_princess.animation = 'idle';
-					_princess.stuck = true;
+					_princess.setStuck(true);
 				}
 				
 			}
@@ -209,7 +209,7 @@ package objects.menus
 				_princess = ( _ce.state.getFirstObjectByType( Princess ) as Princess );
 				if ( _princess != null )
 				{
-					_princess.stuck = false;
+					_princess.setStuck(false);
 				}
 				
 				if ( !_ce.playing )
