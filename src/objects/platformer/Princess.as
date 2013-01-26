@@ -63,12 +63,7 @@ package objects.platformer
 		public var healingPower:Number = 2;
 						
 		//events
-		
-		/**
-		 * Dispatched whenever the Princess's animation changes. 
-		 */		
-		public var onAnimationChange:Signal;
-		
+			
 		protected var _groundContacts:Array = [];//Used to determine if he's on ground or not.
 		protected var _enemyClass:Class = Baddy;
 		protected var _onGround:Boolean = false;
@@ -79,19 +74,19 @@ package objects.platformer
 		protected var _playerMovingHero:Boolean = false;
 		protected var _controlsEnabled:Boolean = true;
 		protected var _combinedGroundAngle:Number = 0;
+		
+		protected var _movingRight:Boolean = false;
+		protected var _movingLeft:Boolean = false;
+		
 		protected var _healing:Boolean = false;
-		protected var triggerBossAfterDialog:Boolean = false;
+		
+		/*protected var triggerBossAfterDialog:Boolean = false;
 		protected var currentBossSpot:BossSpot;
 		protected var stuck:Boolean = false;
-		
-		protected var _switchOn:Switch;
-		protected var _onSwitch:Boolean = false;
-		
-		public var _cinematic:Boolean = false;
-		
+						
 		private var healingStamp:Number;
 		private var jamHealing:Boolean = false;
-		private var healBtnWasPressed:Boolean = false;
+		private var healBtnWasPressed:Boolean = false;*/
 		
 		public static function Make(name:String, x:Number, y:Number, width:Number, height:Number, view:* = null):Princess
 		{
@@ -106,9 +101,6 @@ package objects.platformer
 		{
 			params.view = asset_Princess;
 			super(name, params);
-						
-			onAnimationChange = new Signal();
-			//this._box2D.visible = false;			
 		}
 		
 		override public function destroy():void
@@ -117,7 +109,6 @@ package objects.platformer
 			_fixture.removeEventListener(ContactEvent.BEGIN_CONTACT, handleBeginContact);
 			_fixture.removeEventListener(ContactEvent.END_CONTACT, handleEndContact);
 			clearTimeout(_hurtTimeoutID);
-			onAnimationChange.removeAll()
 			super.destroy();
 		}
 		
@@ -182,228 +173,6 @@ package objects.platformer
 			}
 		}
 		
-		override public function update(timeDelta:Number):void
-		{
-			super.update(timeDelta);
-			
-			var velocity:V2 = _body.GetLinearVelocity();
-			
-			if ( _knight == null )
-				_knight = CitrusEngine.getInstance().state.getFirstObjectByType( Knight ) as Knight;
-			
-			if (controlsEnabled && !stuck )
-			{
-				var moveKeyPressed:Boolean = false;
-								
-				if (_ce.input.isDown(Keyboard.RIGHT))
-				{
-					if ( _ce.input.isDown( Keyboard.SHIFT ) )
-					{
-						//trace( "knight right" );
-						_knight.moveToRight();
-					}
-					else
-					{
-						velocity = V2.add(velocity, getSlopeBasedMoveAngle());
-						moveKeyPressed = true;
-					}
-				}
-				
-				if (_ce.input.isDown(Keyboard.LEFT))
-				{
-					
-					if ( _ce.input.isDown( Keyboard.SHIFT ) )
-					{
-						//trace( "knight left" );
-						_knight.moveToLeft();
-					}
-					else
-					{
-						velocity = V2.subtract(velocity, getSlopeBasedMoveAngle());
-						moveKeyPressed = true;
-					}
-				}
-				
-				if ( _ce.input.isDown( Keyboard.UP ) && _ce.input.isDown( Keyboard.SHIFT ) )
-				{
-					
-					trace( "knight attack" );
-					_knight.setAttackMode();
-					
-				}
-				
-				//If player just started moving the Princess this tick.
-				if (moveKeyPressed && !_playerMovingHero)
-				{
-					_playerMovingHero = true;
-					_fixture.SetFriction(0); //Take away friction so he can accelerate.
-				}
-				//Player just stopped moving the Princess this tick.
-				else if (!moveKeyPressed && _playerMovingHero)
-				{
-					_playerMovingHero = false;
-					_fixture.SetFriction(_friction); //Add friction so that he stops running
-				}
-				
-				// healing shit
-				var date:Date = new Date();
-				// if the healing key is down and the healing isn't jammed
-				if ( _ce.input.isDown( Keyboard.CONTROL ) && !jamHealing && !moveKeyPressed)
-				{
-					
-					// if the princess wasn't already healing
-					// start healing
-					// and save the timestamp of button press
-					if ( !_healing )
-					{
-						heal();
-						healingStamp = date.time;
-					}
-					else
-					{						
-						// if the princess was already healing
-						// and the user as got the healing key down for over 200ms
-						// stop healing
-						// else if the user as pressed again
-						// continue healing
-						// and save the timestamp of button press
-						if ( date.time > ( healingStamp + 300 ) )
-						{
-							stopHealing();
-							jamHealing = true;
-						}
-						else if ( !healBtnWasPressed )
-						{
-							healingStamp = date.time;
-							heal();
-						}
-						
-					}
-					
-					healBtnWasPressed = true;
-				}
-				
-				// if the player isn't pressing on the healing button
-				if ( !_ce.input.isDown( Keyboard.CONTROL ) )
-				{
-					
-					// if the princess was healing up to now
-					// check if the healing button was pressed not long ago
-					// if so, continue healing
-					// otherwise, stop and jam
-					if ( _healing )
-					{
-						
-						if ( date.time > ( healingStamp + 300 ) )
-						{
-							stopHealing();
-							jamHealing = true;
-						}
-						else
-							heal();
-					}
-					
-					// if the princess is jammed from healing
-					// unjam !
-					if ( jamHealing )
-						jamHealing = false;
-						
-					healBtnWasPressed = false;
-					
-				}
-								
-				if ( _ce.input.isDown( Keyboard.DOWN ) )
-				{
-					//trace( "DOWN" );
-					
-					if ( _ce.input.isDown( Keyboard.SHIFT ) )
-					{
-						trace( "knight defend" );
-						_knight.setDefenseMode();
-					}
-					else
-					{
-						var _knight:Knight = _ce.state.getFirstObjectByType( Knight ) as Knight;
-						if ( _knight != null )
-							_knight.comeBack();
-					}
-				}
-				
-				if ( _ce.input.isDown( Keyboard.SPACE ) && _onSwitch && !ConstantState.getInstance().runningCinematic )
-				{
-					
-					if ( _switchOn.gate != "" )
-						( _ce.state.getObjectByName( _switchOn.gate ) as Gate ).toggle();
-					
-					if( _switchOn.elementToDestroy != "" )
-					( _ce.state.getObjectByName( _switchOn.elementToDestroy ) as Exploding ).explode();
-					
-					if ( _switchOn.otherElementToremove != "" )
-					{
-						
-						if ( _switchOn.otherElementToremove.indexOf( "," ) != -1 )
-						{
-							
-							//trace( "loads of elements to remove!" );
-							
-							var elements:Array = _switchOn.otherElementToremove.split( ',' );
-							
-							for each( var element:String in elements )
-							{
-								if ( _ce.state.getObjectByName( element ) != null )
-								_ce.state.remove( _ce.state.getObjectByName( element ) );
-								
-								//trace( "remove " + element );
-								
-							}
-							
-						}
-						else
-						{
-							if ( _ce.state.getObjectByName( _switchOn.otherElementToremove ) != null )
-							_ce.state.remove( _ce.state.getObjectByName( _switchOn.otherElementToremove ) );
-						}
-					}
-										
-					if ( _switchOn.animationToStart != "" )
-					{
-						//_ce.state.playCinematic( _switchOn.animationToStart );
-						_ce.stage.dispatchEvent( new CinematicEvent( CinematicEvent.PLAY_CINEMATIC, _switchOn.animationToStart ) );
-					}
-					
-					//_ce.state.remove( _switchOn );
-					_switchOn.pressed = true;
-					_switchOn.animation = 'pressed';
-					
-					offSwitch( _switchOn );
-				}
-				
-				//Cap velocities
-				if (velocity.x > (maxVelocity))
-					velocity.x = maxVelocity;
-				else if (velocity.x < (-maxVelocity))
-					velocity.x = -maxVelocity;
-				
-				//update physics with new velocity
-				_body.SetLinearVelocity(velocity);
-			}
-			else if ( controlsEnabled && stuck )
-			{
-								
-				if ( _ce.input.isDown( Keyboard.DOWN ) )
-				{
-					
-					if ( _knight == null )
-						_knight = _ce.state.getFirstObjectByType( Knight ) as Knight;
-						
-						if ( _knight != null && !_ce.input.isDown(Keyboard.SHIFT) )
-						_knight.comeBack();
-				}
-			}
-			
-			updateAnimation();
-		}
-		
 		/**
 		 * Returns the absolute walking speed, taking moving platforms into account.
 		 * Isn't super performance-light, so use sparingly.
@@ -466,7 +235,7 @@ package objects.platformer
 		{
 			var collider:PhysicsObject = e.other.GetBody().GetUserData();		
 			
-			if ( collider is BossSpot )
+			/*if ( collider is BossSpot )
 			{
 				currentBossSpot = collider as BossSpot;
 				CitrusEngine.getInstance().state.view.cameraTarget = CitrusEngine.getInstance().state.getObjectByName( currentBossSpot.cameraName );
@@ -497,13 +266,7 @@ package objects.platformer
 				if ( (collider as CameraSpot).fixOnTouch == true )
 				_ce.state.view.cameraTarget = collider;
 			}
-			
-			if ( collider is TextSpot )
-				showDialog( collider as TextSpot );
-				
-			/*if ( collider is Checkpoint )
-				_ce.state.activateCheckpoint( collider as Checkpoint );*/
-				
+							
 			if ( collider is DestroySpot )
 				destroyElement( collider as DestroySpot );
 				
@@ -526,7 +289,7 @@ package objects.platformer
 			{
 				//trace( "start knight" );
 				( _ce.state.getFirstObjectByType( Knight ) as Knight ).start();
-			}
+			}*/
 				
 			//Collision angle
 			if (e.normal) //The normal property doesn't come through all the time. I think doesn't come through against sensors.
@@ -541,6 +304,12 @@ package objects.platformer
 			}
 		}
 		
+		/*protected function destroyElement( spot:DestroySpot ) : void
+		{
+			_ce.state.remove( _ce.state.getObjectByName( spot.elementToDestroy ) );
+			_ce.state.remove( spot );
+		}*/
+		
 		protected function handleEndContact(e:ContactEvent):void
 		{
 			//Remove from ground contacts, if it is one.
@@ -553,9 +322,6 @@ package objects.platformer
 				updateCombinedGroundAngle();
 			}
 			
-			var collider:PhysicsObject = e.other.GetBody().GetUserData();	
-			if ( collider is Switch )
-				offSwitch( collider as Switch );
 		}
 		
 		protected function getSlopeBasedMoveAngle():V2
@@ -580,117 +346,123 @@ package objects.platformer
 			_hurt = false;
 			controlsEnabled = true;
 		}
-		
+			
 		protected function updateAnimation():void
-		{
-			var prevAnimation:String = _animation;
-											
-			var velocity:V2 = _body.GetLinearVelocity();
-			if ( ConstantState.getInstance().runningCinematic )
+		{													
+			if ( ConstantState.getInstance().runningCinematic == false )
 			{
 				
-			}
-			else if ( _healing )
-			{
-				_animation = "heal";
-			}
-			else if (_hurt)
-			{
-				_animation = "hurt";
-			}
-			else if (!_onGround)
-			{
-				_animation = "jump";
-			}
-			else
-			{
-				var walkingSpeed:Number = getWalkingSpeed();
-				if (walkingSpeed < -acceleration)
+				if ( _healing )
 				{
-					_inverted = true;
-					_animation = "walk";
+					_animation = "heal";
 				}
-				else if (walkingSpeed > acceleration)
+				else if (_hurt)
 				{
-					_inverted = false;
-					_animation = "walk";
+					_animation = "hurt";
+				}
+				else if (!_onGround)
+				{
+					_animation = "jump";
 				}
 				else
 				{
-					_animation = "idle";
+					var walkingSpeed:Number = getWalkingSpeed();
+					if (walkingSpeed < -acceleration)
+					{
+						_inverted = true;
+						_animation = "walk";
+					}
+					else if (walkingSpeed > acceleration)
+					{
+						_inverted = false;
+						_animation = "walk";
+					}
+					else
+					{
+						_animation = "idle";
+					}
 				}
+							
+			}
+		}
+	
+		override public function update(timeDelta:Number):void
+		{
+			super.update(timeDelta);
+			
+			var velocity:V2 = _body.GetLinearVelocity();
+					
+			if (controlsEnabled )
+			{
+								
+				if (_movingRight)
+				{
+					velocity = V2.add(velocity, getSlopeBasedMoveAngle());
+					stopHealing();
+				}
+				
+				if (_movingLeft)
+				{
+					velocity = V2.subtract(velocity, getSlopeBasedMoveAngle());
+					stopHealing();
+				}
+								
+				//If player just started moving the Princess this tick.
+				if (!_playerMovingHero)
+				{
+					_playerMovingHero = true;
+					_fixture.SetFriction(0); //Take away friction so he can accelerate.
+				}
+				//Player just stopped moving the Princess this tick.
+				else if (_playerMovingHero)
+				{
+					_playerMovingHero = false;
+					_fixture.SetFriction(_friction); //Add friction so that he stops running
+				}
+				
+				//Cap velocities
+				if (velocity.x > (maxVelocity))
+					velocity.x = maxVelocity;
+				else if (velocity.x < (-maxVelocity))
+					velocity.x = -maxVelocity;
+				
+				//update physics with new velocity
+				_body.SetLinearVelocity(velocity);
+				
 			}
 			
-			if (prevAnimation != _animation)
-			{
-				onAnimationChange.dispatch();
-			}
-		}
-		
-		public function forceDialog( text:String, trigger:Boolean=false ) : void
-		{
-			Dialog.getInstance().show( text, 'knight', 2000, true, currentBossSpot );
-			_ce.state.view.cameraTarget = _ce.state.getFirstObjectByType( Knight );
-		}
-		
-		protected function showDialog( spot:TextSpot ) : void
-		{
-			Dialog.getInstance().show( spot.text, 'knight', spot.displayTime, spot.pauseOnRead );
-						
-			if ( spot.switchText != "" )
-			{
-				var orgText:String = spot.text;
-				spot.text = spot.switchText;
-				spot.switchText = orgText;
-			}
-			else
-				_ce.state.remove( spot );
+			_movingRight = false;
+			_movingLeft = false;
 			
-			if ( spot.pauseOnRead )
-			_ce.state.view.cameraTarget = _ce.state.getFirstObjectByType( Knight );
+			updateAnimation();
 		}
 		
-		protected function destroyElement( spot:DestroySpot ) : void
+		public function moveRight() : void
 		{
-			_ce.state.remove( _ce.state.getObjectByName( spot.elementToDestroy ) );
-			_ce.state.remove( spot );
+			_movingRight = true;
 		}
 		
-		protected function onSwitch( switchElement:Switch ) : void
+		public function moveLeft() : void
 		{
-			if ( !switchElement.pressed )
+			_movingLeft = true;
+		}
+		
+		public function get healing() : Boolean
+		{
+			return _healing;
+		}
+		
+		public function startHealing() : void
+		{
+			if ( !_movingRight && !_movingLeft )
 			{
-				_onSwitch = true;
-				_switchOn = switchElement;
+				_healing = true;
 			}
 		}
 		
-		protected function offSwitch( switchElement:Switch ) : void
-		{
-			_onSwitch = false;
-			_switchOn = null;
-		}
-		
-		// BUG find a cleaner way to heal
-		private function heal() : void
-		{
-			_healing = true;
-			//_ce.state.heal();
-		}
-		
-		private function stopHealing( e:TimerEvent=null ) : void
+		public function stopHealing() : void
 		{
 			_healing = false;
-		}
-		
-		public function getStuck() : Boolean
-		{
-			return stuck;
-		}
-		
-		public function setStuck( bool:Boolean ) : void
-		{
-			stuck = bool;
 		}
 
 	}

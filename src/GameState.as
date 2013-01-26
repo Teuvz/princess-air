@@ -25,6 +25,7 @@ package
 	import flash.utils.setTimeout;
 	import flash.utils.Timer;
 	import objects.events.CinematicEvent;
+	import objects.events.DialogEvent;
 	import objects.events.EndGameEvent;
 	import objects.events.FightEvent;
 	import objects.events.KnightEvent;
@@ -97,10 +98,7 @@ package
 			add(box2D);
 			
 			//Create the level objects from the XML file.
-			/*if (_levelData)
-				ObjectMaker.FromLevelArchitect(_levelData);*/
-				ObjectMaker.FromLevelArchitect( Levels.getLevelXml( _levelName ) );
-				//System.disposeXML( Levels.getLevelXml(_levelName) );
+			ObjectMaker.FromLevelArchitect( Levels.getLevelXml( _levelName ) );
 				
 			//trace( "load level " + _levelName );
 				
@@ -120,10 +118,16 @@ package
 			
 			stage.addEventListener( CinematicEvent.PLAY_CINEMATIC, playCinematic );
 			//stage.addEventListener( CinematicEvent.PLAY_INTRO, playIntro );
-			stage.addEventListener( FightEvent.START_FIGHT, startFight );
+			//stage.addEventListener( FightEvent.START_FIGHT, startFight );
 			addEventListener( StateEvent.START, start );
 			
-			handleLoadComplete();			
+			handleLoadComplete();
+			
+		}
+		
+		private function handleLoadComplete() : void
+		{
+			dispatchEvent( new Event( Event.COMPLETE ) );
 		}
 		
 		public function start( e:StateEvent=null ) : void
@@ -155,8 +159,7 @@ package
 				addChild( _healthbar );
 			}
 			
-			stage.addEventListener( KnightEvent.KNIGHT_START, knighStartRequest );
-			stage.addEventListener( KnightEvent.KNIGHT_REMOVED, knightRemoved );
+			//stage.addEventListener( KnightEvent.KNIGHT_START, knighStartRequest );
 			
 			// dialog	
 			Dialog.getInstance().setXml( XmlGameData.getInstance().lang, _textData, _charsData );
@@ -169,24 +172,17 @@ package
 					
 			if ( _scenesData.length() != 0 && _scenesData.child( "startAnimation" ).length() != 0 )
 			{
-				ConstantState.getInstance().runningCinematic = true;
-				var _ce:CitrusEngine = CitrusEngine.getInstance();
-				//_ce.playing = false;
-				
-				if ( _knight )
-				_knight.stop();
-							
-				if (_hero)
-				_hero.controlsEnabled = false;
-				
-				cinematic = XML( _scenesData.child( "startAnimation" ).toXMLString() );
-				//_scenesData = null;
-								
-				showBlackBands();
-				cinematicAction();
+				playCinematic(null, "startAnimation");
 			}
 			
-			CitrusEngine.getInstance().stage.addEventListener( KeyboardEvent.KEY_DOWN, keyDownHandler );
+			if ( _knight != null )
+				stage.addEventListener( KnightEvent.KNIGHT_REMOVED, removeKnight );
+				
+			stage.addEventListener( DialogEvent.DIALOG_SHOW, showDialog );
+			stage.addEventListener( DialogEvent.DIALOG_HIDE, hideDialog );
+				
+			//CitrusEngine.getInstance().stage.addEventListener( KeyboardEvent.KEY_DOWN, keyDownHandler );
+			
 		}
 		
 		private function showBlackBands() : void
@@ -229,6 +225,7 @@ package
 			//_ce.playing = false;
 							
 			_hero.controlsEnabled = false;
+			_knight.stop();
 			
 			cinematic = XML( _scenesData.child( name ).toXMLString() );
 						
@@ -391,7 +388,7 @@ package
 			}
 			else if ( cinematic.action[cinematicActionStep].attribute("type") == 'stuck' ) 
 			{
-				_hero.setStuck(true);
+				//_hero.setStuck(true);
 				setTimeout( cinematicAction, 200 );
 				cinematicActionStep++;
 			}
@@ -407,7 +404,7 @@ package
 			
 		}
 		
-		override public function update(timeDelta:Number):void
+		/*override public function update(timeDelta:Number):void
 		{			
 			manageFight();
 						
@@ -440,9 +437,9 @@ package
 			//Update the state's view
 			_view.update();
 					
-		}
+		}*/
 		
-		public function startFight( event:FightEvent=null, ennemy:Ennemy=null ) : void
+		/*public function startFight( event:FightEvent=null, ennemy:Ennemy=null ) : void
 		{
 			if ( event != null )
 				ennemy = getObjectByName( event.ennemy ) as Ennemy;
@@ -458,9 +455,9 @@ package
 				_view.cameraTarget = _knight;
 			}
 			
-		}
+		}*/
 		
-		public function stopFight( ennemyDead:Boolean, knightDead:Boolean ) : void
+		/*public function stopFight( ennemyDead:Boolean, knightDead:Boolean ) : void
 		{
 			if ( _currentEnnemy != null )
 			{
@@ -483,9 +480,9 @@ package
 				//_view.cameraTarget = _hero;
 			}
 			
-		}
+		}*/
 		
-		private function manageFight() : void
+		/*private function manageFight() : void
 		{
 			if ( _currentEnnemy != null )
 			{
@@ -504,9 +501,9 @@ package
 					stopFight( false, true );
 				
 			}
-		}
+		}*/
 		
-		public function heal() : void
+		/*public function heal() : void
 		{
 			if ( _knight != null && _healthbar != null )
 			{				
@@ -516,7 +513,7 @@ package
 					
 				_healthbar.life.width = _knight.healthPoints / 4;	
 			}
-		}
+		}*/
 		
 		/*override public function startBossFight( spot:BossSpot ) : void
 		{
@@ -531,19 +528,14 @@ package
 		{
 			view.cameraTarget = _hero;		
 		}*/
-		
-		private function handleLoadComplete() : void
-		{
-			dispatchEvent( new Event( Event.COMPLETE ) );
-		}
-		
-		private function knighStartRequest( e:KnightEvent ) : void
+				
+		/*private function knighStartRequest( e:KnightEvent ) : void
 		{
 			e.stopPropagation();
 			_knight.start();
-		}
+		}*/
 		
-		private function knightRemoved( e:KnightEvent ) : void
+		/*private function knightRemoved( e:KnightEvent ) : void
 		{			
 			if ( _knight == null )
 			_knight == getFirstObjectByType( Knight ) as Knight;
@@ -554,9 +546,9 @@ package
 			if ( _healthbar != null && getChildByName( _healthbar.name ) != null )
 			removeChild( _healthbar );
 			
-		}
+		}*/
 		
-		private function keyDownHandler( e:KeyboardEvent ) : void
+		/*private function keyDownHandler( e:KeyboardEvent ) : void
 		{
 								
 			if ( e.keyCode == Keyboard.P || e.keyCode == Keyboard.ESCAPE )
@@ -587,9 +579,9 @@ package
 				_knight.comeBack();
 			}
 			
-		}
+		}*/
 		
-		private function pauseContinue( e:Event ) : void
+		/*private function pauseContinue( e:Event ) : void
 		{
 			paused = false;
 			pauseScreen.hide();
@@ -597,14 +589,9 @@ package
 			removeChild( pauseScreen );
 			CitrusEngine.getInstance().playing = true;
 			stage.focus = this;
-		}
-		
-		/*override public function activateCheckpoint( checkpoint:Checkpoint ) : void
-		{
-			this.checkpoint = checkpoint;
 		}*/
-		
-		public function setPrincessStartPosition( x:uint, y:uint ) : void 
+				
+		/*public function setPrincessStartPosition( x:uint, y:uint ) : void 
 		{ 
 			_hero.x = x;
 			_hero.y = y;
@@ -615,29 +602,144 @@ package
 				_knight.y = _hero.y;
 			}
 			
-		}
+		}*/
 		
-		public function getKnightHealth() : uint
+		/*public function getKnightHealth() : uint
 		{
 			return _knight.healthPoints;
-		}
+		}*/
 		
-		public function setKnightHealth( value:uint ) : void
+		/*public function setKnightHealth( value:uint ) : void
 		{
 			if ( _knight != null )
 			{
 				_knight.healthPoints = value;
 				_healthbar.life.width = _knight.healthPoints / 4;
 			}
-		}
+		}*/
 		
-		override public function destroy() : void
+		/*override public function destroy() : void
 		{			
 			stage.removeEventListener( KnightEvent.KNIGHT_START, knighStartRequest );
 			stage.removeEventListener( KnightEvent.KNIGHT_REMOVED, knightRemoved );
 			CitrusEngine.getInstance().stage.removeEventListener( KeyboardEvent.KEY_DOWN, keyDownHandler );
 			
 			super.destroy();
+		}*/
+				
+		override public function update(timeDelta:Number):void
+		{			
+						
+			//Call update on all objects
+			var garbage:Array = [];
+			var n:Number = _objects.length;
+					
+			for (var i:int = 0; i < n; i++)
+			{
+				var object:CitrusObject = _objects[i];
+				if (object.kill)
+					garbage.push(object);
+				else
+					object.update(timeDelta);
+			}
+			
+			//Destroy all objects marked for destroy
+			n = garbage.length;
+			for (i = 0; i < n; i++)
+			{
+				var garbageObject:CitrusObject = garbage[i];
+				_objects.splice(_objects.indexOf(garbageObject), 1);
+				garbageObject.destroy();
+				_view.removeArt(garbageObject);
+			}
+			
+			//Update the input object
+			_input.update();
+			handleInputs();
+			
+			//Update the state's view
+			_view.update();
+					
+		}
+		
+		protected function handleInputs() : void
+		{
+			
+			var _ce:CitrusEngine = CitrusEngine.getInstance();
+			
+			if (_ce.input.isDown(Keyboard.RIGHT))
+			{
+				_hero.moveRight();
+			}
+			
+			if (_ce.input.isDown(Keyboard.LEFT))
+			{
+				_hero.moveLeft();
+			}
+			
+			if (_ce.input.isDown(Keyboard.DOWN))
+			{
+				trace("down");
+			}
+			
+			if (_ce.input.isDown(Keyboard.UP))
+			{
+				trace("up");
+			}
+			
+			if (_ce.input.isDown(Keyboard.ESCAPE))
+			{
+				trace("escape");
+			}
+			
+			if (_ce.input.isDown(Keyboard.CONTROL))
+			{
+				_hero.startHealing();
+			}
+			else if ( _hero.healing )
+			{
+				_hero.stopHealing();
+			}
+			
+			if (_ce.input.isDown(Keyboard.SPACE))
+			{
+				//trace("space");
+			}
+			
+		}
+		
+		private function removeKnight( e:KnightEvent = null ) : void
+		{
+			remove(_knight);
+		}
+		
+		private function showDialog( e:DialogEvent ) : void
+		{
+			
+			Dialog.getInstance().show( e.text, 'knight', e.timer, e.block );
+	
+			if ( e.block )
+			{
+				_hero.controlsEnabled = false;
+				_knight.stop();
+				_knight._talking = true;
+				_hero.animation = 'idle';
+				CitrusEngine.getInstance().playing = false;
+				showBlackBands();
+			}
+			
+		}
+		
+		private function hideDialog( e:DialogEvent ) : void
+		{
+			_hero.controlsEnabled = true;
+			_knight.start();
+			_knight._talking = false;
+			CitrusEngine.getInstance().playing = true;
+			hideBlackBands();
+			
+			view.cameraTarget = _hero;
+			
 		}
 		
 	}

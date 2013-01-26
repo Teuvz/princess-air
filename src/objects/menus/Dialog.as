@@ -7,9 +7,8 @@ package objects.menus
 	import flash.ui.Keyboard;
 	import flash.utils.Timer;
 	import mx.utils.StringUtil;
+	import objects.events.DialogEvent;
 	import objects.platformer.BossSpot;
-	import objects.platformer.Knight;
-	import objects.platformer.Princess;
 	import singletons.XmlGameData;
 	/**
 	 * ...
@@ -29,8 +28,6 @@ package objects.menus
 		
 		private var _bossSpot:BossSpot;
 		private var textArray:Array;
-		private var _knight:Knight;
-		private var _princess:Princess;
 		
 		private var _keyToContinue:String;
 		
@@ -78,26 +75,9 @@ package objects.menus
 						_timer.removeEventListener( TimerEvent.TIMER, hide );
 				}
 				
-				_ce.playing = false;
 				gotoAndStop( 'main' );
 				TweenLite.to( this, 0.2, {alpha:1} );
-				TweenLite.to( blackBandTop, 0.5, { y:0 } );
-				TweenLite.to( blackBandBottom, 0.5, { y:472 } );
-				
-				_knight = (_ce.state.getFirstObjectByType( Knight ) as Knight );
-				if ( _knight != null )
-				{
-					_knight._talking = true;
-					_knight.stop();
-				}
-				
-				_princess = ( _ce.state.getFirstObjectByType( Princess ) as Princess );
-				if ( _princess != null )
-				{
-					_princess.animation = 'idle';
-					_princess.setStuck(true);
-				}
-				
+												
 			}
 			else
 			{
@@ -162,6 +142,7 @@ package objects.menus
 		// BUG the hideDialog should use event/signal
 		public function hide( e:TimerEvent=null ) : void
 		{
+			
 			if ( textArray != null )
 			{
 				nextText();
@@ -179,43 +160,20 @@ package objects.menus
 					//_ce.state.startBossFight( _bossSpot );
 					_bossSpot = null;
 				}
-				else
-					_ce.state.view.cameraTarget = _ce.state.getFirstObjectByType( Princess );
-					//_ce.state.hideDialog();
 				
 				_ce.stage.removeChild( this );
 				
 				_ce.stage.focus = _ce.state;
-				
-				if ( currentLabel == 'main' )
-				{
-					blackBandTop.y = -128;
-					blackBandBottom.y = 600;
-				}
-				
+								
 				if ( _timer.running )
 				{
 					_timer.removeEventListener( TimerEvent.TIMER, hide );
 					_timer.stop();
 				}
-
-				_knight = (_ce.state.getFirstObjectByType( Knight ) as Knight );
-				if ( _knight != null )
-				{
-					_knight._talking = false;
-					_knight.start();
-				}
-				
-				_princess = ( _ce.state.getFirstObjectByType( Princess ) as Princess );
-				if ( _princess != null )
-				{
-					_princess.setStuck(false);
-				}
-				
-				if ( !_ce.playing )
-					_ce.playing = true;
-					
+									
 				alpha = 0;
+				
+				CitrusEngine.getInstance().stage.dispatchEvent( new DialogEvent( DialogEvent.DIALOG_HIDE ) );
 			}
 		}
 		

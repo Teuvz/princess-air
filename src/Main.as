@@ -10,6 +10,7 @@ package
 	import flash.system.Capabilities;
 	import flash.ui.ContextMenu;
 	import objects.events.StateEvent;
+	import objects.platformer.Switch;
 	import singletons.ConstantState;
 	import net.hires.debug.Stats;
 	import objects.platformer.Ennemy;
@@ -183,7 +184,7 @@ package
 			//stage.displayState = StageDisplayState.FULL_SCREEN;
 			
 			removeEventListener( Event.ADDED_TO_STAGE, init );
-			var classes:Array = [CitrusSprite, MovingPlatform, PhysicsObject, Platform, Knight, StopSpot, StartSpot, DirectionSpot, Ennemy, Princess, Lift, BossSpot, CameraSpot, TextSpot, DestroySpot, TeleportSpot, Exploding, AnimationSpot, Destructible, Runner, Gate, Ennemy, PrincessSprite, PrincessPlatform, PrincessPhysics ];
+			var classes:Array = [CitrusSprite, MovingPlatform, PhysicsObject, Platform, Knight, StopSpot, StartSpot, DirectionSpot, Ennemy, Princess, Lift, BossSpot, CameraSpot, TextSpot, DestroySpot, TeleportSpot, Exploding, AnimationSpot, Destructible, Runner, Gate, Ennemy, PrincessSprite, PrincessPlatform, PrincessPhysics, Switch ];
 										
 			// display main menu
 			mainMenu = new StartMenu();

@@ -2,7 +2,9 @@ package objects.platformer
 {
 	import Box2DAS.Dynamics.ContactEvent;
 	import Box2DAS.Dynamics.b2Body;
+	import com.citrusengine.core.CitrusEngine;
 	import flash.display.MovieClip;
+	import objects.events.DialogEvent;
 	
 	import com.citrusengine.objects.PhysicsObject;
 	
@@ -104,6 +106,32 @@ package objects.platformer
 		protected function handleBeginContact(e:ContactEvent):void
 		{
 			onBeginContact.dispatch(e);
+			
+			var collider:PhysicsObject = e.other.GetBody().GetUserData();
+			var _ce:CitrusEngine = CitrusEngine.getInstance();
+			
+			if ( collider is Princess )
+			{
+				_ce.stage.dispatchEvent( new DialogEvent( DialogEvent.DIALOG_SHOW, this.text, this.pauseOnRead, false, this.displayTime ) );
+				
+				if ( this.switchText != null && this.switchText != "" )
+				{
+					this.text = this.switchText;
+					this.switchText = null;
+				}
+				else
+				{
+					_ce.state.remove(this);
+				}
+				
+				_ce.state.view.cameraTarget = collider;
+			}
+			else if ( collider is Knight && this.readByKnight )
+			{
+				_ce.stage.dispatchEvent( new DialogEvent( DialogEvent.DIALOG_SHOW, this.text, this.pauseOnRead, false, this.displayTime ) );
+				_ce.state.view.cameraTarget = collider;
+				_ce.state.remove(this);
+			}
 		}
 		
 		protected function handleEndContact(e:ContactEvent):void

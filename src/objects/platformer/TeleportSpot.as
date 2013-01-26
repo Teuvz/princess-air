@@ -2,7 +2,10 @@ package objects.platformer
 {
 	import Box2DAS.Dynamics.ContactEvent;
 	import Box2DAS.Dynamics.b2Body;
+	import com.citrusengine.core.CitrusEngine;
 	import flash.display.MovieClip;
+	import objects.events.KnightEvent;
+	import objects.events.TeleportEvent;
 	
 	import com.citrusengine.objects.PhysicsObject;
 	
@@ -87,6 +90,18 @@ package objects.platformer
 		protected function handleBeginContact(e:ContactEvent):void
 		{
 			onBeginContact.dispatch(e);
+			
+			var collider:PhysicsObject = e.other.GetBody().GetUserData();
+			
+			if ( collider is Princess )
+			{
+				CitrusEngine.getInstance().stage.dispatchEvent( new TeleportEvent( TeleportEvent.CHANGE, this.level ) );
+			}
+			else if ( collider is Knight )
+			{
+				CitrusEngine.getInstance().stage.dispatchEvent( new KnightEvent( KnightEvent.KNIGHT_REMOVED ) );
+			}
+			
 		}
 		
 		protected function handleEndContact(e:ContactEvent):void

@@ -24,7 +24,7 @@ package objects.menus
 		public var chapterToLoad:String;
 		
 		public var lang:String = 'fr';
-		public var volume:Number = 4;
+		public var volume:Number = 1;
 		private var page:String = 'main';
 		public var startMode:String = 'new';
 		
