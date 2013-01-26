@@ -147,8 +147,7 @@ package objects.platformer
 					velocity.x = speed;
 					
 				_body.SetLinearVelocity(velocity);
-				
-				
+	
 				updateAnimation();
 				
 			}
@@ -257,14 +256,6 @@ package objects.platformer
 				//_ce.state.remove( collider );
 				//trace( 'Knight: StartSpot ' + collider.name );
 			}
-			else if ( collider is PrincessPlatform )
-			{
-				
-			}
-			else
-			{
-				trace( "piouf " + collider );
-			}
 			
 			if (e.normal) //The normal property doesn't come through all the time. I think doesn't come through against sensors.
 			{
@@ -333,14 +324,6 @@ package objects.platformer
 			else if ( collider is Gate )
 			{
 				trace("plop!");
-			}
-			else if ( collider is PrincessPlatform )
-			{
-				
-			}
-			else
-			{
-				trace( "2piouf " + collider );
 			}
 		}
 		

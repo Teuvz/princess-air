@@ -6,7 +6,7 @@ package
       public static const Minor:int = 2;
       public static const Build:int = 3;
       public static const Revision:int = 0;
-      public static const Timestamp:String = "20/01/2013 15:34:42";
-      public static const Author:String = "...";
+      public static const Timestamp:String = "26/01/2013 22:40:15";
+      public static const Author:String = "matt";
   }
 }

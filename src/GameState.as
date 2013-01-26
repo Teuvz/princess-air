@@ -30,11 +30,13 @@ package
 	import objects.events.FightEvent;
 	import objects.events.KnightEvent;
 	import objects.events.StateEvent;
+	import objects.events.SwitchEvent;
 	import objects.events.TeleportEvent;
 	import objects.menus.PauseMenu;
 	import objects.platformer.BossSpot;
 	import objects.platformer.CameraSpot;
 	import objects.platformer.Ennemy;
+	import objects.platformer.Gate;
 	import objects.platformer.Knight;
 	import objects.platformer.Lift;
 	import objects.platformer.Princess;
@@ -42,6 +44,7 @@ package
 	import objects.platformer.PrincessSprite;
 	import objects.platformer.Runner;
 	import objects.platformer.Ennemy;
+	import objects.platformer.Switch;
 	import objects.platformer.TextSpot;
 	import objects.menus.Dialog;
 	import singletons.ConstantState;
@@ -57,7 +60,7 @@ package
 		private var _textData:XML;
 		private var _charsData:XML;
 		private var _scenesData:XMLList;
-		public var _hero:Princess;
+		private var _hero:Princess;
 		private var _knight:Knight;
 		private var _healthbar:Healthbar;
 		private var _bosshealthbar:Healthbar;
@@ -66,6 +69,8 @@ package
 		
 		private var _currentEnnemy:Ennemy;
 		private var _fightRound:uint = 0;
+		
+		private var _switch:String = null;
 		
 		//private var _lang:String;
 		private var cinematic:XML;
@@ -184,7 +189,9 @@ package
 			stage.addEventListener( CinematicEvent.PLAY_CINEMATIC, playCinematic );
 			stage.addEventListener( KnightEvent.KNIGHT_START, knightStart );
 			stage.addEventListener( KnightEvent.KNIGHT_STOP, knightStop );
-				
+			stage.addEventListener( SwitchEvent.SWITCH_OVER, switchOver );
+			stage.addEventListener( SwitchEvent.SWITCH_OUT, switchOut );
+			
 			//CitrusEngine.getInstance().stage.addEventListener( KeyboardEvent.KEY_DOWN, keyDownHandler );
 			
 		}
@@ -372,13 +379,7 @@ package
 				cinematicActionStep++;
 			}
 			else if ( cinematic.action[cinematicActionStep].attribute("type") == 'camera_target' ) 
-			{
-				
-				if ( cinematic.action[cinematicActionStep].object == "Knight" )
-				{
-					//trace( getObjectByName( cinematic.action[cinematicActionStep].object ) );
-				}
-				
+			{	
 				view.cameraTarget = getObjectByName( cinematic.action[cinematicActionStep].object );
 				setTimeout( cinematicAction, 200 );
 				cinematicActionStep++;
@@ -402,7 +403,6 @@ package
 			}
 			else if ( cinematic.action[cinematicActionStep].attribute("type") == 'teleport' )
 			{
-				//trace( "load " + cinematic.action[cinematicActionStep].level );
 				stage.dispatchEvent( new TeleportEvent( TeleportEvent.CHANGE, cinematic.action[cinematicActionStep].level ) );
 			}
 			
@@ -472,19 +472,6 @@ package
 			stage.focus = this;
 		}*/
 				
-		/*public function setPrincessStartPosition( x:uint, y:uint ) : void 
-		{ 
-			_hero.x = x;
-			_hero.y = y;
-			
-			if ( _knight != null )
-			{
-				_knight.x = _hero.x + 20;
-				_knight.y = _hero.y;
-			}
-			
-		}*/
-		
 		/*public function getKnightHealth() : uint
 		{
 			return _knight.healthPoints;
@@ -584,7 +571,8 @@ package
 			
 			if (_ce.input.isDown(Keyboard.SPACE))
 			{
-				//trace("space");
+				if ( _switch != null )
+					activateSwitch();
 			}
 			
 		}
@@ -672,6 +660,37 @@ package
 		protected function knightStop( e:KnightEvent ) : void
 		{
 			_knight.stop();
+		}
+		
+		protected function switchOver( e:SwitchEvent ) : void
+		{
+			_switch = e.name;
+		}
+		
+		protected function switchOut( e:SwitchEvent ) : void
+		{
+			_switch = null;
+		}
+		
+		protected function activateSwitch() : void
+		{
+			var switchO:Switch = (getObjectByName( _switch ) as Switch);
+
+			if ( switchO.otherElementToremove != "" )
+			{
+				remove( getObjectByName( switchO.otherElementToremove ) );
+			}
+			
+			if ( switchO.animationToStart != "" )
+			{
+				playCinematic( null, switchO.animationToStart );
+			}
+			
+			if ( switchO.gate != "" )
+			{
+				( getObjectByName( switchO.gate ) as Gate ).toggle();
+			}
+			
 		}
 		
 	}
