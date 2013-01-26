@@ -44,8 +44,6 @@ package objects.platformer
 		public var speed:Number = 6;
 		[Property(value="right")]
 		public var startingDirection:String = "right";
-		[Property(value="400")]
-		public var hurtDuration:Number = 400;
 		[Citrus(value="10")]
 		public var wallSensorOffset:Number = 10;
 		[Citrus(value="2")]
@@ -58,6 +56,8 @@ package objects.platformer
 		public var maxHealthPoints:Number = 1000;
 		[Property(value="5")]
 		public var hitPoints:Number = 5;
+		[Property(value = "200")]
+		public var hitFrequency:Number = 180;
 		[Property(value="true")]
 		public var startRunning:Boolean = true;
 		
@@ -67,8 +67,6 @@ package objects.platformer
 		[Property(value="14")]
 		public var jumpHeight:Number = 14;
 		
-		protected var _hurtTimeoutID:Number = 0;
-		protected var _hurt:Boolean = false;
 		protected var _enemyClass:* = Baddy;
 		protected var _lastXPos:Number;
 		
@@ -79,22 +77,12 @@ package objects.platformer
 		protected var _sensorFixtureDef:b2FixtureDef;
 		
 		protected var _groundContacts:Array = [];//Used to determine if he's on ground or not.
-		public var _stopped:Boolean = false;
+		protected var _stopped:Boolean = false;
 		protected var _onGround:Boolean = false;
 		protected var _fighting:Boolean = false;
-		protected var _jumping:Boolean = false;
 		protected var _comingBack:Boolean = false;
-		public var _talking:Boolean = false;
-		
-		private var princessPosition:uint = 0;
-		private var moveMode:uint = 0;
-		
-		public static const POSITION_RIGHT:uint = 0;
-		public static const POSITION_LEFT:uint = 1;
-		
-		public static const MODE_ATTACK:uint = 0;
-		public static const MODE_DEFENCE:uint = 1;
-		
+		protected var _talking:Boolean = false;
+				
 		public static function Make(name:String, x:Number, y:Number, width:Number, height:Number, speed:Number, view:* = null, leftBound:Number = -100000, rightBound:Number = 100000, startingDirection:String = "left"):Knight
 		{
 			if (view == null) view = MovieClip;
@@ -120,7 +108,6 @@ package objects.platformer
 			_fixture.removeEventListener(ContactEvent.BEGIN_CONTACT, handleBeginContact);
 			_leftSensorFixture.removeEventListener(ContactEvent.BEGIN_CONTACT, handleSensorBeginContact);
 			_rightSensorFixture.removeEventListener(ContactEvent.BEGIN_CONTACT, handleSensorBeginContact);
-			clearTimeout(_hurtTimeoutID);
 			_sensorFixtureDef.destroy();
 			_leftSensorShape.destroy();
 			_rightSensorShape.destroy();
@@ -144,32 +131,20 @@ package objects.platformer
 		override public function update(timeDelta:Number):void
 		{
 			
-			if ( CitrusEngine.getInstance().playing || ConstantState.getInstance().runningCinematic )
-			{
-				super.update(timeDelta);
-				
+			super.update(timeDelta);
+			
+			if ( CitrusEngine.getInstance().playing && !ConstantState.getInstance().runningCinematic && !_stopped )
+			{				
+	
 				var position:V2 = _body.GetPosition();
 				_lastXPos = position.x;
-				
-				//Turn around when they pass their left/right bounds
-				/*if ((_inverted && position.x * 30 < leftBound) || (!_inverted && position.x * 30 > rightBound))
-					turnAround();*/
-				
+								
 				var velocity:V2 = _body.GetLinearVelocity();
-				if (!_stopped && !_fighting && moveMode == Knight.MODE_ATTACK )
-				{
-					if (_inverted)
-						velocity.x = -speed;
-					else
-						velocity.x = speed;
-				}
+		
+				if (_inverted)
+					velocity.x = -speed;
 				else
-					velocity.x = 0;
-				
-				if ( moveMode == MODE_DEFENCE )
-				{
-					
-				}
+					velocity.x = speed;
 					
 				_body.SetLinearVelocity(velocity);
 				
@@ -179,13 +154,7 @@ package objects.platformer
 			}
 
 		}
-		
-		public function hurt():void
-		{
-			_hurt = true;
-			_hurtTimeoutID = setTimeout(endHurtState, hurtDuration);
-		}
-		
+				
 		public function turnAround():void
 		{
 			_inverted = !_inverted;
@@ -227,6 +196,21 @@ package objects.platformer
 			//_sensorFixtureDef.filter.maskBits = CollisionCategories.GetAllExcept("Items");
 		}
 		
+		/**
+		 * Returns the absolute walking speed, taking moving platforms into account.
+		 * Isn't super performance-light, so use sparingly.
+		 */
+		public function getWalkingSpeed():Number
+		{
+			var groundVelocityX:Number = 0;
+			for each (var groundContact:b2Fixture in _groundContacts)
+			{
+				groundVelocityX += groundContact.GetBody().GetLinearVelocity().x;
+			}
+			
+			return _body.GetLinearVelocity().x - groundVelocityX;
+		}
+		
 		override protected function createFixture():void
 		{
 			super.createFixture();
@@ -247,49 +231,39 @@ package objects.platformer
 		protected function handleBeginContact(e:ContactEvent):void
 		{
 			var collider:PhysicsObject = e.other.GetBody().GetUserData();
-						
-			_jumping = false;
-						
-			if ( collider is TextSpot )
-			{
-				showDialog( collider as TextSpot );
-				//trace( 'Knight: TextSpot ' + collider.name );
-			}
-			
+															
 			if ( collider is Gate )
 			{
-				stop();
+				trace("plop");
 			}
-				
-			if ( collider is TeleportSpot )
-			{								
-				_ce.stage.dispatchEvent( new KnightEvent( KnightEvent.KNIGHT_REMOVED ) );
-				//trace( 'Knight: TeleportSpot ' + collider.name );
-			}
-			
-			if ( collider is GameOverSpot )
+			else if ( collider is GameOverSpot )
 			{
 				_ce.stage.dispatchEvent( new KnightEvent( KnightEvent.KNIGHT_REMOVED ) );
 				//_ce.state.remove( this );
 			}
-			
-			if ( collider is Princess && _comingBack )
+			else if ( collider is Princess && _comingBack )
 			{
 				//trace( 'Knight: TurnAround ' );
 				endComeBack();
 			}
-			
-			if ( collider is Destructible )
+			else if ( collider is Destructible )
 			{
 				//(collider as Destructible).destruct();
 				_ce.state.remove( collider );
 			}
-			
-			if ( collider is StartSpot )
+			else if ( collider is StartSpot )
 			{
 				start();
 				//_ce.state.remove( collider );
 				//trace( 'Knight: StartSpot ' + collider.name );
+			}
+			else if ( collider is PrincessPlatform )
+			{
+				
+			}
+			else
+			{
+				trace( "piouf " + collider );
 			}
 			
 			if (e.normal) //The normal property doesn't come through all the time. I think doesn't come through against sensors.
@@ -328,26 +302,19 @@ package objects.platformer
 				return;
 				
 			var collider:PhysicsObject = e.other.GetBody().GetUserData();
-			var velocity:V2 = _body.GetLinearVelocity();
-						
-			if ( collider is TextSpot )
-			{
-				showDialog( collider as TextSpot );
-				//trace( 'Knight: TextSpot 2 ' + collider.name );
-			}
-							
+													
 			if ( collider is Destructible )
 			{
 				//(collider as Destructible).destruct();
 				_ce.state.remove( collider );
 			}
-				
-			if ( collider is DirectionSpot )
+			else if ( collider is DirectionSpot )
 			{
 				_inverted = !_inverted;
 				_ce.state.remove( collider );
 				//trace( 'Knight: DirectionSpot ' + collider.name );
-			} else if ( collider is StopSpot )
+			} 
+			else if ( collider is StopSpot )
 			{
 				
 				if (  (collider as StopSpot).deleteOnTouch ) 
@@ -356,19 +323,29 @@ package objects.platformer
 				stop();
 				//_ce.state.remove( collider );
 				//trace( 'Knight: StopSpot ' + collider.name );
-			} else if ( collider is StartSpot )
+			} 
+			else if ( collider is StartSpot )
 			{
 				start();
 				//_ce.state.remove( collider );
 				//trace( 'Knight: StartSpot ' + collider.name );
 			}
-			
-								
+			else if ( collider is Gate )
+			{
+				trace("plop!");
+			}
+			else if ( collider is PrincessPlatform )
+			{
+				
+			}
+			else
+			{
+				trace( "2piouf " + collider );
+			}
 		}
 		
 		protected function updateAnimation():void
-		{
-			//trace( ConstantState.getInstance().runningCinematic );
+		{			
 			if ( !ConstantState.getInstance().runningCinematic )
 			{
 				if ( _fighting )
@@ -377,57 +354,11 @@ package objects.platformer
 					_animation = "talking";
 				else if ( _stopped )
 					_animation = "idle";
-				else if ( _jumping )
-					_animation = "jump";
 				else
 					_animation = "walk";
 			}
-			//trace( _animation );
 		}
-		
-		protected function endHurtState():void
-		{
-			_hurt = false;
-		}
-			
-		public function startFighting() : void
-		{
-			_fighting = true;
-			var velocity:V2 = _body.GetLinearVelocity();
-			velocity.x = 0;
-			_body.SetLinearVelocity(velocity);
-			trace( 'Knight: StartFight' );
-		}
-		
-		public function stopFighting( dead:Boolean ) : void
-		{
-			if ( dead )
-				_ce.playing = false;
-			else
-			{
-				_fighting = false;
-				_stopped = false;
-				_animation = "walk";
-				
-				var velocity:V2 = _body.GetLinearVelocity();
-				velocity.x = speed;
-				_body.SetLinearVelocity(velocity);
-			}
-			
-			trace( 'Knight: StopFight' );
-				
-		}
-		
-		protected function showDialog( spot:TextSpot ) : void
-		{
-			if ( spot.readByKnight )
-			{
-				Dialog.getInstance().show( spot.text, 'knight', spot.displayTime, spot.pauseOnRead);
-				_ce.state.remove( spot );
-				_ce.state.view.cameraTarget = this;
-			}
-		}
-				
+						
 		public function comeBack() : void
 		{
 			if ( !_comingBack )
@@ -453,64 +384,44 @@ package objects.platformer
 		{
 			_stopped = false;
 			_animation = "walk";
+			
+			if ( _talking )
+				_talking = false;
 		}
 		
-		public function stop() : void
+		public function stop( talking:Boolean = false ) : void
 		{
 			var velocity:V2 = _body.GetLinearVelocity();
 			velocity.x = 0;
-			_stopped = true;
 			_body.SetLinearVelocity(velocity);
+			_stopped = true;
+			_talking = talking;
 		}
 		
-		public function setAttackMode() : Boolean
+		public function startFighting() : void
 		{
-			
-			if ( moveMode == Knight.MODE_ATTACK )
-			return false;
-			
-			moveMode = Knight.MODE_ATTACK;
-			return true;
+			stop();
+			_fighting = true;
+			_animation = "fight";
 		}
 		
-		public function setDefenseMode() : Boolean
+		public function stopFighting( won:Boolean = true ) : void
 		{
-			if ( moveMode == Knight.MODE_DEFENCE )
-			return false;
+			_fighting = false;
 			
-			moveMode = Knight.MODE_DEFENCE;
-			return true;
+			if ( won )
+			{
+				start();
+			}
+			else
+			{
+				trace('urg');
+			}
 		}
 		
-		public function moveToRight() : Boolean
+		public function hurt() : void
 		{
-			if ( princessPosition == Knight.POSITION_RIGHT )
-			return false;
 			
-			princessPosition = Knight.POSITION_RIGHT;
-			body.SetActive(false);
-			
-			var princess:Princess = CitrusEngine.getInstance().state.getFirstObjectByType( Princess ) as Princess;
-			this.x = princess.x + this.width + 10;
-			body.SetActive(true);
-			_inverted = false;
-			
-			return true;
-		}
-		
-		public function moveToLeft() : Boolean
-		{
-			if ( princessPosition == Knight.POSITION_LEFT )
-			return false;
-			
-			princessPosition = Knight.POSITION_LEFT;
-			
-			var princess:Princess = CitrusEngine.getInstance().state.getFirstObjectByType( Princess ) as Princess;
-			this.x = princess.x - (this.width + 10);
-			body.SetActive(true);
-			_inverted = true;
-			
-			return true;
 		}
 		
 	}

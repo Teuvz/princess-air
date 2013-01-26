@@ -21,6 +21,7 @@ package objects.platformer
 	import flash.utils.getDefinitionByName;
 	import flash.utils.getTimer;
 	import flash.utils.setTimeout;
+	import objects.events.EndGameEvent;
 	import objects.events.FightEvent;
 	import org.osflash.signals.Signal;
 	import singletons.Assets;
@@ -101,18 +102,6 @@ package objects.platformer
 		
 		public function Ennemy(name:String, params:Object=null)
 		{
-			
-			/*switch( params.type )
-			{
-				case "Boss":
-					params.view = asset_Boss;
-					break;
-				default:
-					params.view = asset_Skeleton;
-					//params.view = getDefinitionByName("asset_Skeleton");
-					break;
-			}*/
-
 			params.view = Assets.getInstance().formatName( params.view );
 			
 			super(name, params);
@@ -123,7 +112,6 @@ package objects.platformer
 			{
 				_inverted = true;
 			}
-			//this._box2D.visible = false;
 			
 			_originalX = this.x;
 			leftBound = this.x - leftBound;
@@ -260,14 +248,14 @@ package objects.platformer
 		protected function handleBeginContact(e:ContactEvent):void
 		{
 			var collider:PhysicsObject = e.other.GetBody().GetUserData();
-			
-			/*if (collider is _enemyClass && collider.body.GetLinearVelocity().y > enemyKillVelocity)
-				hurt();*/
 				
-			if ( collider is Knight && !_hurt && !kill )
+			if ( collider is Knight && !_hurt && !kill && !_fighting)
 			{
-				//_ce.state.startFight( this );
-				CitrusEngine.getInstance().stage.dispatchEvent( new FightEvent( FightEvent.START_FIGHT, this.name ) );
+				startFighting();
+			}
+			else if ( collider is Princess )
+			{
+				CitrusEngine.getInstance().stage.dispatchEvent( new EndGameEvent( EndGameEvent.PRINCESS_DEAD ) );
 			}
 				
 			if (e.normal) //The normal property doesn't come through all the time. I think doesn't come through against sensors.
@@ -296,8 +284,6 @@ package objects.platformer
 				}
 			}
 			
-			//_ce.state.stopFight( false, false );
-			
 		}
 		
 		protected function handleSensorBeginContact(e:ContactEvent):void
@@ -307,19 +293,7 @@ package objects.platformer
 			
 			if (_body.GetLinearVelocity().x > 0 && e.fixture == _leftSensorFixture)
 				return;
-				
-			var collider:PhysicsObject = e.other.GetBody().GetUserData();
-			var velocity:V2 = _body.GetLinearVelocity();
-									
-			if ( collider is Hero )
-			{
-				trace( 'ahah, got you!' );
-			}
-			else
-			{
-				turnAround();
-			}
-								
+												
 		}
 		
 		protected function updateAnimation():void
@@ -348,6 +322,7 @@ package objects.platformer
 		public function startFighting() : void
 		{
 			_fighting = true;
+			CitrusEngine.getInstance().stage.dispatchEvent( new FightEvent( FightEvent.START_FIGHT, this.name ) );
 		}
 		
 		public function stopFighting( dead:Boolean ) : void

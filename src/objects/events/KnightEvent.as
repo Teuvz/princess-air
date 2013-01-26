@@ -10,6 +10,7 @@ package objects.events
 	{
 		
 		public static const KNIGHT_START:String = 'knight_start';
+		public static const KNIGHT_STOP:String = 'knight_stop';
 		public static const KNIGHT_REMOVED:String = 'knight_removed';
 				
 		public function KnightEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false) 

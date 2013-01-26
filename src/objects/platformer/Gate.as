@@ -104,6 +104,8 @@ package objects.platformer
 		protected function handleBeginContact(e:ContactEvent):void
 		{
 			onBeginContact.dispatch(e);
+			
+			trace("oh hello you");
 		}
 		
 		protected function handleEndContact(e:ContactEvent):void

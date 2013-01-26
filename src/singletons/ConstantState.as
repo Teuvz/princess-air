@@ -10,6 +10,7 @@ package singletons
 		private static var instance:ConstantState;
 		
 		public var runningCinematic:Boolean = false;
+		public var fightTing:Boolean = false;
 		
 		public function ConstantState() 
 		{

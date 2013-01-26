@@ -14,12 +14,13 @@ package objects.events
 		public static var STOP_FIGHT:String = "stop_fight";
 		
 		public var ennemy:String;
+		public var won:Boolean;
 		
-		public function FightEvent(type:String, ennemy:String ) 
+		public function FightEvent(type:String, ennemy:String, won:Boolean = true ) 
 		{ 
 			super(type, false, false);
 			this.ennemy = ennemy;
-			trace( "created event " + type + " for ennemy " + ennemy );
+			this.won = won;
 		} 
 		
 		public override function clone():Event 

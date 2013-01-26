@@ -56,15 +56,16 @@ package
 		
 		private var _textData:XML;
 		private var _charsData:XML;
-		//private var _levelData:XML;
 		private var _scenesData:XMLList;
 		public var _hero:Princess;
 		private var _knight:Knight;
-		private var _currentEnnemy:Ennemy;
 		private var _healthbar:Healthbar;
 		private var _bosshealthbar:Healthbar;
 		private var _levelName:String;
 		private var _inMenu:Boolean;
+		
+		private var _currentEnnemy:Ennemy;
+		private var _fightRound:uint = 0;
 		
 		//private var _lang:String;
 		private var cinematic:XML;
@@ -115,10 +116,11 @@ package
 			{
 				start();
 			}
+			else
+			{
+				ConstantState.getInstance().runningCinematic = true;
+			}
 			
-			stage.addEventListener( CinematicEvent.PLAY_CINEMATIC, playCinematic );
-			//stage.addEventListener( CinematicEvent.PLAY_INTRO, playIntro );
-			//stage.addEventListener( FightEvent.START_FIGHT, startFight );
 			addEventListener( StateEvent.START, start );
 			
 			handleLoadComplete();
@@ -159,8 +161,6 @@ package
 				addChild( _healthbar );
 			}
 			
-			//stage.addEventListener( KnightEvent.KNIGHT_START, knighStartRequest );
-			
 			// dialog	
 			Dialog.getInstance().setXml( XmlGameData.getInstance().lang, _textData, _charsData );
 			_textData = null;
@@ -180,6 +180,10 @@ package
 				
 			stage.addEventListener( DialogEvent.DIALOG_SHOW, showDialog );
 			stage.addEventListener( DialogEvent.DIALOG_HIDE, hideDialog );
+			stage.addEventListener( FightEvent.START_FIGHT, startFight );
+			stage.addEventListener( CinematicEvent.PLAY_CINEMATIC, playCinematic );
+			stage.addEventListener( KnightEvent.KNIGHT_START, knightStart );
+			stage.addEventListener( KnightEvent.KNIGHT_STOP, knightStop );
 				
 			//CitrusEngine.getInstance().stage.addEventListener( KeyboardEvent.KEY_DOWN, keyDownHandler );
 			
@@ -404,105 +408,6 @@ package
 			
 		}
 		
-		/*override public function update(timeDelta:Number):void
-		{			
-			manageFight();
-						
-			//Call update on all objects
-			var garbage:Array = [];
-			var n:Number = _objects.length;
-					
-			for (var i:int = 0; i < n; i++)
-			{
-				var object:CitrusObject = _objects[i];
-				if (object.kill)
-					garbage.push(object);
-				else
-					object.update(timeDelta);
-			}
-			
-			//Destroy all objects marked for destroy
-			n = garbage.length;
-			for (i = 0; i < n; i++)
-			{
-				var garbageObject:CitrusObject = garbage[i];
-				_objects.splice(_objects.indexOf(garbageObject), 1);
-				garbageObject.destroy();
-				_view.removeArt(garbageObject);
-			}
-			
-			//Update the input object
-			_input.update();
-			
-			//Update the state's view
-			_view.update();
-					
-		}*/
-		
-		/*public function startFight( event:FightEvent=null, ennemy:Ennemy=null ) : void
-		{
-			if ( event != null )
-				ennemy = getObjectByName( event.ennemy ) as Ennemy;
-								
-			if ( _knight == null )
-				_knight = getFirstObjectByType( Knight ) as Knight;
-			
-			if ( ennemy != null && _knight != null )
-			{
-				_currentEnnemy = ennemy;
-				_knight.startFighting( );
-				_currentEnnemy.startFighting();
-				_view.cameraTarget = _knight;
-			}
-			
-		}*/
-		
-		/*public function stopFight( ennemyDead:Boolean, knightDead:Boolean ) : void
-		{
-			if ( _currentEnnemy != null )
-			{
-				
-				if ( knightDead )
-					stage.dispatchEvent( new EndGameEvent( EndGameEvent.KNIGHT_DEAD ) );
-				
-				if ( _currentEnnemy.isBoss && ennemyDead )
-				{
-					remove( _currentEnnemy );
-					removeChild( _bosshealthbar );
-					stage.dispatchEvent( new KnightEvent( KnightEvent.KNIGHT_START ) );
-					view.cameraTarget = _hero;
-				}
-				
-				_knight.stopFighting(knightDead);
-				_currentEnnemy.stopFighting( ennemyDead );
-								
-				_currentEnnemy = null;
-				//_view.cameraTarget = _hero;
-			}
-			
-		}*/
-		
-		/*private function manageFight() : void
-		{
-			if ( _currentEnnemy != null )
-			{
-				_knight.healthPoints -= _currentEnnemy.hitPoints;
-				_currentEnnemy.healthPoints -= _knight.hitPoints;
-				
-				_healthbar.life.width = _knight.healthPoints / 4;
-				
-				if ( _currentEnnemy.isBoss )
-				_bosshealthbar.life.width = _currentEnnemy.healthPoints / 4;
-				
-				if ( _currentEnnemy.healthPoints <= 0 )
-					stopFight( true, false );
-				
-				if ( _knight.healthPoints <= 0 )
-					stopFight( false, true );
-				
-			}
-		}*/
-		
 		/*public function heal() : void
 		{
 			if ( _knight != null && _healthbar != null )
@@ -523,31 +428,7 @@ package
 			addChild( _bosshealthbar );
 			remove( spot );
 		}*/
-					
-		/*public function hideDialog() : void
-		{
-			view.cameraTarget = _hero;		
-		}*/
-				
-		/*private function knighStartRequest( e:KnightEvent ) : void
-		{
-			e.stopPropagation();
-			_knight.start();
-		}*/
-		
-		/*private function knightRemoved( e:KnightEvent ) : void
-		{			
-			if ( _knight == null )
-			_knight == getFirstObjectByType( Knight ) as Knight;
-			
-			e.stopPropagation();
-			remove( _knight );
-			
-			if ( _healthbar != null && getChildByName( _healthbar.name ) != null )
-			removeChild( _healthbar );
-			
-		}*/
-		
+
 		/*private function keyDownHandler( e:KeyboardEvent ) : void
 		{
 								
@@ -721,8 +602,7 @@ package
 			if ( e.block )
 			{
 				_hero.controlsEnabled = false;
-				_knight.stop();
-				_knight._talking = true;
+				_knight.stop(true);
 				_hero.animation = 'idle';
 				CitrusEngine.getInstance().playing = false;
 				showBlackBands();
@@ -734,12 +614,64 @@ package
 		{
 			_hero.controlsEnabled = true;
 			_knight.start();
-			_knight._talking = false;
 			CitrusEngine.getInstance().playing = true;
 			hideBlackBands();
 			
 			view.cameraTarget = _hero;
 			
+		}
+		
+		private function startFight( e:FightEvent ) : void
+		{
+			ConstantState.getInstance().fightTing = true;
+			_currentEnnemy = (getObjectByName(e.ennemy) as Ennemy );
+			_knight.startFighting();
+			_fightRound = 0;
+			handleFight();
+		}
+		
+		private function stopFight( won:Boolean = true ) : void
+		{
+			ConstantState.getInstance().fightTing = false;
+			_knight.stopFighting(won);
+			_currentEnnemy.stopFighting(won);		
+		}
+		
+		private function handleFight() : void
+		{
+			if ( ++_fightRound % 2 == 0 )
+			{
+				_knight.hurt();
+				_knight.healthPoints -= _currentEnnemy.hitPoints;
+				_healthbar.life.width = _knight.healthPoints / 4;
+			}
+			else
+			{
+				_currentEnnemy.healthPoints -= _knight.hitPoints;
+			}
+			
+			if ( _currentEnnemy.healthPoints < 0 )
+			{
+				stopFight();
+			}
+			else if ( _knight.healthPoints < 0 )
+			{
+				stopFight(false);
+			}
+			else
+			{
+				setTimeout( handleFight, _knight.hitFrequency );
+			}
+		}
+		
+		protected function knightStart( e:KnightEvent ) : void
+		{
+			_knight.start();
+		}
+		
+		protected function knightStop( e:KnightEvent ) : void
+		{
+			_knight.stop();
 		}
 		
 	}
