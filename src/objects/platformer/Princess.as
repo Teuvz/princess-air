@@ -61,6 +61,9 @@ package objects.platformer
 										
 		[Property(value="2")]
 		public var healingPower:Number = 2;
+		
+		[Property(value="")]
+		public var initialAnimation:String = "";
 						
 		//events
 			
@@ -101,6 +104,7 @@ package objects.platformer
 		{
 			params.view = asset_Princess;
 			super(name, params);
+			
 		}
 		
 		override public function destroy():void

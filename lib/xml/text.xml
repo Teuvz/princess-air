@@ -4,8 +4,8 @@
 		
 		<!-- GUI -->
 		<text_space>
-			<en>Press [KEY] to continue</en>
-			<fr>Appuyez sur [KEY] pour continuer</fr>
+			<en>Press Space or Enter to continue</en>
+			<fr>Appuyez sur Espace ou Entrée pour continuer</fr>
 		</text_space>
 		
 		<or>

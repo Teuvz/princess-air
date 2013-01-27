@@ -22,14 +22,11 @@ package objects.menus
 		
 		private var _lang:String;
 		private var _characters:XML;
-		private var _keys:XML;
 		
 		private var _timer:Timer = new Timer(2000);
 		
 		private var _bossSpot:BossSpot;
 		private var textArray:Array;
-		
-		private var _keyToContinue:String;
 		
 		public static function getInstance() : Dialog
 		{
@@ -48,12 +45,7 @@ package objects.menus
 			_lang = lang;
 			_characters = characters;
 		}
-			
-		public function set keys( keys:XML ) : void
-		{
-			_keys = keys;
-		}
-		
+					
 		public function show( text:String, character:String = 'knight', timer:uint = 2000, pause:Boolean = false, bossTrigger:BossSpot = null, forced:Boolean=false ) : void
 		{								
 			var _ce:CitrusEngine = CitrusEngine.getInstance();
@@ -94,15 +86,6 @@ package objects.menus
 				this.text.text = text;
 			else
 				this.text.text = XmlGameData.getInstance().texts.texts.child(text).child(_lang);
-						
-			if ( XmlGameData.getInstance().texts.texts.child(text).key == undefined )
-				_keyToContinue = 'space,enter';
-			else
-				_keyToContinue = XmlGameData.getInstance().texts.texts.child(text).key;
-				
-			_keyToContinue = 'space,enter';
-								
-			text_space.text = text_space.text.replace( '[KEY]', formatKeyText( _keyToContinue.split(',') ) );
 			
 			text_space.visible = !forced;
 			
@@ -122,17 +105,9 @@ package objects.menus
 						
 			var textKey:String = textArray.shift();
 			this.text.text = XmlGameData.getInstance().texts.texts.child( textKey ).child(_lang);
-			
-			if ( XmlGameData.getInstance().texts.texts.child(textKey).key == undefined )
-				_keyToContinue = 'space,enter';
-			else
-				_keyToContinue = XmlGameData.getInstance().texts.texts.child(textKey).key;
-				
-			_keyToContinue = 'space,enter';
-				
+							
 			//text_space.text = _keyToContinue;
 			text_space.text = XmlGameData.getInstance().texts.texts.text_space.child(_lang);
-			text_space.text = text_space.text.replace( '[KEY]', formatKeyText( _keyToContinue.split(',') ) );
 			
 			if ( textArray.length == 0 )
 			textArray = null;
@@ -180,40 +155,13 @@ package objects.menus
 		public function hideKeyboard( e:KeyboardEvent ) : void
 		{		
 			
-			if ( _keyToContinue.indexOf( "," ) != -1 )
-			{
-				var keys:Array = _keyToContinue.split(',');
-				for each( var key:String in keys )
-				{
-					
-					if ( e.keyCode.toString() == _keys.child(key) )
-					{
-						hide();	
-					}
-				}
-			}
-			else if ( e.keyCode.toString() == _keys.child(_keyToContinue) )
+			if ( e.keyCode == Keyboard.SPACE || e.keyCode == Keyboard.ENTER )
 			{
 				hide();	
 			}
+
 		}
-		
-		private function formatKeyText( keys:Array ) : String
-		{
-						
-			var keyText:String = "";
-			var i:uint = 0;
-			for each( var key:String in keys )
-			{
-				keyText = keyText + XmlGameData.getInstance().texts.texts.child(key).child(_lang);
 				
-				if ( ++i != keys.length )
-				keyText = keyText += " "+XmlGameData.getInstance().texts.texts.or.child(_lang)+" ";
-			}
-			
-			return keyText;
-		}
-		
 	}
 
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<fallingObjects1>
+		<action type="temp">
+			<time>300</time>
+		</action>
+		<action type="remove_object">
+			<object>Platform268</object>
+		</action>
+		<action type="stuck" />
+		<action type="unblock" />
+		<action type="camera_target">
+			<object>Knight350</object>
+		</action>
+	</fallingObjects1>
+	<boss_appear>
+		<action type="camera_target">
+			<object>CameraSpot174</object>
+		</action>
+		<action type="move">
+			<character>BossSprite</character>
+			<effect>bounce</effect>
+			<time>1000</time>
+			<y>420</y>
+		</action>
+		<action type="temp">
+			<time>200</time>
+		</action>
+		<action type="animation">
+			<character>BossSprite</character>
+			<animation>shout</animation>
+		</action>
+		<action type="temp">
+			<time>2000</time>
+		</action>
+		<action type="animation">
+			<character>BossSprite</character>
+			<animation>fight</animation>
+		</action>
+		<action type="camera_target">
+			<object>Princess123</object>
+		</action>
+		<action type="remove_object">
+			<object>StopSpot172</object>
+		</action>
+		<action type="unblock" />
+	</boss_appear>
+</data>

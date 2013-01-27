@@ -1,6 +1,5 @@
 <GameState name="Untitled Level">
   <CitrusObject name="CitrusSprite86" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">345</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -14,7 +13,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite365" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallB</Property>
     <Property name="x">413</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -28,7 +26,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite366" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">509</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -42,7 +39,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite367" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">605</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -56,7 +52,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite368" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">701</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -70,7 +65,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite369" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">797</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -84,7 +78,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite370" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">893</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -98,7 +91,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite371" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallB</Property>
     <Property name="x">989</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -112,7 +104,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite372" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">1085</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -126,7 +117,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite373" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">1181</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -140,7 +130,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite374" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">1277</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -154,7 +143,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite375" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">1373</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -168,7 +156,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite376" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">1469</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -182,7 +169,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite377" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">1565</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -196,7 +182,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite378" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">1661</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -210,7 +195,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite379" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">1757</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -224,7 +208,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite380" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">1853</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -238,7 +221,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite381" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">1949</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -252,7 +234,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite382" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WallA</Property>
     <Property name="x">2045</Property>
     <Property name="y">299</Property>
     <Property name="width">96</Property>
@@ -266,7 +247,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="Platform1" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">124</Property>
@@ -282,7 +262,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform2" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">220</Property>
@@ -298,7 +277,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform3" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">316</Property>
@@ -314,7 +292,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform4" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">412</Property>
@@ -330,7 +307,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform5" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">508</Property>
@@ -346,7 +322,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform6" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">604</Property>
@@ -362,7 +337,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform7" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">700</Property>
@@ -378,7 +352,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform8" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">796</Property>
@@ -394,7 +367,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform9" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">892</Property>
@@ -410,7 +382,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform10" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">988</Property>
@@ -426,7 +397,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform11" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">1084</Property>
@@ -442,7 +412,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform12" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">1180</Property>
@@ -458,7 +427,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform13" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">1276</Property>
@@ -474,7 +442,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform14" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">1372</Property>
@@ -490,7 +457,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform15" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">1468</Property>
@@ -506,7 +472,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform16" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">1564</Property>
@@ -522,7 +487,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform17" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">1660</Property>
@@ -538,7 +502,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform18" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">1756</Property>
@@ -554,7 +517,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform19" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">1852</Property>
@@ -570,7 +532,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform20" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">1948</Property>
@@ -586,7 +547,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform21" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">2044</Property>
@@ -602,7 +562,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform22" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">2140</Property>
@@ -618,7 +577,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="Platform23" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">2236</Property>
@@ -634,7 +592,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite24" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">162</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -648,7 +605,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite25" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">333</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -662,7 +618,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite26" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">504</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -676,7 +631,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite27" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">675</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -690,7 +644,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite28" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">846</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -704,7 +657,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite29" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">1017</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -718,7 +670,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite30" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">1188</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -732,7 +683,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite31" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">1359</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -746,7 +696,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite32" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">1530</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -760,7 +709,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite33" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">1701</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -774,7 +722,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite34" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">1872</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -788,7 +735,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite35" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">2043</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -802,7 +748,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite36" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">2214</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -816,7 +761,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="Platform74" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GroundA</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">2332</Property>
@@ -832,7 +776,6 @@
     <Property name="height">96</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite85" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GroundDecoWallA</Property>
     <Property name="x">2294</Property>
     <Property name="y">632</Property>
     <Property name="width">171</Property>
@@ -846,7 +789,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="Platform88" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset"></Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">61</Property>
@@ -973,7 +915,6 @@
     <Property name="height">30</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite61" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GateFrame</Property>
     <Property name="x">1265</Property>
     <Property name="y">357</Property>
     <Property name="width">244</Property>
@@ -1024,7 +965,6 @@
     <Property name="height">24.05</Property>
   </CitrusObject>
   <CitrusObject name="Gate" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset">GateGate</Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">1267.5</Property>
@@ -1040,7 +980,6 @@
     <Property name="height">265</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite136" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">GateFrame</Property>
     <Property name="x">1999</Property>
     <Property name="y">348</Property>
     <Property name="width">244</Property>
@@ -1072,7 +1011,6 @@
     <Property name="height">24.05</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite647" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">ExitLeftSide</Property>
     <Property name="x">182</Property>
     <Property name="y">254</Property>
     <Property name="width">210</Property>
@@ -1086,7 +1024,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite223" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">ExitRightSide</Property>
     <Property name="x">2236</Property>
     <Property name="y">255</Property>
     <Property name="width">210</Property>
@@ -1100,7 +1037,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite361" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">Black</Property>
     <Property name="x">-123</Property>
     <Property name="y">314</Property>
     <Property name="width">400</Property>
@@ -1114,7 +1050,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite82" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">WindowA</Property>
     <Property name="x">708</Property>
     <Property name="y">239</Property>
     <Property name="width">243</Property>
@@ -1128,7 +1063,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite83" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">PillarC</Property>
     <Property name="x">346</Property>
     <Property name="y">258</Property>
     <Property name="width">111</Property>
@@ -1142,7 +1076,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite84" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">PillarB</Property>
     <Property name="x">2057</Property>
     <Property name="y">260</Property>
     <Property name="width">111</Property>
@@ -1156,7 +1089,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite170" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">Ventilation</Property>
     <Property name="x">1634</Property>
     <Property name="y">178</Property>
     <Property name="width">84</Property>
@@ -1170,7 +1102,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite172" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">Black</Property>
     <Property name="x">2579</Property>
     <Property name="y">299</Property>
     <Property name="width">400</Property>
@@ -1184,7 +1115,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="Platform432" className="objects.platformer.PrincessPlatform">
-    <Property name="viewAsset"></Property>
     <Property name="oneWay">false</Property>
     <Property name="gravity">1.6</Property>
     <Property name="x">140</Property>
@@ -1200,7 +1130,6 @@
     <Property name="height">373</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite82" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">ExitDoorForeground</Property>
     <Property name="x">2111</Property>
     <Property name="y">293</Property>
     <Property name="width">66</Property>
@@ -1214,7 +1143,6 @@
     <Property name="registration">center</Property>
   </CitrusObject>
   <CitrusObject name="CitrusSprite83" className="objects.platformer.PrincessSprite">
-    <Property name="viewAsset">ExitDoorForeground</Property>
     <Property name="x">2280</Property>
     <Property name="y">292</Property>
     <Property name="width">66</Property>
@@ -1248,7 +1176,7 @@
     <Property name="hurtDuration">5000</Property>
     <Property name="leftBound">30</Property>
     <Property name="rightBound">30</Property>
-    <Property name="healthPoints">100</Property>
+    <Property name="healthPoints">50</Property>
     <Property name="hitPoints">5</Property>
     <Property name="canMove">true</Property>
     <Property name="isBoss">false</Property>
@@ -1274,7 +1202,7 @@
     <Property name="hurtDuration">5000</Property>
     <Property name="leftBound">30</Property>
     <Property name="rightBound">30</Property>
-    <Property name="healthPoints">100</Property>
+    <Property name="healthPoints">50</Property>
     <Property name="hitPoints">5</Property>
     <Property name="canMove">true</Property>
     <Property name="isBoss">false</Property>
@@ -1300,7 +1228,7 @@
     <Property name="hurtDuration">5000</Property>
     <Property name="leftBound">30</Property>
     <Property name="rightBound">30</Property>
-    <Property name="healthPoints">100</Property>
+    <Property name="healthPoints">50</Property>
     <Property name="hitPoints">5</Property>
     <Property name="canMove">true</Property>
     <Property name="isBoss">false</Property>

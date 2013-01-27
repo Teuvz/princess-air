@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+<startAnimation>
+	<action type="animation">
+		<character>Princess</character>
+		<animation>sleeping</animation>
+	</action>
+	<action type="temp">
+		<time>2000</time>
+	</action>
+	<action type="start_sound">
+		<file>sound/bomb.mp3</file>
+	</action>
+	<action type="temp">
+		<time>5000</time>
+	</action>
+	<action type="stop_sound">
+		<file>sound/bomb.mp3</file>
+	</action>
+	<action type="animation">
+		<character>Knight</character>
+		<animation>walk</animation>
+	</action>
+	<!--<action type="turnaround">
+		<character>Knight</character>
+	</action>-->
+	<action type="move">
+		<character>Knight</character>
+		<time>2000</time>
+		<x>-500</x>
+	</action>
+	<action type="animation">
+		<character>Knight</character>
+		<animation>talking</animation>
+	</action>
+	<action type="animation">
+		<character>Princess</character>
+		<animation>waking</animation>
+	</action>
+	<action type="dialog">
+		<text>intro_1,intro_2</text>
+	</action>
+	<action type="temp">
+		<time>1500</time>
+	</action>
+	<action type="animation">
+		<character>Knight</character>
+		<animation>walk</animation>
+	</action>
+	<action type="turnaround">
+		<character>Knight</character>
+	</action>
+	<action type="move">
+		<character>Knight</character>
+		<time>2000</time>
+		<x>250</x>
+	</action>
+	<action type="remove_object">
+		<object>Knight</object>
+	</action>
+	<action type="animation">
+		<character>Princess</character>
+		<animation>nightshirt</animation>
+	</action>
+	<action type="move">
+		<character>Princess</character>
+		<time>6000</time>
+		<x>320</x>
+	</action>
+	<action type="animation">
+		<character>Princess</character>
+		<animation>idle</animation>
+	</action>
+	<action type="temp">
+		<time>2000</time>
+	</action>
+	<action type="add_object">
+		<type>Knight</type>
+		<x>915</x>
+		<y>289</y>
+	</action>
+	<action type="animation">
+		<character>Princess</character>
+		<animation>walk</animation>
+	</action>
+	<action type="move">
+		<character>Princess</character>
+		<time>6000</time>
+		<x>350</x>
+	</action>
+	<action type="animation">
+		<character>Princess</character>
+		<animation>idle</animation>
+	</action>
+	<action type="unblock" />
+</startAnimation>
+</data>

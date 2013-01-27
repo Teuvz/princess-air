@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<startAnimation>
+		<action type="move">
+			<character>Lift</character>
+			<time>4000</time>
+			<y>-400</y>
+		</action>
+		<action type="run">
+			<character>Boss</character>
+		</action>
+		<action type="camera_target">
+			<object>Boss</object>
+		</action>
+		<action type="temp">
+			<time>1200</time>
+		</action>
+		<action type="camera_target">
+			<object>Princess</object>
+		</action>
+		<action type="unblock" />
+		<action type="dialog">
+			<text>wall_run</text>
+		</action>
+	</startAnimation>
+	<gateClose>
+		<action type="move">
+			<character>Gate3</character>
+			<time>500</time>
+			<y>150</y>
+		</action>
+	</gateClose>
+	<bossFall>
+		<action type="camera_target">
+			<object>Boss</object>
+		</action>
+		<action type="move">
+			<character>Princess</character>
+			<time>650</time>
+			<x>250</x>
+		</action>
+		<action type="move">
+			<character>Boss</character>
+			<time>750</time>
+			<x>-150</x>
+		</action>
+		<action type="animation">
+			<character>Boss</character>
+			<animation>fall</animation>
+		</action>
+		<action type="animation">
+			<character>Princess</character>
+			<animation>idle</animation>
+		</action>
+		<action type="temp">
+			<time>1500</time>
+		</action>
+		<action type="camera_target">
+			<object>Princess</object>
+		</action>
+		<action type="remove_object">
+			<object>Boss</object>
+		</action>
+		<action type="unblock" />
+	</bossFall>
+	<teamFall>
+		<action type="start_sound">
+			<file>sound/bomb.mp3</file>
+		</action>
+		<action type="animation">
+			<character>Princess</character>
+			<animation>endFall</animation>
+		</action>
+		<action type="animation">
+			<character>Knight</character>
+			<animation>endFall</animation>
+		</action>
+		<action type="temp">
+			<time>5000</time>
+		</action>
+		<action type="stop_sound">
+			<file>sound/bomb.mp3</file>
+		</action>
+		<action type="teleport">
+			<level>yard</level>
+		</action>
+	</teamFall>
+</data>

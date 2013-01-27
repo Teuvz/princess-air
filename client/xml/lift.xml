@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<liftCamera>
+		<action type="camera_target">
+			<object>CameraSpot</object>
+		</action>
+		<action type="animation">
+			<character>Princess</character>
+			<animation>idle</animation>
+		</action>
+		<action type="lift_start">
+			<object>Lift118</object>
+		</action>
+		<action type="unblock" />
+	</liftCamera>
+</data>

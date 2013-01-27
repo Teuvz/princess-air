@@ -1259,7 +1259,7 @@
     <Property name="hurtDuration">5000</Property>
     <Property name="leftBound">30</Property>
     <Property name="rightBound">30</Property>
-    <Property name="healthPoints">100</Property>
+    <Property name="healthPoints">50</Property>
     <Property name="hitPoints">5</Property>
     <Property name="canMove">true</Property>
     <Property name="isBoss">false</Property>
@@ -1285,7 +1285,7 @@
     <Property name="hurtDuration">5000</Property>
     <Property name="leftBound">30</Property>
     <Property name="rightBound">30</Property>
-    <Property name="healthPoints">100</Property>
+    <Property name="healthPoints">50</Property>
     <Property name="hitPoints">5</Property>
     <Property name="canMove">true</Property>
     <Property name="isBoss">false</Property>
@@ -1311,7 +1311,7 @@
     <Property name="hurtDuration">5000</Property>
     <Property name="leftBound">30</Property>
     <Property name="rightBound">30</Property>
-    <Property name="healthPoints">100</Property>
+    <Property name="healthPoints">50</Property>
     <Property name="hitPoints">5</Property>
     <Property name="canMove">true</Property>
     <Property name="isBoss">false</Property>
@@ -1337,7 +1337,7 @@
     <Property name="hurtDuration">5000</Property>
     <Property name="leftBound">30</Property>
     <Property name="rightBound">30</Property>
-    <Property name="healthPoints">100</Property>
+    <Property name="healthPoints">50</Property>
     <Property name="hitPoints">5</Property>
     <Property name="canMove">true</Property>
     <Property name="isBoss">false</Property>

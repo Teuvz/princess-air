@@ -6,9 +6,7 @@ package singletons
 	 */
 	public class Levels 
 	{
-		
-		private static var cinematic:XML;
-		
+				
 		private static var XML_TUTORIAL:XML;
 		private static var XML_CORRIDOR:XML;
 		private static var XML_THRONE:XML;
@@ -85,17 +83,7 @@ package singletons
 			
 			return xml;
 		}
-		
-		public static function setCinematicXml( xml:XML ) : void
-		{ 
-			cinematic = xml;
-		}
-		
-		public static function getCinematicXml( lvl:String ) : XMLList
-		{ 
-			return cinematic.child(lvl);
-		}
-		
+				
 	}
 
 }

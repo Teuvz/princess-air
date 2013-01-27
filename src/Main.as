@@ -83,17 +83,9 @@ package
 	
 	public class Main extends CitrusEngine 
 	{
-		
 			
-		[Embed(source="../lib/xml/levels.xml", mimeType="application/octet-stream")]
-		private var levelsRaw:Class;
-		
 		[Embed(source="../lib/xml/text.xml", mimeType="application/octet-stream")]
 		private var textRaw:Class;
-			
-		[Embed(source="../lib/xml/keys.xml", mimeType="application/octet-stream")]
-		private var keysRaw:Class;
-		private var keysXml:XML;
 		
 		private var mainMenu:StartMenu;
 		private var mainMenuBackground:MainMenuBack;
@@ -123,37 +115,31 @@ package
 			var byteArray:ByteArray = new textRaw() as ByteArray;
 			//textXml = new XML(byteArray.readUTFBytes(byteArray.length));
 			XmlGameData.getInstance().texts = new XML(byteArray.readUTFBytes(byteArray.length));
-				
-			
-			byteArray = new levelsRaw() as ByteArray;
-			Levels.setCinematicXml( new XML(byteArray.readUTFBytes(byteArray.length)) );
-						
+					
 			//byteArray = new tutorialLev() as ByteArray;
 			//Levels.setLevelXml( Levels.LEVEL_TUTORIAL, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			Levels.setLevelXml( Levels.LEVEL_TUTORIAL, readLvl( Levels.LEVEL_TUTORIAL ) );
+			//Levels.setLevelXml( Levels.LEVEL_TUTORIAL, readLvl( Levels.LEVEL_TUTORIAL ) );
 			
 			//byteArray = new corridorLev() as ByteArray;
 			//Levels.setLevelXml( Levels.LEVEL_CORRIDOR, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			Levels.setLevelXml( Levels.LEVEL_CORRIDOR, readLvl( Levels.LEVEL_CORRIDOR ) );
+			//Levels.setLevelXml( Levels.LEVEL_CORRIDOR, readLvl( Levels.LEVEL_CORRIDOR ) );
 			
 			//byteArray = new throneLev() as ByteArray;
 			//Levels.setLevelXml( Levels.LEVEL_THRONE, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			Levels.setLevelXml( Levels.LEVEL_THRONE, readLvl( Levels.LEVEL_THRONE ) );
+			//Levels.setLevelXml( Levels.LEVEL_THRONE, readLvl( Levels.LEVEL_THRONE ) );
 			
 			//byteArray = new liftLev() as ByteArray;
 			//Levels.setLevelXml( Levels.LEVEL_LIFT, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			Levels.setLevelXml( Levels.LEVEL_LIFT, readLvl( Levels.LEVEL_LIFT ) );
+			//Levels.setLevelXml( Levels.LEVEL_LIFT, readLvl( Levels.LEVEL_LIFT ) );
 			
 			//byteArray = new wallLev() as ByteArray;
 			//Levels.setLevelXml( Levels.LEVEL_WALL, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			Levels.setLevelXml( Levels.LEVEL_WALL, readLvl( Levels.LEVEL_WALL ) );
+			//Levels.setLevelXml( Levels.LEVEL_WALL, readLvl( Levels.LEVEL_WALL ) );
 			
 			//byteArray = new yardLev() as ByteArray;
 			//Levels.setLevelXml( Levels.LEVEL_YARD, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			Levels.setLevelXml( Levels.LEVEL_YARD, readLvl( Levels.LEVEL_YARD ) );
+			//Levels.setLevelXml( Levels.LEVEL_YARD, readLvl( Levels.LEVEL_YARD ) );
 			
-			byteArray = new keysRaw() as ByteArray;
-			keysXml = new XML(byteArray.readUTFBytes(byteArray.length));
 		}
 		
 		private function update() : void
@@ -162,18 +148,7 @@ package
 			appUpdater.configurationFile = new File("app:/updateConfig.xml"); 
 			appUpdater.initialize();
 		}
-		
-		private function readLvl( file:String ) : XML
-		{
-			var myfile:File = new File( "app:/levels/"+file+".lev" );
-			//trace( myfile.url );
-			var fileStream:FileStream = new FileStream();
-			fileStream.open(myfile, FileMode.READ);
-			var prefsXML:XML = XML(fileStream.readUTFBytes(fileStream.bytesAvailable));
-			fileStream.close();
-			return prefsXML;
-		}
-		
+				
 		private function init( e:Event ) : void
 		{			
 						
@@ -246,17 +221,8 @@ package
 		}
 							
 		private function startGame( e:Event=null ) : void
-		{			
-			
-			//trace( "start game " + currentLevel );
-			
-			//mainMenu.killKeyboard();
-			
+		{						
 			Mouse.hide();
-						
-			//gameXml = Levels.getLevelXml( currentLevel );
-						
-			//trace( gameXml );
 			
 			playing = false;
 						
@@ -282,8 +248,6 @@ package
 			SoundManager.getInstance().setGlobalVolume( mainMenu.volume);
 			stage.focus = state; 
 			state.addEventListener( Event.COMPLETE, loadComplete );
-			
-			Dialog.getInstance().keys = keysXml;
 			
 		}	
 		
@@ -378,7 +342,7 @@ package
 			if ( endScreen != null && getChildByName( endScreen.name ) != null )
 				removeChild( endScreen );
 				
-			state = new GameState(gameXml, null, null, currentLevel, Levels.getCinematicXml(currentLevel));
+			state = new GameState(gameXml, null, null, currentLevel, null);
 			ConstantState.getInstance().runningCinematic = false;
 			// BUG the playIntro should use event/signal
 			//state.playIntro = false;
@@ -408,7 +372,7 @@ package
 			gameXml = Levels.getLevelXml( currentLevel );
 									
 			state = null;			
-			state = new GameState(gameXml, null, null, currentLevel, Levels.getCinematicXml(currentLevel));
+			state = new GameState(gameXml, null, null, currentLevel, null);
 			ConstantState.getInstance().runningCinematic = false;
 			
 			state.addEventListener( Event.COMPLETE, loadComplete );
