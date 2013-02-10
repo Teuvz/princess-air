@@ -3,6 +3,7 @@ package objects.menus
 	import com.citrusengine.core.CitrusEngine;
 	import com.greensock.TweenLite;
 	import flash.events.KeyboardEvent;
+	import flash.events.MouseEvent;
 	import flash.events.TimerEvent;
 	import flash.ui.Keyboard;
 	import flash.utils.Timer;
@@ -21,7 +22,6 @@ package objects.menus
 		private var displayed:Boolean = false;
 		
 		private var _lang:String;
-		private var _characters:XML;
 		
 		private var _timer:Timer = new Timer(2000);
 		
@@ -38,12 +38,15 @@ package objects.menus
 		public function Dialog(  ) 
 		{
 			super();
+			
+			if ( CONFIG::mobile )		
+				this.y -= 80;
+		
 		}
 		
-		public function setXml ( lang:String, texts:XML, characters:XML ) : void
+		public function setXml ( lang:String, texts:XML ) : void
 		{
 			_lang = lang;
-			_characters = characters;
 		}
 					
 		public function show( text:String, character:String = 'knight', timer:uint = 2000, pause:Boolean = false, bossTrigger:BossSpot = null, forced:Boolean=false ) : void
@@ -90,7 +93,12 @@ package objects.menus
 			text_space.visible = !forced;
 			
 			if ( !forced )
+			{
 				_ce.stage.addEventListener( KeyboardEvent.KEY_UP, hideKeyboard );
+				
+				if ( CONFIG::mobile )
+					addEventListener( MouseEvent.MOUSE_UP, hideMouse );
+			}
 			
 			if ( bossTrigger != null )
 				_bossSpot = bossTrigger;
@@ -160,6 +168,11 @@ package objects.menus
 				hide();	
 			}
 
+		}
+		
+		public function hideMouse( e:MouseEvent ) : void
+		{
+			hide();
 		}
 				
 	}

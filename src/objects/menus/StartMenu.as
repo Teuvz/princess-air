@@ -90,9 +90,9 @@ package objects.menus
 			this.optionsBtn.buttonMode = true;
 			this.creditsBtn.buttonMode = true;
 			
-			//this.startBtn.addEventListener( MouseEvent.MOUSE_UP, startBtnHandle );
-			//this.optionsBtn.addEventListener( MouseEvent.MOUSE_UP, optionsBtnHandle );
-			//this.creditsBtn.addEventListener( MouseEvent.MOUSE_UP, creditsBtnHandle );
+			this.startBtn.addEventListener( MouseEvent.MOUSE_UP, startBtnHandle );
+			this.optionsBtn.addEventListener( MouseEvent.MOUSE_UP, optionsBtnHandle );
+			this.creditsBtn.addEventListener( MouseEvent.MOUSE_UP, creditsBtnHandle );
 			
 			var mySO:SharedObject = SharedObject.getLocal("save");						
 			if ( mySO.data.currentLevel != undefined )
@@ -158,6 +158,12 @@ package objects.menus
 			this.returnBtn.buttonMode = true;
 			this.returnBtn.addEventListener( MouseEvent.MOUSE_UP, returnBtnHandle );
 			
+			if ( CONFIG::mobile ) {
+				this.citrusLabel.y -= 50;
+				this.returnBtn.y -= 400;
+				this.returnBtn.x -= 10;
+			}
+			
 			cursor.x = CURSOR_CREDITS_RETURN.x;
 			cursor.y = CURSOR_CREDITS_RETURN.y;
 			
@@ -188,9 +194,9 @@ package objects.menus
 			this.returnBtn.removeEventListener( MouseEvent.MOUSE_UP, returnBtnHandle );			
 			this.gotoAndStop( page );
 			changeTexts();
-			//this.startBtn.addEventListener( MouseEvent.MOUSE_UP, startBtnHandle );
-			//this.optionsBtn.addEventListener( MouseEvent.MOUSE_UP, optionsBtnHandle );
-			//this.creditsBtn.addEventListener( MouseEvent.MOUSE_UP, creditsBtnHandle );
+			this.startBtn.addEventListener( MouseEvent.MOUSE_UP, startBtnHandle );
+			this.optionsBtn.addEventListener( MouseEvent.MOUSE_UP, optionsBtnHandle );
+			this.creditsBtn.addEventListener( MouseEvent.MOUSE_UP, creditsBtnHandle );
 			//this.exitBtn.addEventListener( MouseEvent.MOUSE_UP, exitBtnHandle );
 			
 			var mySO:SharedObject = SharedObject.getLocal("save");						
@@ -211,6 +217,7 @@ package objects.menus
 		
 		private function continueBtnHandle( e:MouseEvent=null ) : void
 		{
+				
 			alpha = 0;
 			var mySO:SharedObject = SharedObject.getLocal("save");	
 			mySO.data.currentLevel;
@@ -220,6 +227,11 @@ package objects.menus
 			changeTexts();
 			this.returnBtn.buttonMode = true;
 			this.returnBtn.addEventListener( MouseEvent.MOUSE_UP, returnBtnHandle );
+	
+			if ( CONFIG::mobile ) {
+				this.returnBtn.y = 40;
+				this.returnBtn.x = 625;
+			}
 			
 			chapterCorridorBtn.gotoAndStop( "disabled" );
 			chapterThroneBtn.gotoAndStop( "disabled" );

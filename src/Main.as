@@ -1,7 +1,9 @@
 package 
 {
 	
+	CONFIG::desktop
 	import air.update.ApplicationUpdaterUI;
+	
 	import com.greensock.TweenLite;
 	import flash.events.ContextMenuEvent;
 	import flash.filesystem.File;
@@ -103,60 +105,45 @@ package
 		private var versionFormat:TextFormat;
 		
 		public function Main():void 
-		{
-							
+		{			
 			super();
-						
-			
 			update();
 			
 			addEventListener( Event.ADDED_TO_STAGE, init );
 			
 			var byteArray:ByteArray = new textRaw() as ByteArray;
-			//textXml = new XML(byteArray.readUTFBytes(byteArray.length));
 			XmlGameData.getInstance().texts = new XML(byteArray.readUTFBytes(byteArray.length));
-					
-			//byteArray = new tutorialLev() as ByteArray;
-			//Levels.setLevelXml( Levels.LEVEL_TUTORIAL, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			//Levels.setLevelXml( Levels.LEVEL_TUTORIAL, readLvl( Levels.LEVEL_TUTORIAL ) );
-			
-			//byteArray = new corridorLev() as ByteArray;
-			//Levels.setLevelXml( Levels.LEVEL_CORRIDOR, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			//Levels.setLevelXml( Levels.LEVEL_CORRIDOR, readLvl( Levels.LEVEL_CORRIDOR ) );
-			
-			//byteArray = new throneLev() as ByteArray;
-			//Levels.setLevelXml( Levels.LEVEL_THRONE, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			//Levels.setLevelXml( Levels.LEVEL_THRONE, readLvl( Levels.LEVEL_THRONE ) );
-			
-			//byteArray = new liftLev() as ByteArray;
-			//Levels.setLevelXml( Levels.LEVEL_LIFT, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			//Levels.setLevelXml( Levels.LEVEL_LIFT, readLvl( Levels.LEVEL_LIFT ) );
-			
-			//byteArray = new wallLev() as ByteArray;
-			//Levels.setLevelXml( Levels.LEVEL_WALL, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			//Levels.setLevelXml( Levels.LEVEL_WALL, readLvl( Levels.LEVEL_WALL ) );
-			
-			//byteArray = new yardLev() as ByteArray;
-			//Levels.setLevelXml( Levels.LEVEL_YARD, new XML(byteArray.readUTFBytes(byteArray.length)) );
-			//Levels.setLevelXml( Levels.LEVEL_YARD, readLvl( Levels.LEVEL_YARD ) );
+				
 			
 		}
 		
+		CONFIG::desktop
 		private function update() : void
 		{
 			var appUpdater:ApplicationUpdaterUI = new ApplicationUpdaterUI();
 			appUpdater.configurationFile = new File("app:/updateConfig.xml"); 
 			appUpdater.initialize();
 		}
+		
+		CONFIG::mobile
+		private function update() : void
+		{
+			
+		}
 				
 		private function init( e:Event ) : void
 		{			
-						
+			
+			if ( CONFIG::mobile ) {
+				stage.stageHeight = 480;
+				stage.stageWidth = 762;
+			}
+			
 			stage.focus = this;
 			stage.stageFocusRect = false;
+			
+			if ( CONFIG::desktop )
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
-			//stage.scaleMode = StageScaleMode.NO_SCALE;
-			//stage.displayState = StageDisplayState.FULL_SCREEN;
 			
 			removeEventListener( Event.ADDED_TO_STAGE, init );
 			var classes:Array = [CitrusSprite, MovingPlatform, PhysicsObject, Platform, Knight, StopSpot, StartSpot, DirectionSpot, Ennemy, Princess, Lift, BossSpot, CameraSpot, TextSpot, DestroySpot, TeleportSpot, Exploding, AnimationSpot, Destructible, Runner, Gate, Ennemy, PrincessSprite, PrincessPlatform, PrincessPhysics, Switch ];
@@ -203,6 +190,9 @@ package
 			}
 			else
 				version.appendText(" RELEASE");
+				
+			if ( CONFIG::mobile )
+				version.appendText(" MOBILE");
 			
 			version.setTextFormat( versionFormat, 0, version.length );
 			version.x = stage.stageWidth - version.textWidth - 5;
@@ -221,8 +211,9 @@ package
 		}
 							
 		private function startGame( e:Event=null ) : void
-		{						
-			Mouse.hide();
+		{					
+			if ( CONFIG::release )
+				Mouse.hide();
 			
 			playing = false;
 						
@@ -239,11 +230,8 @@ package
 			assetsLoaded = false;
 			objectsLoaded = false;
 			
-			//Mouse.hide();
-			state = new GameState(null, null, null, currentLevel, null, inMenu );
+				state = new GameState(null, null, currentLevel, null, inMenu );
 			ConstantState.getInstance().runningCinematic = false;
-			//state.lang = mainMenu.lang;
-			//state.volume = mainMenu.volume;
 			XmlGameData.getInstance().lang = mainMenu.lang;
 			SoundManager.getInstance().setGlobalVolume( mainMenu.volume);
 			stage.focus = state; 
@@ -261,7 +249,9 @@ package
 			
 			inMenu = false;
 			
-			Mouse.hide();
+			if ( CONFIG::release )
+				Mouse.hide();
+			
 			if ( getChildByName( mainMenu.name) != null )
 			removeChild( mainMenu );
 			if ( getChildByName( mainMenuBackground.name) != null )
@@ -342,7 +332,7 @@ package
 			if ( endScreen != null && getChildByName( endScreen.name ) != null )
 				removeChild( endScreen );
 				
-			state = new GameState(gameXml, null, null, currentLevel, null);
+			state = new GameState(gameXml, null, currentLevel, null);
 			ConstantState.getInstance().runningCinematic = false;
 			// BUG the playIntro should use event/signal
 			//state.playIntro = false;
@@ -372,7 +362,7 @@ package
 			gameXml = Levels.getLevelXml( currentLevel );
 									
 			state = null;			
-			state = new GameState(gameXml, null, null, currentLevel, null);
+			state = new GameState(gameXml, null, currentLevel, null);
 			ConstantState.getInstance().runningCinematic = false;
 			
 			state.addEventListener( Event.COMPLETE, loadComplete );
@@ -431,22 +421,18 @@ package
 				mainMenu.addEventListener( MenuEvent.START, startNewGame );
 				mainMenu.addEventListener( MenuEvent.CONTINUE, continueGame );
 				mainMenu.activate();
-				//Mouse.show();
+				
 				ConstantState.getInstance().runningCinematic = true;
 				( state.getFirstObjectByType( Princess ) as Princess ).animation = "sleeping";
 			}
 			else
 			{
-				Mouse.hide();
+				if ( CONFIG::release )
+					Mouse.hide();
+					
 				var mySO:SharedObject = SharedObject.getLocal("save");	
 				mySO.data.currentLevel = currentLevel;
-				
-				/*if ( lastCheckpoint != null )
-				state.setPrincessStartPosition( lastCheckpoint.x, lastCheckpoint.y );*/
-				
-				/*if ( previousKnightHealth != 0 )
-				state.setKnightHealth( previousKnightHealth );*/
-				
+								
 				removeChild( mainMenu );
 				removeChild( mainMenuBackground );
 				playing = true;

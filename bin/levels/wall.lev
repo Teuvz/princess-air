@@ -1,0 +1,2222 @@
+<GameState name="Untitled Level">
+  <CitrusObject name="CitrusSprite120" className="objects.platformer.PrincessSprite">
+    <Property name="x">-681</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite121" className="objects.platformer.PrincessSprite">
+    <Property name="x">-681</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite122" className="objects.platformer.PrincessSprite">
+    <Property name="x">335</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite123" className="objects.platformer.PrincessSprite">
+    <Property name="x">1351</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite124" className="objects.platformer.PrincessSprite">
+    <Property name="x">2367</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite125" className="objects.platformer.PrincessSprite">
+    <Property name="x">3383</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite126" className="objects.platformer.PrincessSprite">
+    <Property name="x">4399</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite127" className="objects.platformer.PrincessSprite">
+    <Property name="x">5415</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite128" className="objects.platformer.PrincessSprite">
+    <Property name="x">6431</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite129" className="objects.platformer.PrincessSprite">
+    <Property name="x">7447</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite130" className="objects.platformer.PrincessSprite">
+    <Property name="x">7447</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="Lift" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">401</Property>
+    <Property name="y">816</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/Lift.png</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">301</Property>
+    <Property name="height">30</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform1" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">203</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform2" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">107</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform3" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">11</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform4" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-85</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform5" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">598</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform12" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">236</Property>
+    <Property name="y">618</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view"></Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">30</Property>
+    <Property name="height">428</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform14" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">694</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform15" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">790</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform16" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">886</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform17" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">982</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform18" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1078</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform34" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1174</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform35" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1270</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform36" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1366</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform37" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1462</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform38" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1558</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform39" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1654</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform40" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1750</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform41" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1846</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform42" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1942</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform406" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">203</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform410" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">565</Property>
+    <Property name="y">617.5</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view"></Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">30</Property>
+    <Property name="height">417</Property>
+  </CitrusObject>
+  <CitrusObject name="Boss" className="objects.platformer.Runner">
+    <Property name="speed">9.1</Property>
+    <Property name="startingDirection">right</Property>
+    <Property name="healthPoints">100</Property>
+    <Property name="running">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-965</Property>
+    <Property name="y">289</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view"></Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">309</Property>
+    <Property name="height">225</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform122" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-181</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform123" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-277</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform124" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-373</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform125" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-469</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform126" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-565</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform127" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-661</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform128" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-757</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform129" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-853</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform130" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-949</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform131" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-1045</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform132" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-1141</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform174" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2038</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform175" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2134</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform176" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2230</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform177" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2326</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform178" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2422</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform179" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2518</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform180" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2614</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform181" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2710</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform182" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2806</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Knight" className="objects.platformer.Knight">
+    <Property name="speed">9.5</Property>
+    <Property name="startingDirection">right</Property>
+    <Property name="hurtDuration">400</Property>
+    <Property name="healthPoints">1000</Property>
+    <Property name="maxHealthPoints">1000</Property>
+    <Property name="hitPoints">5</Property>
+    <Property name="startRunning">true</Property>
+    <Property name="jumpHeight">14</Property>
+    <Property name="enemyClass">objects.platformer.Ennemy</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">448</Property>
+    <Property name="y">759</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/knight.swf</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">87.3</Property>
+    <Property name="height">83.25</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform157" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2909</Property>
+    <Property name="y">425</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">-25.040650775951555</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform159" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2995</Property>
+    <Property name="y">385</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">-25.040650775951555</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform161" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3081</Property>
+    <Property name="y">345</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">-25.040650775951555</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform162" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3152</Property>
+    <Property name="y">330</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform163" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3248</Property>
+    <Property name="y">330</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform164" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3344</Property>
+    <Property name="y">330</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform165" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3440</Property>
+    <Property name="y">330</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform166" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3536</Property>
+    <Property name="y">330</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform167" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3632</Property>
+    <Property name="y">330</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform168" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3728</Property>
+    <Property name="y">330</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform169" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3824</Property>
+    <Property name="y">330</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform173" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3895</Property>
+    <Property name="y">346</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">25</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform174" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3981</Property>
+    <Property name="y">386</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">25</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform176" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4068</Property>
+    <Property name="y">426</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">25</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform190" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4150</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform191" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4246</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform192" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4342</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform298" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4438</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform299" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4534</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform300" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4630</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform301" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4726</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform302" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4822</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform303" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">5312</Property>
+    <Property name="y">427</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">-25.040650775951555</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform404" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4918</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform405" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">5014</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform406" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">5110</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform407" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">5206</Property>
+    <Property name="y">449</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform103" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">5398</Property>
+    <Property name="y">386</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">-25.040650775951555</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform105" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">5484</Property>
+    <Property name="y">346</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">-25.040650775951555</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform106" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">5555</Property>
+    <Property name="y">331</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform107" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">5651</Property>
+    <Property name="y">331</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform108" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">5747</Property>
+    <Property name="y">331</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform219" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">5843</Property>
+    <Property name="y">331</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform220" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">5939</Property>
+    <Property name="y">331</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform221" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">6010</Property>
+    <Property name="y">347</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">25</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform222" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">6096</Property>
+    <Property name="y">387</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">25</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform225" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">6181</Property>
+    <Property name="y">426</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">25</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform226" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">6291</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform227" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">6387</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform228" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">6483</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform229" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">6579</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Floor0" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">6675</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Floor1" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">6771</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Floor2" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">6867</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Floor3" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">6963</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform355" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7059</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform356" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7155</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform357" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7251</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform358" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7347</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform359" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7443</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform360" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7539</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform361" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7635</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform362" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7731</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform363" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7827</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform364" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7923</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Ennemy533" className="objects.platformer.Ennemy">
+    <Property name="speed">1.3</Property>
+    <Property name="startingDirection">left</Property>
+    <Property name="hurtDuration">5000</Property>
+    <Property name="leftBound">10</Property>
+    <Property name="rightBound">10</Property>
+    <Property name="healthPoints">20</Property>
+    <Property name="hitPoints">10</Property>
+    <Property name="canMove">true</Property>
+    <Property name="isBoss">false</Property>
+    <Property name="type">Skeleton</Property>
+    <Property name="jumpHeight">14</Property>
+    <Property name="enemyClass">com.citrusengine.objects.platformer.Baddy</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1304</Property>
+    <Property name="y">358</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">117</Property>
+    <Property name="height">78</Property>
+  </CitrusObject>
+  <CitrusObject name="Ennemy537" className="objects.platformer.Ennemy">
+    <Property name="speed">1.3</Property>
+    <Property name="startingDirection">left</Property>
+    <Property name="hurtDuration">5000</Property>
+    <Property name="leftBound">10</Property>
+    <Property name="rightBound">10</Property>
+    <Property name="healthPoints">20</Property>
+    <Property name="hitPoints">5</Property>
+    <Property name="canMove">true</Property>
+    <Property name="isBoss">false</Property>
+    <Property name="type">Skeleton</Property>
+    <Property name="jumpHeight">14</Property>
+    <Property name="enemyClass">com.citrusengine.objects.platformer.Baddy</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3343</Property>
+    <Property name="y">242</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">117</Property>
+    <Property name="height">78</Property>
+  </CitrusObject>
+  <CitrusObject name="Ennemy539" className="objects.platformer.Ennemy">
+    <Property name="speed">1.3</Property>
+    <Property name="startingDirection">left</Property>
+    <Property name="hurtDuration">5000</Property>
+    <Property name="leftBound">10</Property>
+    <Property name="rightBound">10</Property>
+    <Property name="healthPoints">20</Property>
+    <Property name="hitPoints">5</Property>
+    <Property name="canMove">true</Property>
+    <Property name="isBoss">false</Property>
+    <Property name="type">Skeleton</Property>
+    <Property name="jumpHeight">14</Property>
+    <Property name="enemyClass">com.citrusengine.objects.platformer.Baddy</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4585</Property>
+    <Property name="y">361</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">117</Property>
+    <Property name="height">78</Property>
+  </CitrusObject>
+  <CitrusObject name="Ennemy543" className="objects.platformer.Ennemy">
+    <Property name="speed">1.3</Property>
+    <Property name="startingDirection">left</Property>
+    <Property name="hurtDuration">5000</Property>
+    <Property name="leftBound">10</Property>
+    <Property name="rightBound">10</Property>
+    <Property name="healthPoints">20</Property>
+    <Property name="hitPoints">5</Property>
+    <Property name="canMove">true</Property>
+    <Property name="isBoss">false</Property>
+    <Property name="type">Skeleton</Property>
+    <Property name="jumpHeight">14</Property>
+    <Property name="enemyClass">com.citrusengine.objects.platformer.Baddy</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">4305</Property>
+    <Property name="y">363</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">117</Property>
+    <Property name="height">78</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite547" className="objects.platformer.PrincessSprite">
+    <Property name="x">1714</Property>
+    <Property name="y">313</Property>
+    <Property name="width">244</Property>
+    <Property name="height">328</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/GateFrame.png</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="Switch549" className="objects.platformer.Switch">
+    <Property name="elementToDestroy"></Property>
+    <Property name="otherElementToremove"></Property>
+    <Property name="animationToStart"></Property>
+    <Property name="gate">Gate1</Property>
+    <Property name="width">24.05</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1468</Property>
+    <Property name="y">341</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/switch.swf</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="height">24.05</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite550" className="objects.platformer.PrincessSprite">
+    <Property name="x">3687</Property>
+    <Property name="y">195</Property>
+    <Property name="width">244</Property>
+    <Property name="height">328</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/GateFrame.png</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="Switch552" className="objects.platformer.Switch">
+    <Property name="elementToDestroy"></Property>
+    <Property name="otherElementToremove"></Property>
+    <Property name="animationToStart"></Property>
+    <Property name="gate">Gate2</Property>
+    <Property name="width">24.05</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3444</Property>
+    <Property name="y">219</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/switch.swf</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="height">24.05</Property>
+  </CitrusObject>
+  <CitrusObject name="Switch553" className="objects.platformer.Switch">
+    <Property name="elementToDestroy"></Property>
+    <Property name="otherElementToremove"></Property>
+    <Property name="animationToStart"></Property>
+    <Property name="gate">Gate3</Property>
+    <Property name="width">24.05</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7046</Property>
+    <Property name="y">344</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/switch.swf</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="height">24.05</Property>
+  </CitrusObject>
+  <CitrusObject name="StopSpot554" className="objects.platformer.StopSpot">
+    <Property name="deleteOnTouch">true</Property>
+    <Property name="width">30</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8312</Property>
+    <Property name="y">307.5</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view"></Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="height">173</Property>
+  </CitrusObject>
+  <CitrusObject name="Gate1" className="objects.platformer.Gate">
+    <Property name="position">down</Property>
+    <Property name="width">244</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">1716</Property>
+    <Property name="y">295</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/GateGate.png</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="height">328</Property>
+  </CitrusObject>
+  <CitrusObject name="Gate2" className="objects.platformer.Gate">
+    <Property name="position">down</Property>
+    <Property name="width">244</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">3689</Property>
+    <Property name="y">160</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/GateGate.png</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="height">328</Property>
+  </CitrusObject>
+  <CitrusObject name="Platform232" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">-1185</Property>
+    <Property name="y">345.5</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view"></Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">30</Property>
+    <Property name="height">813</Property>
+  </CitrusObject>
+  <CitrusObject name="Ennemy237" className="objects.platformer.Ennemy">
+    <Property name="speed">1.3</Property>
+    <Property name="startingDirection">left</Property>
+    <Property name="hurtDuration">5000</Property>
+    <Property name="leftBound">10</Property>
+    <Property name="rightBound">10</Property>
+    <Property name="healthPoints">20</Property>
+    <Property name="hitPoints">5</Property>
+    <Property name="canMove">true</Property>
+    <Property name="isBoss">false</Property>
+    <Property name="type">Skeleton</Property>
+    <Property name="jumpHeight">14</Property>
+    <Property name="enemyClass">com.citrusengine.objects.platformer.Baddy</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2505</Property>
+    <Property name="y">358</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">117</Property>
+    <Property name="height">78</Property>
+  </CitrusObject>
+  <CitrusObject name="Ennemy245" className="objects.platformer.Ennemy">
+    <Property name="speed">1.3</Property>
+    <Property name="startingDirection">left</Property>
+    <Property name="hurtDuration">5000</Property>
+    <Property name="leftBound">10</Property>
+    <Property name="rightBound">10</Property>
+    <Property name="healthPoints">20</Property>
+    <Property name="hitPoints">5</Property>
+    <Property name="canMove">true</Property>
+    <Property name="isBoss">false</Property>
+    <Property name="type">Skeleton</Property>
+    <Property name="jumpHeight">14</Property>
+    <Property name="enemyClass">com.citrusengine.objects.platformer.Baddy</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">2149</Property>
+    <Property name="y">359</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Skeleton.swf</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">117</Property>
+    <Property name="height">78</Property>
+  </CitrusObject>
+  <CitrusObject name="CitrusSprite247" className="objects.platformer.PrincessSprite">
+    <Property name="x">7187</Property>
+    <Property name="y">300</Property>
+    <Property name="width">244</Property>
+    <Property name="height">328</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/GateFrame.png</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="Gate3" className="objects.platformer.Gate">
+    <Property name="position">up</Property>
+    <Property name="width">244</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7190</Property>
+    <Property name="y">98</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/GateGate.png</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="height">328</Property>
+  </CitrusObject>
+  <CitrusObject name="PrincessSprite130" className="objects.platformer.PrincessSprite">
+    <Property name="x">8463</Property>
+    <Property name="y">2</Property>
+    <Property name="width">1016</Property>
+    <Property name="height">812</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/Sunset.jpg</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+  </CitrusObject>
+  <CitrusObject name="PrincessPlatform131" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8019</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="PrincessPlatform132" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8115</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="PrincessPlatform133" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8211</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="PrincessPlatform134" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8307</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="PrincessPlatform135" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8403</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="PrincessPlatform136" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8499</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="PrincessPlatform137" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8595</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="PrincessPlatform138" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8691</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="PrincessPlatform139" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8787</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="PrincessPlatform140" className="objects.platformer.PrincessPlatform">
+    <Property name="oneWay">false</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8883</Property>
+    <Property name="y">450</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view">asset/GroundA.gif</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">96</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="Princess" className="objects.platformer.Princess">
+    <Property name="acceleration">1</Property>
+    <Property name="maxVelocity">9</Property>
+    <Property name="hurtDuration">1000</Property>
+    <Property name="healingPower">6</Property>
+    <Property name="enemyClass">com.citrusengine.objects.platformer.Baddy</Property>
+    <Property name="friction">0.75</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">337</Property>
+    <Property name="y">753</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view">asset/princess.swf</Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="width">66.3</Property>
+    <Property name="height">96</Property>
+  </CitrusObject>
+  <CitrusObject name="AnimationSpot142" className="objects.platformer.AnimationSpot">
+    <Property name="cinematic">teamFall</Property>
+    <Property name="width">30</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8190</Property>
+    <Property name="y">355</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view"></Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="height">30</Property>
+  </CitrusObject>
+  <CitrusObject name="StopSpot144" className="objects.platformer.StopSpot">
+    <Property name="deleteOnTouch">true</Property>
+    <Property name="width">30</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">8273</Property>
+    <Property name="y">310.5</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view"></Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="height">173</Property>
+  </CitrusObject>
+  <CitrusObject name="StartSpot145" className="objects.platformer.StartSpot">
+    <Property name="width">30</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7729</Property>
+    <Property name="y">307.5</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">0</Property>
+    <Property name="view"></Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="height">173</Property>
+  </CitrusObject>
+  <CitrusObject name="StopSpot146" className="objects.platformer.StopSpot">
+    <Property name="deleteOnTouch">true</Property>
+    <Property name="width">30</Property>
+    <Property name="gravity">1.6</Property>
+    <Property name="x">7789</Property>
+    <Property name="y">307.5</Property>
+    <Property name="parallax">1</Property>
+    <Property name="rotation">0</Property>
+    <Property name="group">1</Property>
+    <Property name="view"></Property>
+    <Property name="offsetX">0</Property>
+    <Property name="offsetY">0</Property>
+    <Property name="registration">center</Property>
+    <Property name="height">173</Property>
+  </CitrusObject>
+</GameState>
