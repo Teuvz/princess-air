@@ -142,8 +142,13 @@ package
 			stage.focus = this;
 			stage.stageFocusRect = false;
 			
-			if ( CONFIG::desktop )
-			stage.scaleMode = StageScaleMode.EXACT_FIT;
+			if ( CONFIG::desktop ) {
+				Mouse.hide();
+				stage.scaleMode = StageScaleMode.EXACT_FIT;
+				
+				if ( CONFIG::release )
+					stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+			}
 			
 			removeEventListener( Event.ADDED_TO_STAGE, init );
 			var classes:Array = [CitrusSprite, MovingPlatform, PhysicsObject, Platform, Knight, StopSpot, StartSpot, DirectionSpot, Ennemy, Princess, Lift, BossSpot, CameraSpot, TextSpot, DestroySpot, TeleportSpot, Exploding, AnimationSpot, Destructible, Runner, Gate, Ennemy, PrincessSprite, PrincessPlatform, PrincessPhysics, Switch ];
@@ -212,8 +217,6 @@ package
 							
 		private function startGame( e:Event=null ) : void
 		{					
-			if ( CONFIG::release )
-				Mouse.hide();
 			
 			playing = false;
 						

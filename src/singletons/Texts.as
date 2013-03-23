@@ -22,7 +22,6 @@ package singletons
 		{
 			this.lang = lang;
 			this.texts = new Dictionary();
-			trace( texts );
 		}
 		
 		public function getText( key:String ) : String

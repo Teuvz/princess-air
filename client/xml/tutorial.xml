@@ -78,6 +78,7 @@
 		<type>Knight</type>
 		<x>915</x>
 		<y>289</y>
+		<speed>7</speed>
 	</action>
 	<action type="animation">
 		<character>Princess</character>
@@ -91,6 +92,9 @@
 	<action type="animation">
 		<character>Princess</character>
 		<animation>idle</animation>
+	</action>
+	<action type="dialog">
+		<text>intro_3</text>
 	</action>
 	<action type="unblock" />
 </startAnimation>

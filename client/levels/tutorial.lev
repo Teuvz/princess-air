@@ -223,8 +223,8 @@
   <CitrusObject name="Princess" className="objects.platformer.Princess">
     <Property name="acceleration">1</Property>
     <Property name="maxVelocity">9</Property>
-    <Property name="hurtDuration">1000</Property>
     <Property name="healingPower">6</Property>
+    <Property name="initialAnimation"></Property>
     <Property name="enemyClass">com.citrusengine.objects.platformer.Baddy</Property>
     <Property name="friction">0.75</Property>
     <Property name="gravity">1.6</Property>
@@ -869,25 +869,6 @@
     <Property name="offsetY">0</Property>
     <Property name="registration">center</Property>
   </CitrusObject>
-  <CitrusObject name="TextSpot149" className="objects.platformer.TextSpot">
-    <Property name="text">intro_3</Property>
-    <Property name="pauseOnRead">true</Property>
-    <Property name="displayTime">2000</Property>
-    <Property name="readByKnight">true</Property>
-    <Property name="switchText"></Property>
-    <Property name="width">30</Property>
-    <Property name="gravity">1.6</Property>
-    <Property name="x">1164</Property>
-    <Property name="y">308</Property>
-    <Property name="parallax">1</Property>
-    <Property name="rotation">0</Property>
-    <Property name="group">2</Property>
-    <Property name="view"></Property>
-    <Property name="offsetX">0</Property>
-    <Property name="offsetY">0</Property>
-    <Property name="registration">center</Property>
-    <Property name="height">30</Property>
-  </CitrusObject>
   <CitrusObject name="CitrusSprite70" className="objects.platformer.PrincessSprite">
     <Property name="x">781</Property>
     <Property name="y">49</Property>
@@ -969,10 +950,10 @@
   <CitrusObject name="Knight" className="objects.platformer.Knight">
     <Property name="speed">9.5</Property>
     <Property name="startingDirection">left</Property>
-    <Property name="hurtDuration">400</Property>
     <Property name="healthPoints">1000</Property>
     <Property name="maxHealthPoints">1000</Property>
     <Property name="hitPoints">5</Property>
+    <Property name="hitFrequency">200</Property>
     <Property name="startRunning">false</Property>
     <Property name="jumpHeight">14</Property>
     <Property name="enemyClass">objects.platformer.Ennemy</Property>

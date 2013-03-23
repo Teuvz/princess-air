@@ -16,7 +16,19 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'06/02/2013'</value>
+      <value>'23/03/2013'</value>
+    </define>
+    <define append="true">
+      <name>CONFIG::air</name>
+      <value>true</value>
+    </define>
+    <define append="true">
+      <name>CONFIG::mobile</name>
+      <value>false</value>
+    </define>
+    <define append="true">
+      <name>CONFIG::desktop</name>
+      <value>true</value>
     </define>
     <define append="true">
       <name>CONFIG::desktop</name>

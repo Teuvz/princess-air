@@ -29,9 +29,11 @@ package objects.platformer
 		
 		public function PrincessPlatform(name:String, params:Object = null )
 		{
-						
-			params.view = Assets.getInstance().formatName(params.view);
-								
+			if ( name == "BossSprite" )
+				params.view = asset_Boss;
+			else
+				params.view = Assets.getInstance().formatName(params.view);
+			
 			super(name, params);
 			
 		}

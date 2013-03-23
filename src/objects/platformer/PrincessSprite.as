@@ -50,7 +50,7 @@ package objects.platformer
 		public function PrincessSprite(name:String, params:Object=null)
 		{
 			
-			params.view = Assets.getInstance().formatName(params.view);			
+			params.view = Assets.getInstance().formatName(params.view);
 					
 			super(name, params);
 		}

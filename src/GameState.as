@@ -15,6 +15,7 @@ package
 	import com.greensock.easing.Bounce;
 	import com.greensock.TimelineLite;
 	import com.greensock.TweenLite;
+	import flash.display.StageDisplayState;
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
@@ -104,13 +105,15 @@ package
 			ObjectMaker.FromLevelArchitect(readLvl());
 						
 			_hero = getFirstObjectByType(Princess) as Princess;
-			if (_hero)
+			/*if (_hero)
 			{
 				_hero.controlsEnabled = false;
 				view.cameraTarget = _hero;
 				view.cameraOffset = new MathVector(stage.stageWidth / 4, (stage.stageHeight / 3) * 2);
 				view.cameraEasing = new MathVector(1, 1);
-			}
+			}*/
+			
+			_knight = getFirstObjectByType(Knight) as Knight;
 						
 			addEventListener(StateEvent.START, start);
 			
@@ -156,11 +159,7 @@ package
 		{
 			removeEventListener(StateEvent.START, start);
 			
-			//Find the hero object, and make it the camera target if it exists.
-			
-			//trace( "state start" );
-			
-			_hero = getFirstObjectByType(Princess) as Princess;
+			//Find the hero object, and make it the camera target if it exists.		
 			if (_hero)
 			{
 				_hero.controlsEnabled = true;
@@ -168,9 +167,7 @@ package
 				view.cameraOffset = new MathVector(stage.stageWidth / 2, (stage.stageHeight / 3) * 2);
 				view.cameraEasing = new MathVector(0.4, 0.4);
 			}
-			
-			_knight = getFirstObjectByType(Knight) as Knight;
-			
+						
 			if (_knight != null && _levelName != Levels.LEVEL_TUTORIAL)
 			{
 				_healthbar = new Healthbar();
@@ -277,9 +274,7 @@ package
 				var _ce:CitrusEngine = CitrusEngine.getInstance();
 				_ce.playing = true;
 				ConstantState.getInstance().runningCinematic = false;
-				//trace( "undefined cinematic" );
 				hideBlackBands();
-					//System.disposeXML( XmlGameData.getInstance().cinematics );
 					
 				if ( CONFIG::mobile )
 					MobileMenu.getInstance().show();
@@ -312,15 +307,7 @@ package
 			else if (cinematic.action[cinematicActionStep].attribute("type") == 'move')
 			{
 				setTimeout(cinematicAction, cinematic.action[cinematicActionStep].time);
-				
-				/*if ( cinematic.action[cinematicActionStep].character == _knight.name )
-				   {
-				   trace( "this is knight" );
-				   trace( "is knight stopped? " + _knight._stopped );
-				   _knight.start();
-				   trace( "is knight stopped? " + _knight._stopped );
-				 }*/
-				
+								
 				if (cinematic.action[cinematicActionStep].effect == 'bounce')
 				{
 					TweenLite.to((getObjectByName(cinematic.action[cinematicActionStep].character) as PhysicsObject), cinematic.action[cinematicActionStep].time / 1000, {y: cinematic.action[cinematicActionStep].y, ease: Bounce.easeOut});
@@ -360,9 +347,6 @@ package
 					SoundManager.getInstance().addSound(cinematic.action[cinematicActionStep].file, cinematic.action[cinematicActionStep].file);
 				
 				SoundManager.getInstance().playSound(cinematic.action[cinematicActionStep].file);
-				trace(cinematic.action[cinematicActionStep].file);
-				
-				//SoundManager.getInstance().setGlobalVolume( this.volume/10 );
 				
 				setTimeout(cinematicAction, 200);
 				cinematicActionStep++;
@@ -382,7 +366,7 @@ package
 				{
 					
 					var params:Object = new Object();
-					params.speed = 3;
+					params.speed = cinematic.action[cinematicActionStep].speed;
 					params.startingDirection = "right";
 					params.gravity = 1.6;
 					params.parallax = 1;
@@ -588,6 +572,7 @@ package
 			if (_ce.input.isDown(Keyboard.ESCAPE))
 			{
 				trace("escape");
+				stage.displayState = StageDisplayState.NORMAL;
 			}
 			
 			if (_ce.input.isDown(Keyboard.CONTROL) || _mobile.healButtonDown)
@@ -647,6 +632,19 @@ package
 		private function startFight(e:FightEvent):void
 		{
 			ConstantState.getInstance().fightTing = true;
+			
+			var i:uint = _objects.length;
+			trace(_objects);
+			while ( i-- > 0 )
+			{
+				trace(_objects[i].name);
+				
+				if (_objects[i].name == e.ennemy)
+				{
+					trace("found ennemy! " + e.ennemy);
+				}
+			}
+			
 			_currentEnnemy = (getObjectByName(e.ennemy) as Ennemy);
 			_knight.startFighting();
 			_fightRound = 0;
@@ -673,7 +671,7 @@ package
 				_currentEnnemy.healthPoints -= _knight.hitPoints;
 			}
 			
-			if (_currentEnnemy.healthPoints < 0)
+			if ( _currentEnnemy.healthPoints < 0)
 			{
 				stopFight();
 			}
